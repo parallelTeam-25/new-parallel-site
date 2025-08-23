@@ -8,23 +8,25 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 5
     
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
     
-    - name: Test FTP with curl
-      run: |
-        echo "Testing FTP connection with curl..."
-        curl -v --ftp-pasv ftp://u399412635.parallel-ai.it:y*xr=lgC!LM*J9n@195.35.27.36/ || echo "Curl failed"
+    - name: Install lftp
+      run: sudo apt-get update && sudo apt-get install -y lftp
     
-    - name: Try different FTP approach
-      uses: sebastianpopp/ftp-action@releases/v2
-      with:
-        host: 195.35.27.36
-        user: u399412635.parallel-ai.it
-        password: y*xr=lgC!LM*J9n
-        localDir: "./"
-        remoteDir: "./"
-        options: "--ignore-host-key"
+    - name: Deploy with lftp
+      run: |
+        lftp -c "
+          set ftp:ssl-allow no;
+          set ftp:passive-mode yes;
+          set net:timeout 30;
+          open -u u399412635.parallel-ai.it,'y*xr=lgC!LM*J9n' 195.35.27.36;
+          lcd .;
+          cd public_html;
+          mirror -R -e -v --delete --exclude='.git/' --exclude='.github/' --exclude='README.md' --exclude='.gitignore' .;
+          quit
+        "
+        echo "Deploy completed successfully!"
