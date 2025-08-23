@@ -8,33 +8,32 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-      
-    - name: Debug Secrets
-      run: |
-        echo "FTP_HOST exists: ${{ secrets.FTP_HOST != '' }}"
-        echo "FTP_USERNAME exists: ${{ secrets.FTP_USERNAME != '' }}"
-        echo "FTP_PASSWORD exists: ${{ secrets.FTP_PASSWORD != '' }}"
-        
     
-    - name: Deploy to FTP
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-      with:
-        server: "195.35.27.36"
-        username: "u399412635.parallel-ai.it" 
-        password: ${{ secrets.FTP_PASSWORD }}
-        protocol: ftp
-        port: 21
-        exclude: |
-          **/.git*
-          **/.git*/**
-          **/README.md
-          **/node_modules/**
-          **/.github/**
-          **/package*.json
-          **/.DS_Store
-          **/Thumbs.db
-          **/.gitignore
+    - name: Test FTP Connection
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y ftp
+        echo "Testing FTP connection..."
+        ftp -n 195.35.27.36 <<EOF
+        user u399412635.parallel-ai.it CWgbzff6os&o7]qA
+        pwd
+        ls
+        quit
+        EOF
+    
+    - name: Deploy with lftp (more reliable)
+      run: |
+        sudo apt-get install -y lftp
+        lftp -c "
+          set ssl:verify-certificate no;
+          set ftp:passive-mode on;
+          open -u u399412635.parallel-ai.it,CWgbzff6os&o7]qA 195.35.27.36;
+          lcd ./;
+          mirror -R -e -v --ignore-time --exclude .git/ --exclude .github/ --exclude README.md ./;
+          quit
+        "
