@@ -13,5 +13,9 @@
  */
 define( 'WP_USE_THEMES', true );
 
+
+include('landing.php');
+exit;
+
 /** Loads the WordPress Environment and Template */
 require __DIR__ . '/wp-blog-header.php';
