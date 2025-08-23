@@ -14,26 +14,17 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
     
-    - name: Test FTP Connection
+    - name: Test FTP with curl
       run: |
-        sudo apt-get update
-        sudo apt-get install -y ftp
-        echo "Testing FTP connection..."
-        ftp -n 195.35.27.36 <<EOF
-        user u399412635.parallel-ai.it CWgbzff6os&o7]qA
-        pwd
-        ls
-        quit
-        EOF
+        echo "Testing FTP connection with curl..."
+        curl -v --ftp-pasv ftp://u399412635.parallel-ai.it:y*xr=lgC!LM*J9n@195.35.27.36/ || echo "Curl failed"
     
-    - name: Deploy with lftp (more reliable)
-      run: |
-        sudo apt-get install -y lftp
-        lftp -c "
-          set ssl:verify-certificate no;
-          set ftp:passive-mode on;
-          open -u u399412635.parallel-ai.it,CWgbzff6os&o7]qA 195.35.27.36;
-          lcd ./;
-          mirror -R -e -v --ignore-time --exclude .git/ --exclude .github/ --exclude README.md ./;
-          quit
-        "
+    - name: Try different FTP approach
+      uses: sebastianpopp/ftp-action@releases/v2
+      with:
+        host: 195.35.27.36
+        user: u399412635.parallel-ai.it
+        password: y*xr=lgC!LM*J9n
+        localDir: "./"
+        remoteDir: "./"
+        options: "--ignore-host-key"
