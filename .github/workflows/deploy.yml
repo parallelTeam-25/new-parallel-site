@@ -3,6 +3,7 @@ name: Deploy to Hostinger
 on:
   push:
     branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -10,15 +11,18 @@ jobs:
     
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     
     - name: Deploy to FTP
-      uses: SamKirkland/FTP-Deploy-Action@4.3.3
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: ${{ secrets.FTP_HOST }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         server-dir: ${{ secrets.FTP_PATH }}/
+        protocol: ftp
+        port: 21
+        local-dir: ./
         exclude: |
           **/.git*
           **/.git*/**
@@ -28,3 +32,4 @@ jobs:
           **/package*.json
           **/.DS_Store
           **/Thumbs.db
+          **/.gitignore
