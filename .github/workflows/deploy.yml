@@ -12,17 +12,21 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+      
+    - name: Debug Secrets
+      run: |
+        echo "FTP_HOST exists: ${{ secrets.FTP_HOST != '' }}"
+        echo "FTP_USERNAME exists: ${{ secrets.FTP_USERNAME != '' }}"
+        echo "FTP_PASSWORD exists: ${{ secrets.FTP_PASSWORD != '' }}"
     
     - name: Deploy to FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: ${{ secrets.FTP_HOST }}
-        username: ${{ secrets.FTP_USERNAME }}
+        server: "195.35.27.36"
+        username: "u399412635.parallel-ai.it" 
         password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: ${{ secrets.FTP_PATH }}/
         protocol: ftp
         port: 21
-        local-dir: ./
         exclude: |
           **/.git*
           **/.git*/**
