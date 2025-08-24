@@ -1784,10 +1784,10 @@ if ($_POST && isset($_POST['contact_submit'])) {
                             </div>
                         </div>
                         <div class="floating-card card-2">
-                            <div class="card-icon">📊</div>
+                            <div class="card-icon">🎓</div>
                             <div class="card-content">
-                                <h4>Analisi Dati</h4>
-                                <p>Insights in tempo reale</p>
+                                <h4>Formazione</h4>
+                                <p>Team qualificati</p>
                             </div>
                         </div>
                         <div class="floating-card card-3">
