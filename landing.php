@@ -349,66 +349,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
         text-transform: uppercase;
     }
     
-    /* Hero Benefits */
-    .hero-benefits {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        margin: 40px 0;
-    }
-    
-    .benefit-item {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        padding: 20px;
-        background: rgba(16, 185, 129, 0.05);
-        border: 1px solid rgba(16, 185, 129, 0.1);
-        border-radius: 16px;
-        transition: all 0.3s ease;
-        backdrop-filter: blur(10px);
-    }
-    
-    .benefit-item:hover {
-        background: rgba(16, 185, 129, 0.1);
-        border-color: var(--primary-color);
-        transform: translateY(-4px);
-        box-shadow: 0 8px 25px rgba(16, 185, 129, 0.15);
-    }
-    
-    .benefit-icon {
-        font-size: 32px;
-        width: 56px;
-        height: 56px;
-        background: var(--gradient-primary);
-        border-radius: 16px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
-    }
-    
-    .benefit-text {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-    }
-    
-    .benefit-text strong {
-        font-size: 16px;
-        font-weight: 700;
-        color: var(--white);
-        letter-spacing: 0.5px;
-        line-height: 1.3;
-    }
-    
-    .benefit-text span {
-        font-size: 14px;
-        color: var(--gray-200);
-        opacity: 0.9;
-        font-weight: 500;
-    }
+
     
     /* Hero Social Proof */
     .hero-social-proof {
@@ -500,6 +441,12 @@ if ($_POST && isset($_POST['contact_submit'])) {
         animation-delay: 6s;
     }
     
+    .floating-card.card-4 {
+        top: 60%;
+        left: 60%;
+        animation-delay: 9s;
+    }
+    
     .card-icon {
         font-size: 36px;
         width: 56px;
@@ -580,15 +527,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
             max-width: 320px;
         }
         
-        .hero-benefits {
-            grid-template-columns: 1fr;
-            gap: 16px;
-            margin: 30px 0;
-        }
-        
-        .benefit-item {
-            padding: 16px;
-        }
+
         
         .proof-stats {
             gap: 20px;
@@ -615,6 +554,10 @@ if ($_POST && isset($_POST['contact_submit'])) {
             margin: 15px;
             animation: none;
             transform: none;
+        }
+        
+        .floating-card.card-4 {
+            margin: 15px;
         }
         
         .process-steps {
@@ -1922,23 +1865,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
             font-size: 16px;
         }
         
-        .hero-benefits {
-            grid-template-columns: 1fr;
-            gap: 12px;
-            margin: 24px 0;
-        }
-        
-        .benefit-item {
-            padding: 14px;
-            flex-direction: column;
-            text-align: center;
-        }
-        
-        .benefit-icon {
-            width: 48px;
-            height: 48px;
-            font-size: 24px;
-        }
+
         
         .proof-stats {
             gap: 16px;
