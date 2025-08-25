@@ -17,13 +17,15 @@ if ($_POST && isset($_POST['contact_submit'])) {
     $nome = htmlspecialchars($_POST['nome'] ?? '');
     $email = htmlspecialchars($_POST['email'] ?? '');
     $azienda = htmlspecialchars($_POST['azienda'] ?? '');
+    $servizio = htmlspecialchars($_POST['servizio'] ?? '');
+    $budget = htmlspecialchars($_POST['budget'] ?? '');
     $messaggio = htmlspecialchars($_POST['messaggio'] ?? '');
     
-    if ($nome && $email && $messaggio) {
+    if ($nome && $email && $servizio && $messaggio) {
         $form_message = '<div class="success-message">Grazie! Ti ricontatteremo entro 24 ore.</div>';
         
         // Qui puoi aggiungere l'invio email o salvataggio database
-        // mail('info@example.com', 'Nuova richiesta landing', "Nome: $nome\nEmail: $email\nAzienda: $azienda\nMessaggio: $messaggio");
+        // mail('info@example.com', 'Nuova richiesta landing', "Nome: $nome\nEmail: $email\nAzienda: $azienda\nServizio: $servizio\nBudget: $budget\nMessaggio: $messaggio");
     } else {
         $form_message = '<div class="error-message">Compila tutti i campi obbligatori.</div>';
     }
@@ -1959,13 +1961,8 @@ if ($_POST && isset($_POST['contact_submit'])) {
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">⚡</div>
-                    <div class="service-badge">Best Seller</div>
                     <h3>Automazioni AI Custom</h3>
                     <p class="service-subtitle">FLUSSI INTELLIGENTI PER PROCESSI AZIENDALI</p>
-                    <div class="service-price">
-                        <span class="price-amount">€5,000</span>
-                        <span class="price-period">/progetto</span>
-                    </div>
                     <ul class="service-features">
                         <li>Creazione flussi di lavoro intelligenti con AI</li>
                         <li>Agenti AI personalizzati per processi specifici</li>
@@ -1977,13 +1974,8 @@ if ($_POST && isset($_POST['contact_submit'])) {
                 
                 <div class="service-card">
                     <div class="service-icon">🎓</div>
-                    <div class="service-badge">Più Popolare</div>
                     <h3>Formazione AI Aziendale</h3>
                     <p class="service-subtitle">WORKSHOP E CORSI PER TEAM E PRIVATI</p>
-                    <div class="service-price">
-                        <span class="price-amount">€2,500</span>
-                        <span class="price-period">/workshop</span>
-                    </div>
                     <ul class="service-features">
                         <li>Masterclass su ChatGPT e AI generative</li>
                         <li>Formazione pratica per team aziendali</li>
@@ -2013,11 +2005,11 @@ if ($_POST && isset($_POST['contact_submit'])) {
             </div>
             <div class="case-studies-grid">
                 <div class="case-study-card">
-                    <h3>E-commerce Fashion</h3>
+                    <h3>Azienda d'Assistenza IT</h3>
                     <p class="completion-time">Completato in 3 mesi</p>
                     <p class="case-description">
-                        Automazione del customer service e ottimizzazione delle campagne marketing 
-                        con AI per un brand di moda online.
+                        Gestione delle scadenze con gestionale custom e automazione invii continua 
+                        per ottimizzare i processi di assistenza tecnica.
                     </p>
                     <div class="case-results">
                         <h4>Risultati</h4>
@@ -2040,11 +2032,11 @@ if ($_POST && isset($_POST['contact_submit'])) {
                 </div>
                 
                 <div class="case-study-card">
-                    <h3>Studio Legale</h3>
+                    <h3>Concessionaria</h3>
                     <p class="completion-time">Completato in 2 mesi</p>
                     <p class="case-description">
-                        Implementazione di agenti AI per la generazione automatica di documenti 
-                        legali e analisi di contratti.
+                        Ricerca sui portali automobilistici delle migliori offerte d'acquisto 
+                        per la rivendita con automazione intelligente.
                     </p>
                     <div class="case-results">
                         <h4>Risultati</h4>
@@ -2067,26 +2059,26 @@ if ($_POST && isset($_POST['contact_submit'])) {
                 </div>
                 
                 <div class="case-study-card">
-                    <h3>Azienda Manifatturiera</h3>
+                    <h3>Agenzia Web</h3>
                     <p class="completion-time">Completato in 4 mesi</p>
                     <p class="case-description">
-                        Automazione dei processi di controllo qualità e ottimizzazione 
-                        della supply chain con soluzioni AI avanzate.
+                        Automazione per invio mensile di report con messaggio custom 
+                        creato dall'AI per i clienti.
                     </p>
                     <div class="case-results">
                         <h4>Risultati</h4>
                         <div class="results-grid">
                             <div class="result-item">
                                 <span class="result-number">-45%</span>
-                                <span class="result-label">Difetti di produzione</span>
+                                <span class="result-label">Tempo per report</span>
                             </div>
                             <div class="result-item">
                                 <span class="result-number">+60%</span>
-                                <span class="result-label">Efficienza operativa</span>
+                                <span class="result-label">Soddisfazione clienti</span>
                             </div>
                             <div class="result-item">
                                 <span class="result-number">+180%</span>
-                                <span class="result-label">Previsioni accurate</span>
+                                <span class="result-label">Report generati</span>
                             </div>
                         </div>
                     </div>
@@ -2264,16 +2256,38 @@ if ($_POST && isset($_POST['contact_submit'])) {
                             </div>
                         </div>
                         
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="azienda">Azienda *</label>
-                                <input type="text" id="azienda" name="azienda" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="telefono">Telefono</label>
-                                <input type="tel" id="telefono" name="telefono">
-                            </div>
-                        </div>
+                                                 <div class="form-row">
+                             <div class="form-group">
+                                 <label for="azienda">Azienda *</label>
+                                 <input type="text" id="azienda" name="azienda" required>
+                             </div>
+                             <div class="form-group">
+                                 <label for="telefono">Telefono</label>
+                                 <input type="tel" id="telefono" name="telefono">
+                             </div>
+                         </div>
+                         
+                         <div class="form-row">
+                             <div class="form-group">
+                                 <label for="servizio">Servizio di interesse *</label>
+                                 <select id="servizio" name="servizio" required>
+                                     <option value="">Seleziona un servizio</option>
+                                     <option value="automazione-processi">Automazione di processi</option>
+                                     <option value="formazione">Formazione</option>
+                                 </select>
+                             </div>
+                             <div class="form-group">
+                                 <label for="budget">Budget stimato</label>
+                                 <select id="budget" name="budget">
+                                     <option value="">Seleziona budget</option>
+                                     <option value="1k-5k">€1.000 - €5.000</option>
+                                     <option value="5k-15k">€5.000 - €15.000</option>
+                                     <option value="15k-50k">€15.000 - €50.000</option>
+                                     <option value="50k+">€50.000+</option>
+                                     <option value="da-definire">Da definire</option>
+                                 </select>
+                             </div>
+                         </div>
                         
                         <div class="form-group">
                             <label for="messaggio">Descrivi la tua esigenza *</label>
