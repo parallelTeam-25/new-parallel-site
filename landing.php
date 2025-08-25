@@ -356,14 +356,14 @@ if ($_POST && isset($_POST['contact_submit'])) {
         margin: 32px 0;
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: 12px;
     }
     
     .credibility-item {
         display: flex;
         align-items: center;
         gap: 12px;
-        padding: 12px 16px;
+        padding: 10px 16px;
         background: rgba(16, 185, 129, 0.05);
         border: 1px solid rgba(16, 185, 129, 0.1);
         border-radius: 12px;
@@ -379,18 +379,130 @@ if ($_POST && isset($_POST['contact_submit'])) {
     }
     
     .credibility-icon {
-        font-size: 18px;
+        font-size: 16px;
         color: var(--primary-color);
         font-weight: bold;
         flex-shrink: 0;
+        width: 20px;
+        text-align: center;
     }
     
     .credibility-text {
-        font-size: 15px;
+        font-size: 14px;
         color: var(--white);
         font-weight: 500;
         line-height: 1.4;
         letter-spacing: 0.3px;
+    }
+    
+    /* Metodo Section */
+    .metodo-section {
+        background: var(--gradient-dark);
+        color: var(--white);
+        padding: 100px 0;
+        position: relative;
+    }
+    
+    .metodo-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: var(--gradient-primary);
+    }
+    
+    .metodo-steps {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        margin-top: 80px;
+    }
+    
+    .metodo-step {
+        background: rgba(16, 185, 129, 0.05);
+        border: 1px solid rgba(16, 185, 129, 0.1);
+        border-radius: 20px;
+        padding: 40px 32px;
+        text-align: center;
+        transition: all 0.4s ease;
+        backdrop-filter: blur(10px);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .metodo-step::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: var(--gradient-primary);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+    
+    .metodo-step:hover::before {
+        transform: scaleX(1);
+    }
+    
+    .metodo-step:hover {
+        background: rgba(16, 185, 129, 0.1);
+        border-color: var(--primary-color);
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(16, 185, 129, 0.2);
+    }
+    
+    .step-number {
+        width: 60px;
+        height: 60px;
+        background: var(--gradient-primary);
+        color: var(--white);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: 800;
+        margin: 0 auto 24px;
+        position: relative;
+        z-index: 2;
+        box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+    }
+    
+    .step-icon {
+        font-size: 48px;
+        margin-bottom: 24px;
+        filter: drop-shadow(0 4px 8px rgba(16, 185, 129, 0.2));
+    }
+    
+    .step-title {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 16px;
+        color: var(--white);
+        letter-spacing: -0.5px;
+        line-height: 1.3;
+    }
+    
+    .step-duration {
+        font-size: 16px;
+        color: var(--primary-color);
+        font-weight: 600;
+        display: block;
+        margin-top: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    .step-description {
+        color: var(--gray-200);
+        line-height: 1.6;
+        font-size: 16px;
+        margin: 0;
+        opacity: 0.9;
     }
     
     .hero-visual {
@@ -633,10 +745,24 @@ if ($_POST && isset($_POST['contact_submit'])) {
             font-size: 32px;
         }
         
-        .hero-section {
+                .hero-section {
             padding: 120px 0 80px;
         }
         
+        .metodo-section {
+            padding: 80px 0;
+        }
+        
+        .metodo-steps {
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .metodo-step {
+            padding: 32px 24px;
+        }
+
         .why-us-section,
         .mission-section,
         .process-section,
@@ -1899,6 +2025,37 @@ if ($_POST && isset($_POST['contact_submit'])) {
             font-size: 16px;
         }
         
+        .metodo-section {
+            padding: 60px 0;
+        }
+        
+        .metodo-steps {
+            gap: 24px;
+            margin-top: 50px;
+        }
+        
+        .metodo-step {
+            padding: 28px 20px;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+        }
+        
+        .step-icon {
+            font-size: 40px;
+        }
+        
+        .step-title {
+            font-size: 18px;
+        }
+        
+        .step-description {
+            font-size: 15px;
+        }
+        
 
         
         .hero-credibility {
@@ -1951,12 +2108,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <!-- Trust Badge -->
-                    <div class="trust-badge">
-                        <span class="badge-icon">🇮🇹</span>
-                        <span class="badge-text">100% Made in Italy</span>
-                    </div>
-                    
+                                        
                     <!-- Headline Principale -->
                     <h1 class="hero-title">
                         Quante ore al giorno i tuoi dipendenti perdono in attività ripetitive?
@@ -2024,6 +2176,56 @@ if ($_POST && isset($_POST['contact_submit'])) {
                                 <p>+40% produttività media</p>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metodo Section -->
+    <section class="metodo-section" id="metodo">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Dal manuale all'automatico in 4 step</h2>
+                <p class="section-intro">
+                    Il nostro processo trasparente per trasformare i tuoi processi ripetitivi
+                </p>
+            </div>
+            
+            <div class="metodo-steps">
+                <div class="metodo-step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">📞</div>
+                    <div class="step-content">
+                        <h3 class="step-title">CALL ESPLORATIVA <span class="step-duration">(30min - GRATUITA)</span></h3>
+                        <p class="step-description">Capiamo la tua azienda e identifichiamo le prime 3 opportunità di automazione</p>
+                    </div>
+                </div>
+                
+                <div class="metodo-step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">🔍</div>
+                    <div class="step-content">
+                        <h3 class="step-title">AUDIT APPROFONDITO <span class="step-duration">(2-3 ore)</span></h3>
+                        <p class="step-description">Analizziamo insieme tutti i processi automatizzabili e definiamo le priorità</p>
+                    </div>
+                </div>
+                
+                <div class="metodo-step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">⚙️</div>
+                    <div class="step-content">
+                        <h3 class="step-title">SVILUPPO + TEST</h3>
+                        <p class="step-description">Creiamo l'automazione su misura e la testiamo insieme al tuo team</p>
+                    </div>
+                </div>
+                
+                <div class="metodo-step">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">🎓</div>
+                    <div class="step-content">
+                        <h3 class="step-title">FORMAZIONE + GO-LIVE + ASSISTENZA</h3>
+                        <p class="step-description">Ti rendiamo completamente autonomo con supporto continuo quando serve</p>
                     </div>
                 </div>
             </div>
