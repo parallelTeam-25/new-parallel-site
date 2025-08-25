@@ -71,6 +71,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
         --text-dark: #111827;
         --text-light: #6b7280;
         --white: #ffffff;
+        --gray-50: #fafafa;
         --gray-100: #f9fafb;
         --gray-200: #f3f4f6;
         --gray-300: #e5e7eb;
@@ -316,7 +317,135 @@ if ($_POST && isset($_POST['contact_submit'])) {
         font-size: 14px;
     }
     
-
+    /* Trust Badge */
+    .trust-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(16, 185, 129, 0.1);
+        border: 1px solid rgba(16, 185, 129, 0.3);
+        border-radius: 25px;
+        padding: 8px 16px;
+        margin-bottom: 24px;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+    }
+    
+    .trust-badge:hover {
+        background: rgba(16, 185, 129, 0.2);
+        border-color: var(--primary-color);
+        transform: translateY(-2px);
+    }
+    
+    .badge-icon {
+        font-size: 16px;
+    }
+    
+    .badge-text {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--primary-color);
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+    }
+    
+    /* Hero Benefits */
+    .hero-benefits {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin: 40px 0;
+    }
+    
+    .benefit-item {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 20px;
+        background: rgba(16, 185, 129, 0.05);
+        border: 1px solid rgba(16, 185, 129, 0.1);
+        border-radius: 16px;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+    }
+    
+    .benefit-item:hover {
+        background: rgba(16, 185, 129, 0.1);
+        border-color: var(--primary-color);
+        transform: translateY(-4px);
+        box-shadow: 0 8px 25px rgba(16, 185, 129, 0.15);
+    }
+    
+    .benefit-icon {
+        font-size: 32px;
+        width: 56px;
+        height: 56px;
+        background: var(--gradient-primary);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+    }
+    
+    .benefit-text {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+    
+    .benefit-text strong {
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--white);
+        letter-spacing: 0.5px;
+        line-height: 1.3;
+    }
+    
+    .benefit-text span {
+        font-size: 14px;
+        color: var(--gray-200);
+        opacity: 0.9;
+        font-weight: 500;
+    }
+    
+    /* Hero Social Proof */
+    .hero-social-proof {
+        margin: 40px 0;
+    }
+    
+    .proof-stats {
+        display: flex;
+        gap: 32px;
+        flex-wrap: wrap;
+    }
+    
+    .stat-item {
+        text-align: center;
+        flex: 1;
+        min-width: 120px;
+    }
+    
+    .stat-number {
+        display: block;
+        font-size: 28px;
+        font-weight: 800;
+        color: var(--primary-color);
+        margin-bottom: 8px;
+        letter-spacing: -1px;
+        text-shadow: 0 2px 10px rgba(16, 185, 129, 0.3);
+    }
+    
+    .stat-label {
+        font-size: 13px;
+        color: var(--gray-200);
+        opacity: 0.9;
+        line-height: 1.4;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
     
     .hero-visual {
         position: relative;
@@ -449,6 +578,28 @@ if ($_POST && isset($_POST['contact_submit'])) {
             display: block;
             margin: 15px auto;
             max-width: 320px;
+        }
+        
+        .hero-benefits {
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin: 30px 0;
+        }
+        
+        .benefit-item {
+            padding: 16px;
+        }
+        
+        .proof-stats {
+            gap: 20px;
+        }
+        
+        .stat-item {
+            min-width: 100px;
+        }
+        
+        .stat-number {
+            font-size: 24px;
         }
         
         .hero-visual {
@@ -1484,7 +1635,8 @@ if ($_POST && isset($_POST['contact_submit'])) {
     }
     
     .form-group input,
-    .form-group textarea {
+    .form-group textarea,
+    .form-group select {
         width: 100%;
         padding: 16px;
         border: 2px solid var(--gray-300);
@@ -1492,14 +1644,58 @@ if ($_POST && isset($_POST['contact_submit'])) {
         font-size: 16px;
         transition: all 0.3s ease;
         background: var(--white);
+        font-family: inherit;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        cursor: pointer;
     }
     
     .form-group input:focus,
-    .form-group textarea:focus {
+    .form-group textarea:focus,
+    .form-group select:focus {
         outline: none;
         border-color: var(--primary-color);
         box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
         transform: translateY(-2px);
+    }
+    
+    /* Stile personalizzato per le select */
+    .form-group select {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%2310b981' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 16px center;
+        background-size: 20px;
+        padding-right: 48px;
+        position: relative;
+        color: var(--text-dark);
+        font-weight: 500;
+    }
+    
+    .form-group select:hover {
+        border-color: var(--primary-color);
+        background-color: var(--gray-50);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.1);
+    }
+    
+    .form-group select option {
+        background: var(--white);
+        color: var(--text-dark);
+        padding: 12px;
+        font-size: 16px;
+        font-weight: 500;
+    }
+    
+    .form-group select option:hover {
+        background: var(--primary-color);
+        color: var(--white);
+    }
+    
+    .form-group select option:checked {
+        background: var(--primary-color);
+        color: var(--white);
+        font-weight: 600;
     }
     
     .form-group textarea {
@@ -1726,6 +1922,40 @@ if ($_POST && isset($_POST['contact_submit'])) {
             font-size: 16px;
         }
         
+        .hero-benefits {
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin: 24px 0;
+        }
+        
+        .benefit-item {
+            padding: 14px;
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .benefit-icon {
+            width: 48px;
+            height: 48px;
+            font-size: 24px;
+        }
+        
+        .proof-stats {
+            gap: 16px;
+        }
+        
+        .stat-item {
+            min-width: 80px;
+        }
+        
+        .stat-number {
+            font-size: 20px;
+        }
+        
+        .stat-label {
+            font-size: 11px;
+        }
+        
         .btn {
             padding: 14px 24px;
             font-size: 14px;
@@ -1763,40 +1993,104 @@ if ($_POST && isset($_POST['contact_submit'])) {
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
+                    <!-- Trust Badge -->
+                    <div class="trust-badge">
+                        <span class="badge-icon">🇮🇹</span>
+                        <span class="badge-text">100% Made in Italy</span>
+                    </div>
+                    
+                    <!-- Headline Principale -->
                     <h1 class="hero-title">
-                        Potenzia la tua azienda con l'AI, oggi
+                        Quante ore al giorno i tuoi dipendenti perdono in attività ripetitive?
                     </h1>
+                    
+                    <!-- Sottotitolo Esplicativo -->
                     <p class="hero-subtitle">
-                        Formazione, automazioni, agenti AI e consulenza strategica per trasformare i tuoi processi aziendali e accelerare la crescita
+                        Analizziamo insieme i tuoi processi ripetitivi, li automatizziamo passo dopo passo e formiamo il tuo team per renderlo completamente autonomo. 
+                        <strong>Trasforma le ore perse in opportunità di crescita.</strong>
                     </p>
+                    
+                    <!-- Benefits Cards -->
+                    <div class="hero-benefits">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">⏰</div>
+                            <div class="benefit-text">
+                                <strong>Risparmio Tempo & Denaro</strong>
+                                <span>Media 6 ore/giorno recuperate</span>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">😊</div>
+                            <div class="benefit-text">
+                                <strong>Team Più Soddisfatto</strong>
+                                <span>Focus su attività strategiche</span>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">✅</div>
+                            <div class="benefit-text">
+                                <strong>Zero Errori Umani</strong>
+                                <span>Processi sempre perfetti</span>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">📈</div>
+                            <div class="benefit-text">
+                                <strong>Crescita Aziendale</strong>
+                                <span>+40% produttività media</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Proof -->
+                    <div class="hero-social-proof">
+                        <div class="proof-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">2000+</span>
+                                <span class="stat-label">ore automatizzate</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">150+</span>
+                                <span class="stat-label">PMI servite</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">95%</span>
+                                <span class="stat-label">soddisfazione</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- CTA Principale -->
                     <div class="hero-cta">
                         <a href="#contact" class="btn btn-primary">
-                            📅 Prenota una chiamata gratuita
+                            🎯 Scopri quanto puoi risparmiare - Analisi gratuita 30min
                         </a>
-                        <a href="#case-studies" class="btn btn-secondary">🔍 Scopri i nostri casi studio</a>
+                        <a href="#case-studies" class="btn btn-secondary">📊 Guarda i nostri casi studio</a>
                     </div>
                 </div>
+                
                 <div class="hero-visual">
                     <div class="hero-image">
+                        <!-- Cards fluttuanti rinnovate -->
                         <div class="floating-card card-1">
-                            <div class="card-icon">🤖</div>
-                            <div class="card-content">
-                                <h4>AI Agent</h4>
-                                <p>Assistente intelligente</p>
-                            </div>
-                        </div>
-                        <div class="floating-card card-2">
-                            <div class="card-icon">🎓</div>
-                            <div class="card-content">
-                                <h4>Formazione</h4>
-                                <p>Team qualificati</p>
-                            </div>
-                        </div>
-                        <div class="floating-card card-3">
                             <div class="card-icon">⚡</div>
                             <div class="card-content">
                                 <h4>Automazione</h4>
-                                <p>Processi ottimizzati</p>
+                                <p>Processi intelligenti</p>
+                            </div>
+                        </div>
+                        <div class="floating-card card-2">
+                            <div class="card-icon">🤝</div>
+                            <div class="card-content">
+                                <h4>Collaborazione</h4>
+                                <p>Analisi condivisa</p>
+                            </div>
+                        </div>
+                        <div class="floating-card card-3">
+                            <div class="card-icon">🎓</div>
+                            <div class="card-content">
+                                <h4>Formazione</h4>
+                                <p>Team autonomo</p>
                             </div>
                         </div>
                     </div>
