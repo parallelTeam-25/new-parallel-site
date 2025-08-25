@@ -351,41 +351,46 @@ if ($_POST && isset($_POST['contact_submit'])) {
     
 
     
-    /* Hero Social Proof */
-    .hero-social-proof {
-        margin: 40px 0;
-    }
-    
-    .proof-stats {
+    /* Hero Credibility Bar */
+    .hero-credibility {
+        margin: 32px 0;
         display: flex;
-        gap: 32px;
-        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 16px;
     }
     
-    .stat-item {
-        text-align: center;
-        flex: 1;
-        min-width: 120px;
+    .credibility-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 16px;
+        background: rgba(16, 185, 129, 0.05);
+        border: 1px solid rgba(16, 185, 129, 0.1);
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
     }
     
-    .stat-number {
-        display: block;
-        font-size: 28px;
-        font-weight: 800;
+    .credibility-item:hover {
+        background: rgba(16, 185, 129, 0.1);
+        border-color: var(--primary-color);
+        transform: translateX(8px);
+        box-shadow: 0 4px 15px rgba(16, 185, 129, 0.15);
+    }
+    
+    .credibility-icon {
+        font-size: 18px;
         color: var(--primary-color);
-        margin-bottom: 8px;
-        letter-spacing: -1px;
-        text-shadow: 0 2px 10px rgba(16, 185, 129, 0.3);
+        font-weight: bold;
+        flex-shrink: 0;
     }
     
-    .stat-label {
-        font-size: 13px;
-        color: var(--gray-200);
-        opacity: 0.9;
+    .credibility-text {
+        font-size: 15px;
+        color: var(--white);
+        font-weight: 500;
         line-height: 1.4;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
+        letter-spacing: 0.3px;
     }
     
     .hero-visual {
@@ -529,16 +534,17 @@ if ($_POST && isset($_POST['contact_submit'])) {
         
 
         
-        .proof-stats {
-            gap: 20px;
+        .hero-credibility {
+            margin: 24px 0;
+            gap: 12px;
         }
         
-        .stat-item {
-            min-width: 100px;
+        .credibility-item {
+            padding: 10px 14px;
         }
         
-        .stat-number {
-            font-size: 24px;
+        .credibility-text {
+            font-size: 14px;
         }
         
         .hero-visual {
@@ -1895,20 +1901,17 @@ if ($_POST && isset($_POST['contact_submit'])) {
         
 
         
-        .proof-stats {
-            gap: 16px;
+        .hero-credibility {
+            margin: 20px 0;
+            gap: 10px;
         }
         
-        .stat-item {
-            min-width: 80px;
+        .credibility-item {
+            padding: 8px 12px;
         }
         
-        .stat-number {
-            font-size: 20px;
-        }
-        
-        .stat-label {
-            font-size: 11px;
+        .credibility-text {
+            font-size: 13px;
         }
         
         .btn {
@@ -1961,27 +1964,23 @@ if ($_POST && isset($_POST['contact_submit'])) {
                     
                     <!-- Sottotitolo Esplicativo -->
                     <p class="hero-subtitle">
-                        Analizziamo insieme i tuoi processi ripetitivi, li automatizziamo passo dopo passo e formiamo il tuo team per renderlo completamente autonomo. 
-                        <strong>Trasforma le ore perse in opportunità di crescita.</strong>
+                        Analizziamo insieme i processi che rubano tempo ai tuoi dipendenti e li trasformiamo in automazioni intelligenti. 
+                        <strong>Un progetto alla volta, con formazione completa per renderti autonomo.</strong>
                     </p>
                     
-
-                    
-                    <!-- Social Proof -->
-                    <div class="hero-social-proof">
-                        <div class="proof-stats">
-                            <div class="stat-item">
-                                <span class="stat-number">2000+</span>
-                                <span class="stat-label">ore automatizzate</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">150+</span>
-                                <span class="stat-label">PMI servite</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">95%</span>
-                                <span class="stat-label">soddisfazione</span>
-                            </div>
+                    <!-- Barra Credibilità -->
+                    <div class="hero-credibility">
+                        <div class="credibility-item">
+                            <span class="credibility-icon">✓</span>
+                            <span class="credibility-text">Metodologia step-by-step collaudata</span>
+                        </div>
+                        <div class="credibility-item">
+                            <span class="credibility-icon">✓</span>
+                            <span class="credibility-text">Automazioni su misura per PMI italiane</span>
+                        </div>
+                        <div class="credibility-item">
+                            <span class="credibility-icon">✓</span>
+                            <span class="credibility-text">Dal manuale all'automatico: un progetto alla volta</span>
                         </div>
                     </div>
                     
