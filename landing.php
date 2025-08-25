@@ -424,26 +424,26 @@ if ($_POST && isset($_POST['contact_submit'])) {
     }
     
     .floating-card.card-1 {
-        top: 15%;
+        top: 10%;
         left: 5%;
         animation-delay: 0s;
     }
     
     .floating-card.card-2 {
-        top: 45%;
-        right: 10%;
+        top: 35%;
+        right: 5%;
         animation-delay: 3s;
     }
     
     .floating-card.card-3 {
-        bottom: 15%;
-        left: 15%;
+        bottom: 35%;
+        left: 10%;
         animation-delay: 6s;
     }
     
     .floating-card.card-4 {
-        top: 60%;
-        left: 60%;
+        bottom: 10%;
+        right: 15%;
         animation-delay: 9s;
     }
     
@@ -556,8 +556,12 @@ if ($_POST && isset($_POST['contact_submit'])) {
             transform: none;
         }
         
+        .floating-card.card-1,
+        .floating-card.card-2,
+        .floating-card.card-3,
         .floating-card.card-4 {
             margin: 15px;
+            width: calc(100% - 30px);
         }
         
         .process-steps {
@@ -693,6 +697,30 @@ if ($_POST && isset($_POST['contact_submit'])) {
             padding: 32px 24px;
         }
     }
+    
+    /* Tablet responsive per le floating cards */
+    @media (max-width: 1024px) and (min-width: 769px) {
+        .floating-card.card-1 {
+            top: 8%;
+            left: 3%;
+        }
+        
+        .floating-card.card-2 {
+            top: 30%;
+            right: 3%;
+        }
+        
+        .floating-card.card-3 {
+            bottom: 30%;
+            left: 8%;
+        }
+        
+        .floating-card.card-4 {
+            bottom: 8%;
+            right: 12%;
+        }
+    }
+    
     /* Sezioni principali */
     .section-header {
         text-align: center;
