@@ -1937,37 +1937,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
                         <strong>Trasforma le ore perse in opportunità di crescita.</strong>
                     </p>
                     
-                    <!-- Benefits Cards -->
-                    <div class="hero-benefits">
-                        <div class="benefit-item">
-                            <div class="benefit-icon">⏰</div>
-                            <div class="benefit-text">
-                                <strong>Risparmio Tempo & Denaro</strong>
-                                <span>Media 6 ore/giorno recuperate</span>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-icon">😊</div>
-                            <div class="benefit-text">
-                                <strong>Team Più Soddisfatto</strong>
-                                <span>Focus su attività strategiche</span>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-icon">✅</div>
-                            <div class="benefit-text">
-                                <strong>Zero Errori Umani</strong>
-                                <span>Processi sempre perfetti</span>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-icon">📈</div>
-                            <div class="benefit-text">
-                                <strong>Crescita Aziendale</strong>
-                                <span>+40% produttività media</span>
-                            </div>
-                        </div>
-                    </div>
+
                     
                     <!-- Social Proof -->
                     <div class="hero-social-proof">
@@ -1998,26 +1968,33 @@ if ($_POST && isset($_POST['contact_submit'])) {
                 
                 <div class="hero-visual">
                     <div class="hero-image">
-                        <!-- Cards fluttuanti rinnovate -->
+                        <!-- Benefits Cards fluttuanti -->
                         <div class="floating-card card-1">
-                            <div class="card-icon">⚡</div>
+                            <div class="card-icon">⏰</div>
                             <div class="card-content">
-                                <h4>Automazione</h4>
-                                <p>Processi intelligenti</p>
+                                <h4>Risparmio Tempo & Denaro</h4>
+                                <p>Media 6 ore/giorno recuperate</p>
                             </div>
                         </div>
                         <div class="floating-card card-2">
-                            <div class="card-icon">🤝</div>
+                            <div class="card-icon">😊</div>
                             <div class="card-content">
-                                <h4>Collaborazione</h4>
-                                <p>Analisi condivisa</p>
+                                <h4>Team Più Soddisfatto</h4>
+                                <p>Focus su attività strategiche</p>
                             </div>
                         </div>
                         <div class="floating-card card-3">
-                            <div class="card-icon">🎓</div>
+                            <div class="card-icon">✅</div>
                             <div class="card-content">
-                                <h4>Formazione</h4>
-                                <p>Team autonomo</p>
+                                <h4>Zero Errori Umani</h4>
+                                <p>Processi sempre perfetti</p>
+                            </div>
+                        </div>
+                        <div class="floating-card card-4">
+                            <div class="card-icon">📈</div>
+                            <div class="card-content">
+                                <h4>Crescita Aziendale</h4>
+                                <p>+40% produttività media</p>
                             </div>
                         </div>
                     </div>
