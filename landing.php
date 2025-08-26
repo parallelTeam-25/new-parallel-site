@@ -1433,7 +1433,25 @@ if ($_POST && isset($_POST['contact_submit'])) {
         letter-spacing: -0.5px;
     }
     
-    .completion-time {
+    .project-badge {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: rgba(16, 185, 129, 0.15);
+        color: var(--primary-color);
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        display: inline-block;
+        z-index: 1;
+        box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
+        letter-spacing: 0.5px;
+        border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    
+    .project-subtitle {
         color: var(--primary-color);
         font-weight: 600;
         margin-bottom: 20px;
@@ -2425,34 +2443,60 @@ if ($_POST && isset($_POST['contact_submit'])) {
     <section class="case-studies-section" id="case-studies">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Casi di successo</h2>
+                <h2 class="section-title">Automazioni che stiamo sviluppando</h2>
                 <p class="section-intro">
-                    Scopri come abbiamo trasformato i processi dei nostri clienti 
-                    con soluzioni AI innovative e personalizzate.
+                    Scopri le automazioni su cui stiamo lavorando e come possono trasformare anche i tuoi processi.
                 </p>
             </div>
             <div class="case-studies-grid">
                 <div class="case-study-card">
-                    <h3>Azienda d'Assistenza IT</h3>
-                    <p class="completion-time">Completato in 3 mesi</p>
+                    <div class="project-badge">In sviluppo</div>
+                    <h3>Scadenziario Intelligente</h3>
+                    <p class="project-subtitle">Elimina 2 ore/giorno di controlli manuali</p>
                     <p class="case-description">
-                        Gestione delle scadenze con gestionale custom e automazione invii continua 
-                        per ottimizzare i processi di assistenza tecnica.
+                        Sistema automatico per gestione scadenze con notifiche smart e integrazione gestionale.
                     </p>
                     <div class="case-results">
-                        <h4>Risultati</h4>
+                        <h4>Benefici attesi</h4>
                         <div class="results-grid">
                             <div class="result-item">
-                                <span class="result-number">-65%</span>
-                                <span class="result-label">Costo per acquisizione</span>
+                                <span class="result-number">-2h</span>
+                                <span class="result-label">Controlli manuali</span>
                             </div>
                             <div class="result-item">
-                                <span class="result-number">+40%</span>
-                                <span class="result-label">Tasso di conversione</span>
+                                <span class="result-number">100%</span>
+                                <span class="result-label">Scadenze coperte</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-number">24/7</span>
+                                <span class="result-label">Monitoraggio</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-outline">Scopri di più</a>
+                </div>
+                
+                <div class="case-study-card">
+                    <div class="project-badge">In sviluppo</div>
+                    <h3>Ricerca Automatica Mercato</h3>
+                    <p class="project-subtitle">Dalle 4 ore di ricerca manuale a risultati istantanei</p>
+                    <p class="case-description">
+                        Assistant intelligente che trova automaticamente le migliori opportunità di mercato.
+                    </p>
+                    <div class="case-results">
+                        <h4>Benefici attesi</h4>
+                        <div class="results-grid">
+                            <div class="result-item">
+                                <span class="result-number">-4h</span>
+                                <span class="result-label">Ricerca manuale</span>
                             </div>
                             <div class="result-item">
                                 <span class="result-number">+300%</span>
-                                <span class="result-label">Documenti generati</span>
+                                <span class="result-label">Opportunità trovate</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-number">Real-time</span>
+                                <span class="result-label">Aggiornamenti</span>
                             </div>
                         </div>
                     </div>
@@ -2460,53 +2504,26 @@ if ($_POST && isset($_POST['contact_submit'])) {
                 </div>
                 
                 <div class="case-study-card">
-                    <h3>Concessionaria</h3>
-                    <p class="completion-time">Completato in 2 mesi</p>
+                    <div class="project-badge">In sviluppo</div>
+                    <h3>Report AI Automatici</h3>
+                    <p class="project-subtitle">Da 4 ore a 10 minuti per report cliente</p>
                     <p class="case-description">
-                        Ricerca sui portali automobilistici delle migliori offerte d'acquisto 
-                        per la rivendita con automazione intelligente.
+                        Generazione automatica di report personalizzati con insights AI integrati.
                     </p>
                     <div class="case-results">
-                        <h4>Risultati</h4>
+                        <h4>Benefici attesi</h4>
                         <div class="results-grid">
                             <div class="result-item">
-                                <span class="result-number">-80%</span>
-                                <span class="result-label">Tempo per documenti</span>
-                            </div>
-                            <div class="result-item">
-                                <span class="result-number">+150%</span>
-                                <span class="result-label">Produttività team</span>
+                                <span class="result-number">-95%</span>
+                                <span class="result-label">Tempo report</span>
                             </div>
                             <div class="result-item">
                                 <span class="result-number">+200%</span>
-                                <span class="result-label">Contratti analizzati</span>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="#contact" class="btn btn-outline">Scopri di più</a>
-                </div>
-                
-                <div class="case-study-card">
-                    <h3>Agenzia Web</h3>
-                    <p class="completion-time">Completato in 4 mesi</p>
-                    <p class="case-description">
-                        Automazione per invio mensile di report con messaggio custom 
-                        creato dall'AI per i clienti.
-                    </p>
-                    <div class="case-results">
-                        <h4>Risultati</h4>
-                        <div class="results-grid">
-                            <div class="result-item">
-                                <span class="result-number">-45%</span>
-                                <span class="result-label">Tempo per report</span>
+                                <span class="result-label">Insights generati</span>
                             </div>
                             <div class="result-item">
-                                <span class="result-number">+60%</span>
-                                <span class="result-label">Soddisfazione clienti</span>
-                            </div>
-                            <div class="result-item">
-                                <span class="result-number">+180%</span>
-                                <span class="result-label">Report generati</span>
+                                <span class="result-number">Auto</span>
+                                <span class="result-label">Personalizzazione</span>
                             </div>
                         </div>
                     </div>
