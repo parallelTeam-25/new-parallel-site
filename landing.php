@@ -412,6 +412,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
         padding: 140px 0 100px;
         position: relative;
         overflow: hidden;
+        display: none; /* HIDDEN: Hero section originale nascosta */
     }
     
     .hero-section::before {
