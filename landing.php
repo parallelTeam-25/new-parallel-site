@@ -483,7 +483,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
         font-size: 20px;
         font-weight: 700;
         margin-bottom: 16px;
-        color: var(--primary-color);
+        color: var(--text-dark);
         letter-spacing: -0.5px;
         line-height: 1.3;
     }
@@ -499,11 +499,11 @@ if ($_POST && isset($_POST['contact_submit'])) {
     }
     
     .step-description {
-        color: var(--gray-200);
+        color: var(--text-light);
         line-height: 1.6;
         font-size: 16px;
         margin: 0;
-        opacity: 0.9;
+        opacity: 1;
     }
     
     .hero-visual {
