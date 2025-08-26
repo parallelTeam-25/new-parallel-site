@@ -251,6 +251,116 @@ if ($_POST && isset($_POST['contact_submit'])) {
         color: var(--text-dark);
     }
     
+    /* New Hero Section */
+    .new-hero-section {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+        color: var(--white);
+        padding: 120px 0 80px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .new-hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.05) 0%, transparent 70%);
+        opacity: 1;
+        animation: float 20s ease-in-out infinite;
+    }
+    
+    .new-hero-section::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            radial-gradient(circle at 30% 30%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
+            radial-gradient(circle at 70% 70%, rgba(16, 185, 129, 0.06) 0%, transparent 40%);
+        opacity: 0.7;
+        animation: float 25s ease-in-out infinite reverse;
+    }
+    
+    .new-hero-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .new-hero-title {
+        font-size: 64px;
+        font-weight: 900;
+        margin-bottom: 32px;
+        line-height: 1.1;
+        animation: fadeInUp 1s ease-out;
+        letter-spacing: -2px;
+        background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    .new-hero-title .ai-partner {
+        background: linear-gradient(135deg, #00d4aa 0%, #10b981 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        position: relative;
+    }
+    
+    .new-hero-subtitle {
+        font-size: 24px;
+        margin-bottom: 48px;
+        opacity: 0.95;
+        animation: fadeInUp 1s ease-out 0.3s both;
+        line-height: 1.7;
+        color: var(--gray-200);
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .new-hero-cta {
+        animation: fadeInUp 1s ease-out 0.6s both;
+    }
+    
+    .new-hero-cta .btn {
+        background: linear-gradient(135deg, #00d4aa 0%, #10b981 100%);
+        border: none;
+        color: white;
+        padding: 18px 36px;
+        font-size: 18px;
+        font-weight: 700;
+        border-radius: 50px;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    
+    .new-hero-cta .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 20px 40px rgba(16, 185, 129, 0.4);
+        background: linear-gradient(135deg, #10b981 0%, #00d4aa 100%);
+    }
+    
+    @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-20px) rotate(180deg); }
+    }
+    
     /* Hero Section */
     .hero-section {
         background: var(--gradient-dark);
@@ -639,6 +749,21 @@ if ($_POST && isset($_POST['contact_submit'])) {
             font-size: 18px;
         }
         
+        .new-hero-title {
+            font-size: 48px;
+            letter-spacing: -1px;
+        }
+        
+        .new-hero-subtitle {
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .new-hero-cta .btn {
+            padding: 16px 32px;
+            font-size: 16px;
+        }
+        
         .hero-cta .btn {
             display: block;
             margin: 15px auto;
@@ -793,6 +918,21 @@ if ($_POST && isset($_POST['contact_submit'])) {
     @media (max-width: 480px) {
         .container {
             padding: 0 20px;
+        }
+        
+        .new-hero-title {
+            font-size: 36px;
+            letter-spacing: -0.5px;
+        }
+        
+        .new-hero-subtitle {
+            font-size: 18px;
+            margin-bottom: 32px;
+        }
+        
+        .new-hero-cta .btn {
+            padding: 14px 28px;
+            font-size: 14px;
         }
         
         .hero-title {
@@ -2379,6 +2519,23 @@ if ($_POST && isset($_POST['contact_submit'])) {
             </div>
         </div>
     </header>
+
+    <!-- New Hero Section -->
+    <section class="new-hero-section" id="new-hero">
+        <div class="container">
+            <div class="new-hero-content">
+                <h1 class="new-hero-title">
+                    Il futuro della tua azienda corre in <span class="ai-partner">parallelo</span> con l'AI
+                </h1>
+                <p class="new-hero-subtitle">
+                    Noi costruiamo soluzioni su misura che affiancano le tue persone, ottimizzano i flussi e liberano energie per ciò che conta davvero.
+                </p>
+                <div class="new-hero-cta">
+                    <a href="#services" class="btn">Le nostre soluzioni</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Hero Section -->
     <section class="hero-section" id="hero">
