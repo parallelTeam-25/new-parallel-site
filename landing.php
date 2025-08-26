@@ -2597,92 +2597,9 @@ if ($_POST && isset($_POST['contact_submit'])) {
     </section>
 
     <!-- ======================================== -->
-    <!-- HERO SECTION ORIGINALE - NASCOSTA -->
-    <!-- PER RIATTIVARE: rimuovi i commenti HTML -->
-    <!-- ======================================== -->
-    
-    <!--
-    <!-- Hero Section -->
-    <!-- <section class="hero-section" id="hero"> -->
-        <!-- 
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                                        
-                    <!-- Headline Principale -->
-                    <h1 class="hero-title">
-                        Quante ore al giorno i tuoi dipendenti perdono in attività ripetitive?
-                    </h1>
-                    
-                    <!-- Sottotitolo Esplicativo -->
-                    <p class="hero-subtitle">
-                        Analizziamo insieme i processi che rubano tempo ai tuoi dipendenti e li trasformiamo in automazioni intelligenti. 
-                        <strong>Un progetto alla volta, con formazione completa per renderti autonomo.</strong>
-                    </p>
-                    
-                    <!-- Barra Credibilità -->
-                    <div class="hero-credibility">
-                        <div class="credibility-item">
-                            <span class="credibility-icon">✓</span>
-                            <span class="credibility-text">Metodologia step-by-step collaudata</span>
-                        </div>
-                        <div class="credibility-item">
-                            <span class="credibility-icon">✓</span>
-                            <span class="credibility-text">Automazioni su misura per PMI italiane</span>
-                        </div>
-                        <div class="credibility-item">
-                            <span class="credibility-icon">✓</span>
-                            <span class="credibility-text">Dal manuale all'automatico: un progetto alla volta</span>
-                        </div>
-                    </div>
-                    
-                    <!-- CTA Principale -->
-                    <div class="hero-cta">
-                        <a href="#contact" class="btn btn-primary">
-                            🎯 Scopri quanto puoi risparmiare - Analisi gratuita 30min
-                        </a>
-                        <a href="#case-studies" class="btn btn-secondary">📊 Guarda i nostri casi studio</a>
-                    </div>
-                </div>
-                
-                <div class="hero-visual">
-                    <div class="hero-image">
-                        <!-- Benefits Cards fluttuanti -->
-                        <div class="floating-card card-1">
-                            <div class="card-icon">⏰</div>
-                            <div class="card-content">
-                                <h4>Risparmio Tempo & Denaro</h4>
-                                <p>Media 6 ore/giorno recuperate</p>
-                            </div>
-                        </div>
-                        <div class="floating-card card-2">
-                            <div class="card-icon">😊</div>
-                            <div class="card-content">
-                                <h4>Team Più Soddisfatto</h4>
-                                <p>Focus su attività strategiche</p>
-                            </div>
-                        </div>
-                        <div class="floating-card card-3">
-                            <div class="card-icon">✅</div>
-                            <div class="card-content">
-                                <h4>Zero Errori Umani</h4>
-                                <p>Processi sempre perfetti</p>
-                            </div>
-                        </div>
-                        <div class="floating-card card-4">
-                            <div class="card-icon">📈</div>
-                            <div class="card-content">
-                                <h4>Crescita Aziendale</h4>
-                                <p>+40% produttività media</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        -->
+
     </section>
-    -->
+
 
     <!-- Metodo Section -->
     <section class="metodo-section" id="metodo">
