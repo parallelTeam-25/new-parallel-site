@@ -2595,6 +2595,12 @@ if ($_POST && isset($_POST['contact_submit'])) {
         </div>
     </section>
 
+    <!-- ======================================== -->
+    <!-- HERO SECTION ORIGINALE - NASCOSTA -->
+    <!-- PER RIATTIVARE: rimuovi i commenti HTML -->
+    <!-- ======================================== -->
+    
+    <!--
     <!-- Hero Section -->
     <section class="hero-section" id="hero">
         <div class="container">
@@ -2673,6 +2679,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
             </div>
         </div>
     </section>
+    -->
 
     <!-- Metodo Section -->
     <section class="metodo-section" id="metodo">
