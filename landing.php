@@ -1223,131 +1223,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
         box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
     }
     
-    /* Services Section */
-    .services-section {
-        background: var(--gray-100);
-        padding: 100px 0;
-        position: relative;
-    }
-    
-    .services-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 1px;
-        background: var(--gradient-primary);
-    }
-    
-    .services-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 60px;
-        margin-bottom: 80px;
-        max-width: 900px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    .service-card {
-        background: var(--white);
-        padding: 40px 32px;
-        border-radius: 20px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        transition: all 0.4s ease;
-        position: relative;
-        border: 1px solid var(--gray-200);
-        overflow: hidden;
-    }
-    
-    .service-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: var(--gradient-primary);
-        transform: scaleX(0);
-        transition: transform 0.3s ease;
-    }
-    
-    .service-card:hover::before {
-        transform: scaleX(1);
-    }
-    
-    .service-card:hover {
-        transform: translateY(-12px);
-        box-shadow: 0 25px 50px rgba(16, 185, 129, 0.15);
-        border-color: var(--primary-color);
-    }
-    
-    .service-badge {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        background: var(--gradient-primary);
-        color: var(--white);
-        padding: 10px 16px;
-        border-radius: 20px;
-        font-size: 11px;
-        font-weight: 700;
-        text-transform: uppercase;
-        display: inline-block;
-        z-index: 1;
-        box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
-        letter-spacing: 0.5px;
-    }
-    
-    .service-icon {
-        font-size: 56px;
-        margin-bottom: 28px;
-        text-align: center;
-        filter: drop-shadow(0 8px 16px rgba(16, 185, 129, 0.2));
-    }
-    
-    .service-card h3 {
-        font-size: 26px;
-        font-weight: 700;
-        margin-bottom: 16px;
-        color: var(--text-dark);
-        letter-spacing: -0.5px;
-    }
-    
-    .service-subtitle {
-        color: var(--primary-color);
-        font-weight: 600;
-        margin-bottom: 24px;
-        font-size: 15px;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-    }
-    
-    .service-price {
-        display: flex;
-        align-items: baseline;
-        gap: 8px;
-        margin-bottom: 24px;
-        color: var(--primary-color);
-        font-weight: 800;
-        justify-content: center;
-    }
-    
-    .price-amount {
-        font-size: 40px;
-        letter-spacing: -1px;
-    }
-    
-    .price-period {
-        font-size: 16px;
-        opacity: 0.8;
-        font-weight: 600;
-    }
-    
-    .service-features {
-        list-style: none;
-        margin-bottom: 24px;
+
     }
     
     .service-features li {
@@ -1517,14 +1393,14 @@ if ($_POST && isset($_POST['contact_submit'])) {
         letter-spacing: 0.5px;
     }
     
-    /* New Services Section */
-    .new-services-section {
+    /* Services Section */
+    .services-section {
         background: var(--gray-100);
         padding: 100px 0;
         position: relative;
     }
     
-    .new-services-section::before {
+    .services-section::before {
         content: '';
         position: absolute;
         top: 0;
@@ -1534,25 +1410,28 @@ if ($_POST && isset($_POST['contact_submit'])) {
         background: var(--gradient-primary);
     }
     
-    .new-services-grid {
+    .services-grid {
         display: grid;
-        grid-template-columns: 70% 30%;
-        gap: 40px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 60px;
         margin-bottom: 80px;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
     }
     
-    .automation-service-card {
+    .service-card {
         background: var(--white);
-        padding: 50px 40px;
+        padding: 40px 32px;
         border-radius: 20px;
-        box-shadow: var(--shadow-md);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         transition: all 0.4s ease;
         position: relative;
         border: 1px solid var(--gray-200);
         overflow: hidden;
     }
     
-    .automation-service-card::before {
+    .service-card::before {
         content: '';
         position: absolute;
         top: 0;
@@ -1564,57 +1443,24 @@ if ($_POST && isset($_POST['contact_submit'])) {
         transition: transform 0.3s ease;
     }
     
-    .automation-service-card:hover::before {
+    .service-card:hover::before {
         transform: scaleX(1);
     }
     
-    .automation-service-card:hover {
+    .service-card:hover {
         transform: translateY(-12px);
         box-shadow: 0 25px 50px rgba(16, 185, 129, 0.15);
         border-color: var(--primary-color);
     }
     
-    .training-service-card {
-        background: var(--white);
-        padding: 40px 30px;
-        border-radius: 20px;
-        box-shadow: var(--shadow-md);
-        transition: all 0.4s ease;
-        position: relative;
-        border: 1px solid var(--gray-200);
-        overflow: hidden;
-    }
-    
-    .training-service-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: var(--gradient-primary);
-        transform: scaleX(0);
-        transition: transform 0.3s ease;
-    }
-    
-    .training-service-card:hover::before {
-        transform: scaleX(1);
-    }
-    
-    .training-service-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 20px 40px rgba(16, 185, 129, 0.15);
-        border-color: var(--primary-color);
-    }
-    
-    .new-services-section .service-icon {
+    .service-icon {
         font-size: 56px;
         margin-bottom: 28px;
         text-align: center;
         filter: drop-shadow(0 8px 16px rgba(16, 185, 129, 0.2));
     }
     
-    .new-services-section h3 {
+    .service-card h3 {
         font-size: 26px;
         font-weight: 700;
         margin-bottom: 16px;
@@ -1622,7 +1468,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
         letter-spacing: -0.5px;
     }
     
-    .new-services-section .service-subtitle {
+    .service-subtitle {
         color: var(--primary-color);
         font-weight: 600;
         margin-bottom: 24px;
@@ -1631,47 +1477,48 @@ if ($_POST && isset($_POST['contact_submit'])) {
         letter-spacing: 0.5px;
     }
     
-    .benefits-list {
-        margin-bottom: 32px;
+    .service-features {
+        list-style: none;
+        margin-bottom: 24px;
     }
     
-    .benefit-item {
-        display: flex;
-        align-items: center;
-        margin-bottom: 16px;
-        font-size: 15px;
+    .service-features li {
+        position: relative;
+        padding-left: 24px;
+        margin-bottom: 12px;
         color: var(--text-light);
+        line-height: 1.6;
     }
     
-    .benefit-item:last-child {
-        margin-bottom: 0;
-    }
-    
-    .benefit-icon {
+    .service-features li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
         color: var(--primary-color);
         font-weight: bold;
-        margin-right: 12px;
         font-size: 16px;
-        min-width: 20px;
     }
     
-    /* Responsive design for new services */
+    .services-cta {
+        text-align: center;
+    }
+    
+    /* Responsive design for services */
     @media (max-width: 768px) {
-        .new-services-grid {
+        .services-grid {
             grid-template-columns: 1fr;
-            gap: 30px;
+            gap: 40px;
         }
         
-        .automation-service-card,
-        .training-service-card {
-            padding: 30px 24px;
+        .service-card {
+            padding: 32px 24px;
         }
         
-        .new-services-section .service-icon {
+        .service-icon {
             font-size: 48px;
         }
         
-        .new-services-section h3 {
+        .service-card h3 {
             font-size: 22px;
         }
     }
@@ -2673,50 +2520,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services-section" id="services">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">I nostri servizi</h2>
-                <p class="section-intro">
-                    Trasformiamo la tua azienda con soluzioni AI su misura: 
-                    dalle automazioni intelligenti alla formazione avanzata del team.
-                </p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">⚡</div>
-                    <h3>Automazioni AI Custom</h3>
-                    <p class="service-subtitle">FLUSSI INTELLIGENTI PER PROCESSI AZIENDALI</p>
-                    <ul class="service-features">
-                        <li>Creazione flussi di lavoro intelligenti con AI</li>
-                        <li>Agenti AI personalizzati per processi specifici</li>
-                        <li>Automazione completa documenti e report</li>
-                        <li>Integrazione seamless con sistemi esistenti</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-outline">Scopri di più</a>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">🎓</div>
-                    <h3>Formazione AI Aziendale</h3>
-                    <p class="service-subtitle">WORKSHOP E CORSI PER TEAM E PRIVATI</p>
-                    <ul class="service-features">
-                        <li>Masterclass su ChatGPT e AI generative</li>
-                        <li>Formazione pratica per team aziendali</li>
-                        <li>Certificazioni riconosciute a livello nazionale</li>
-                        <li>Supporto continuo post-formazione</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-outline">Scopri di più</a>
-                </div>
-            </div>
-            <div class="services-cta">
-                <a href="#contact" class="btn btn-primary btn-large">
-                    Richiedi una consulenza personalizzata
-                </a>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Case Studies Section -->
     <section class="case-studies-section" id="case-studies">
@@ -2817,8 +2621,8 @@ if ($_POST && isset($_POST['contact_submit'])) {
         </div>
     </section>
 
-    <!-- New Services Section -->
-    <section class="new-services-section" id="new-services">
+    <!-- Services Section -->
+    <section class="services-section" id="services">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Come possiamo aiutarti</h2>
@@ -2826,60 +2630,38 @@ if ($_POST && isset($_POST['contact_submit'])) {
                     Soluzioni su misura per trasformare i tuoi processi
                 </p>
             </div>
-            <div class="new-services-grid">
-                <div class="automation-service-card">
+            <div class="services-grid">
+                <div class="service-card">
                     <div class="service-icon">🤖</div>
                     <h3>AUTOMAZIONI INTELLIGENTI</h3>
                     <p class="service-subtitle">Processi ripetitivi → Flussi automatici</p>
-                    <div class="benefits-list">
-                        <div class="benefit-item">
-                            <span class="benefit-icon">✓</span>
-                            <span>Scadenziari e promemoria automatici</span>
-                        </div>
-                        <div class="benefit-item">
-                            <span class="benefit-icon">✓</span>
-                            <span>Report e dashboard auto-generati</span>
-                        </div>
-                        <div class="benefit-item">
-                            <span class="benefit-icon">✓</span>
-                            <span>Integrazione tra software diversi</span>
-                        </div>
-                        <div class="benefit-item">
-                            <span class="benefit-icon">✓</span>
-                            <span>Ricerche e analisi automatiche</span>
-                        </div>
-                        <div class="benefit-item">
-                            <span class="benefit-icon">✓</span>
-                            <span>Gestione dati e fatturazione</span>
-                        </div>
-                    </div>
+                    <ul class="service-features">
+                        <li>Scadenziari e promemoria automatici</li>
+                        <li>Report e dashboard auto-generati</li>
+                        <li>Integrazione tra software diversi</li>
+                        <li>Ricerche e analisi automatiche</li>
+                        <li>Gestione dati e fatturazione</li>
+                    </ul>
                     <a href="#contact" class="btn btn-primary">Scopri cosa puoi automatizzare</a>
                 </div>
                 
-                <div class="training-service-card">
+                <div class="service-card">
                     <div class="service-icon">🎓</div>
                     <h3>FORMAZIONE AI AZIENDALE</h3>
                     <p class="service-subtitle">Rendi il tuo team autonomo con l'AI</p>
-                    <div class="benefits-list">
-                        <div class="benefit-item">
-                            <span class="benefit-icon">✓</span>
-                            <span>Workshop intensivi su strumenti AI</span>
-                        </div>
-                        <div class="benefit-item">
-                            <span class="benefit-icon">✓</span>
-                            <span>Casi d'uso specifici per il tuo settore</span>
-                        </div>
-                        <div class="benefit-item">
-                            <span class="benefit-icon">✓</span>
-                            <span>Formazione personalizzata</span>
-                        </div>
-                        <div class="benefit-item">
-                            <span class="benefit-icon">✓</span>
-                            <span>Follow-up e supporto continuativo</span>
-                        </div>
-                    </div>
+                    <ul class="service-features">
+                        <li>Workshop intensivi su strumenti AI</li>
+                        <li>Casi d'uso specifici per il tuo settore</li>
+                        <li>Formazione personalizzata</li>
+                        <li>Follow-up e supporto continuativo</li>
+                    </ul>
                     <a href="#contact" class="btn btn-outline">Richiedi workshop</a>
                 </div>
+            </div>
+            <div class="services-cta">
+                <a href="#contact" class="btn btn-primary btn-large">
+                    Richiedi una consulenza personalizzata
+                </a>
             </div>
         </div>
     </section>
@@ -3401,3 +3183,4 @@ if ($_POST && isset($_POST['contact_submit'])) {
     </script>
 </body>
 </html>
+
