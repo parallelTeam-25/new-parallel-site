@@ -292,7 +292,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
     /* Linee parallele decorative */
     .new-hero-section .parallel-line-1 {
         position: absolute;
-        top: 45%;
+        top: 52%;
         left: -100px;
         width: 300px;
         height: 4px;
@@ -303,7 +303,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
     
     .new-hero-section .parallel-line-2 {
         position: absolute;
-        top: 48%;
+        top: 55%;
         left: -100px;
         width: 300px;
         height: 4px;
