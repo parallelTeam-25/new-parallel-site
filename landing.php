@@ -2602,7 +2602,8 @@ if ($_POST && isset($_POST['contact_submit'])) {
     
     <!--
     <!-- Hero Section -->
-    <section class="hero-section" id="hero">
+    <!-- <section class="hero-section" id="hero"> -->
+        <!-- 
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
@@ -2678,6 +2679,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
                 </div>
             </div>
         </div>
+        -->
     </section>
     -->
 
