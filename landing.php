@@ -415,8 +415,8 @@ if ($_POST && isset($_POST['contact_submit'])) {
     
     .metodo-steps {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
         margin-top: 80px;
     }
     
@@ -424,7 +424,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
         background: rgba(16, 185, 129, 0.05);
         border: 1px solid rgba(16, 185, 129, 0.1);
         border-radius: 20px;
-        padding: 40px 32px;
+        padding: 32px 20px;
         text-align: center;
         transition: all 0.4s ease;
         backdrop-filter: blur(10px);
@@ -482,7 +482,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
         font-size: 20px;
         font-weight: 700;
         margin-bottom: 16px;
-        color: var(--white);
+        color: var(--primary-color);
         letter-spacing: -0.5px;
         line-height: 1.3;
     }
@@ -754,13 +754,13 @@ if ($_POST && isset($_POST['contact_submit'])) {
         }
         
         .metodo-steps {
-            grid-template-columns: 1fr;
-            gap: 30px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
             margin-top: 60px;
         }
         
         .metodo-step {
-            padding: 32px 24px;
+            padding: 28px 16px;
         }
 
         .why-us-section,
@@ -2030,12 +2030,13 @@ if ($_POST && isset($_POST['contact_submit'])) {
         }
         
         .metodo-steps {
-            gap: 24px;
+            grid-template-columns: 1fr;
+            gap: 20px;
             margin-top: 50px;
         }
         
         .metodo-step {
-            padding: 28px 20px;
+            padding: 24px 16px;
         }
         
         .step-number {
