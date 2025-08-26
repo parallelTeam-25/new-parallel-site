@@ -1517,6 +1517,165 @@ if ($_POST && isset($_POST['contact_submit'])) {
         letter-spacing: 0.5px;
     }
     
+    /* New Services Section */
+    .new-services-section {
+        background: var(--gray-100);
+        padding: 100px 0;
+        position: relative;
+    }
+    
+    .new-services-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: var(--gradient-primary);
+    }
+    
+    .new-services-grid {
+        display: grid;
+        grid-template-columns: 70% 30%;
+        gap: 40px;
+        margin-bottom: 80px;
+    }
+    
+    .automation-service-card {
+        background: var(--white);
+        padding: 50px 40px;
+        border-radius: 20px;
+        box-shadow: var(--shadow-md);
+        transition: all 0.4s ease;
+        position: relative;
+        border: 1px solid var(--gray-200);
+        overflow: hidden;
+    }
+    
+    .automation-service-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: var(--gradient-primary);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+    
+    .automation-service-card:hover::before {
+        transform: scaleX(1);
+    }
+    
+    .automation-service-card:hover {
+        transform: translateY(-12px);
+        box-shadow: 0 25px 50px rgba(16, 185, 129, 0.15);
+        border-color: var(--primary-color);
+    }
+    
+    .training-service-card {
+        background: var(--white);
+        padding: 40px 30px;
+        border-radius: 20px;
+        box-shadow: var(--shadow-md);
+        transition: all 0.4s ease;
+        position: relative;
+        border: 1px solid var(--gray-200);
+        overflow: hidden;
+    }
+    
+    .training-service-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: var(--gradient-primary);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+    
+    .training-service-card:hover::before {
+        transform: scaleX(1);
+    }
+    
+    .training-service-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(16, 185, 129, 0.15);
+        border-color: var(--primary-color);
+    }
+    
+    .new-services-section .service-icon {
+        font-size: 56px;
+        margin-bottom: 28px;
+        text-align: center;
+        filter: drop-shadow(0 8px 16px rgba(16, 185, 129, 0.2));
+    }
+    
+    .new-services-section h3 {
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 16px;
+        color: var(--text-dark);
+        letter-spacing: -0.5px;
+    }
+    
+    .new-services-section .service-subtitle {
+        color: var(--primary-color);
+        font-weight: 600;
+        margin-bottom: 24px;
+        font-size: 15px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    .benefits-list {
+        margin-bottom: 32px;
+    }
+    
+    .benefit-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 16px;
+        font-size: 15px;
+        color: var(--text-light);
+    }
+    
+    .benefit-item:last-child {
+        margin-bottom: 0;
+    }
+    
+    .benefit-icon {
+        color: var(--primary-color);
+        font-weight: bold;
+        margin-right: 12px;
+        font-size: 16px;
+        min-width: 20px;
+    }
+    
+    /* Responsive design for new services */
+    @media (max-width: 768px) {
+        .new-services-grid {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        .automation-service-card,
+        .training-service-card {
+            padding: 30px 24px;
+        }
+        
+        .new-services-section .service-icon {
+            font-size: 48px;
+        }
+        
+        .new-services-section h3 {
+            font-size: 22px;
+        }
+    }
+    
     /* Testimonials Section */
     .testimonials-section {
         background: var(--gray-100);
@@ -1574,6 +1733,126 @@ if ($_POST && isset($_POST['contact_submit'])) {
     .overall-rating .star {
         font-size: 24px;
         margin-right: 8px;
+    }
+    
+    /* FAQ Section */
+    .faq-section {
+        background: var(--white);
+        padding: 100px 0;
+        position: relative;
+    }
+    
+    .faq-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: var(--gradient-primary);
+    }
+    
+    .faq-container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .faq-item {
+        background: var(--white);
+        border: 1px solid var(--gray-200);
+        border-radius: 16px;
+        margin-bottom: 20px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        box-shadow: var(--shadow-sm);
+    }
+    
+    .faq-item:hover {
+        border-color: var(--primary-color);
+        box-shadow: var(--shadow-md);
+    }
+    
+    .faq-item.active {
+        border-color: var(--primary-color);
+        box-shadow: 0 8px 25px rgba(16, 185, 129, 0.15);
+    }
+    
+    .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px 32px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background: var(--gray-50);
+    }
+    
+    .faq-question:hover {
+        background: var(--gray-100);
+    }
+    
+    .faq-question h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--text-dark);
+        margin: 0;
+        line-height: 1.4;
+        flex: 1;
+        padding-right: 20px;
+    }
+    
+    .faq-toggle {
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--primary-color);
+        transition: all 0.3s ease;
+        min-width: 24px;
+        text-align: center;
+        line-height: 1;
+    }
+    
+    .faq-item.active .faq-toggle {
+        transform: rotate(45deg);
+        color: var(--secondary-color);
+    }
+    
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+        background: var(--white);
+    }
+    
+    .faq-item.active .faq-answer {
+        max-height: 200px;
+    }
+    
+    .faq-answer p {
+        padding: 0 32px 24px 32px;
+        margin: 0;
+        color: var(--text-light);
+        line-height: 1.6;
+        font-size: 16px;
+    }
+    
+    /* Responsive design for FAQ */
+    @media (max-width: 768px) {
+        .faq-question {
+            padding: 20px 24px;
+        }
+        
+        .faq-question h3 {
+            font-size: 16px;
+        }
+        
+        .faq-answer p {
+            padding: 0 24px 20px 24px;
+            font-size: 15px;
+        }
+        
+        .faq-toggle {
+            font-size: 20px;
+        }
     }
     
     /* Final CTA Section */
@@ -2538,6 +2817,73 @@ if ($_POST && isset($_POST['contact_submit'])) {
         </div>
     </section>
 
+    <!-- New Services Section -->
+    <section class="new-services-section" id="new-services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Come possiamo aiutarti</h2>
+                <p class="section-intro">
+                    Soluzioni su misura per trasformare i tuoi processi
+                </p>
+            </div>
+            <div class="new-services-grid">
+                <div class="automation-service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>AUTOMAZIONI INTELLIGENTI</h3>
+                    <p class="service-subtitle">Processi ripetitivi → Flussi automatici</p>
+                    <div class="benefits-list">
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✓</span>
+                            <span>Scadenziari e promemoria automatici</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✓</span>
+                            <span>Report e dashboard auto-generati</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✓</span>
+                            <span>Integrazione tra software diversi</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✓</span>
+                            <span>Ricerche e analisi automatiche</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✓</span>
+                            <span>Gestione dati e fatturazione</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-primary">Scopri cosa puoi automatizzare</a>
+                </div>
+                
+                <div class="training-service-card">
+                    <div class="service-icon">🎓</div>
+                    <h3>FORMAZIONE AI AZIENDALE</h3>
+                    <p class="service-subtitle">Rendi il tuo team autonomo con l'AI</p>
+                    <div class="benefits-list">
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✓</span>
+                            <span>Workshop intensivi su strumenti AI</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✓</span>
+                            <span>Casi d'uso specifici per il tuo settore</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✓</span>
+                            <span>Formazione personalizzata</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✓</span>
+                            <span>Follow-up e supporto continuativo</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-outline">Richiedi workshop</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Testimonials Section -->
     <section class="testimonials-section" id="testimonials">
         <div class="container">
@@ -2612,6 +2958,79 @@ if ($_POST && isset($_POST['contact_submit'])) {
             <div class="overall-rating">
                 <span class="star">★</span>
                 <span>4.9/5 rating medio dei nostri clienti</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Domande frequenti</h2>
+                <p class="section-intro">
+                    Tutto quello che devi sapere prima di iniziare
+                </p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item" data-faq="1">
+                    <div class="faq-question">
+                        <h3>Non conosco nulla di automazioni, è adatto per me?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Perfetto! Il nostro metodo è pensato proprio per chi parte da zero. Ti accompagniamo passo passo e ti formiamo completamente.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-faq="2">
+                    <div class="faq-question">
+                        <h3>Quanto tempo ci vuole per vedere i primi risultati?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Dall'analisi al go-live: 2-6 settimane per automazione, in base alla complessità. I benefici li vedi immediatamente.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-faq="3">
+                    <div class="faq-question">
+                        <h3>Cosa succede se ho problemi dopo l'implementazione?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ti forniamo assistenza continua e formazione completa per renderti autonomo. Non sei mai lasciato solo.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-faq="4">
+                    <div class="faq-question">
+                        <h3>Lavorate solo con grandi aziende?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No, siamo specializzati in PMI da 5-50 dipendenti. Capiamo le specifiche esigenze delle piccole e medie imprese italiane.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-faq="5">
+                    <div class="faq-question">
+                        <h3>Posso iniziare con una sola automazione?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Assolutamente sì! Anzi, è il nostro approccio consigliato. Un progetto alla volta, risultati concreti.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-faq="6">
+                    <div class="faq-question">
+                        <h3>Come posso essere sicuro che l'investimento valga la pena?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nella consulenza gratuita calcoliamo insieme il ROI previsto. Investi solo se i numeri ti convincono.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -2945,6 +3364,38 @@ if ($_POST && isset($_POST['contact_submit'])) {
             link.href = href;
             link.as = 'style';
             document.head.appendChild(link);
+        });
+    });
+
+    // FAQ Accordion functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const toggle = item.querySelector('.faq-toggle');
+            
+            question.addEventListener('click', function() {
+                const isActive = item.classList.contains('active');
+                
+                // Close all other FAQ items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                        const otherToggle = otherItem.querySelector('.faq-toggle');
+                        otherToggle.textContent = '+';
+                    }
+                });
+                
+                // Toggle current item
+                if (isActive) {
+                    item.classList.remove('active');
+                    toggle.textContent = '+';
+                } else {
+                    item.classList.add('active');
+                    toggle.textContent = '−';
+                }
+            });
         });
     });
     </script>
