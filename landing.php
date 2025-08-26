@@ -2604,8 +2604,6 @@ if ($_POST && isset($_POST['contact_submit'])) {
         <!-- Linee parallele decorative -->
         <div class="parallel-line-1"></div>
         <div class="parallel-line-2"></div>
-        <div class="parallel-line-3"></div>
-        <div class="parallel-line-4"></div>
         
         <div class="container">
             <div class="new-hero-content">
