@@ -292,56 +292,31 @@ if ($_POST && isset($_POST['contact_submit'])) {
     /* Linee parallele decorative */
     .new-hero-section .parallel-line-1 {
         position: absolute;
-        top: 20%;
+        top: 45%;
         left: -100px;
-        width: 200px;
-        height: 2px;
-        background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.6), transparent);
-        animation: slideLine 15s linear infinite;
-        transform: rotate(15deg);
+        width: 300px;
+        height: 4px;
+        background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 1), rgba(16, 185, 129, 1), transparent);
+        animation: slideLine 8s linear infinite;
+        z-index: 10;
     }
     
     .new-hero-section .parallel-line-2 {
         position: absolute;
-        top: 25%;
+        top: 48%;
         left: -100px;
-        width: 200px;
-        height: 2px;
-        background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.4), transparent);
-        animation: slideLine 15s linear infinite 2s;
-        transform: rotate(15deg);
+        width: 300px;
+        height: 4px;
+        background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.8), rgba(16, 185, 129, 0.8), transparent);
+        animation: slideLine 8s linear infinite 1s;
+        z-index: 10;
     }
     
-    .new-hero-section .parallel-line-3 {
-        position: absolute;
-        bottom: 30%;
-        right: -100px;
-        width: 200px;
-        height: 2px;
-        background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.5), transparent);
-        animation: slideLine 18s linear infinite reverse;
-        transform: rotate(-15deg);
-    }
-    
-    .new-hero-section .parallel-line-4 {
-        position: absolute;
-        bottom: 35%;
-        right: -100px;
-        width: 200px;
-        height: 2px;
-        background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.3), transparent);
-        animation: slideLine 18s linear infinite reverse 3s;
-        transform: rotate(-15deg);
-    }
+
     
     @keyframes slideLine {
-        0% { transform: translateX(-100px) rotate(15deg); }
-        100% { transform: translateX(calc(100vw + 100px)) rotate(15deg); }
-    }
-    
-    @keyframes slideLineReverse {
-        0% { transform: translateX(100px) rotate(-15deg); }
-        100% { transform: translateX(calc(-100vw - 100px)) rotate(-15deg); }
+        0% { transform: translateX(-100px); }
+        100% { transform: translateX(calc(100vw + 100px)); }
     }
     
     .new-hero-content {
