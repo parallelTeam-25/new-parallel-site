@@ -2602,7 +2602,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
 
 
     <!-- Metodo Section -->
-    <section class="metodo-section" id="metodo">
+    <section class="metodo-section" id="metodo" style="display: none !important;">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Dal manuale all'automatico in 4 step</h2>
@@ -2658,6 +2658,53 @@ if ($_POST && isset($_POST['contact_submit'])) {
 
 
 
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Come possiamo aiutarti</h2>
+                <p class="section-intro">
+                    Soluzioni su misura per trasformare i tuoi processi
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>SOLUZIONI CUSTOM</h3>
+                    <p class="service-subtitle">Sviluppiamo Agenti AI custom e automazioni AI personalizzate</p>
+                    <ul class="service-features">
+                        <li>Scadenziari e promemoria automatici</li>
+                        <li>Report e dashboard auto-generati</li>
+                        <li>Integrazione tra software diversi</li>
+                        <li>Ricerche e analisi automatiche</li>
+                        <li>Gestione dati e fatturazione</li>
+                    </ul>
+                    <div class="services-cta">
+                        <a href="#contact" class="btn btn-primary">Prenota call</a>
+                        <a href="#contact" class="btn btn-outline">Scopri di più</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🎓</div>
+                    <h3>FORMAZIONE AZIENDALE</h3>
+                    <p class="service-subtitle">Potenzia il tuo team con formazione AI personalizzata e percorsi mirati</p>
+                    <ul class="service-features">
+                        <li>Workshop intensivi su strumenti AI</li>
+                        <li>Casi d'uso specifici per il tuo settore</li>
+                        <li>Formazione personalizzata</li>
+                        <li>Follow-up e supporto continuativo</li>
+                    </ul>
+                    <div class="services-cta">
+                        <a href="#contact" class="btn btn-primary">Prenota call</a>
+                        <a href="#contact" class="btn btn-outline">Scopri di più</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
 
     <!-- Case Studies Section -->
     <section class="case-studies-section" id="case-studies">
@@ -2803,10 +2850,6 @@ if ($_POST && isset($_POST['contact_submit'])) {
             </div>
 
         </div>
-    </section>
-
-
-
     <!-- Differentiators Section -->
     <section class="differentiators-section" id="differentiators">
         <div class="container">
