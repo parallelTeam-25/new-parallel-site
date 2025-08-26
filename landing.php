@@ -19,13 +19,14 @@ if ($_POST && isset($_POST['contact_submit'])) {
     $azienda = htmlspecialchars($_POST['azienda'] ?? '');
     $servizio = htmlspecialchars($_POST['servizio'] ?? '');
     $budget = htmlspecialchars($_POST['budget'] ?? '');
+    $processo_principale = htmlspecialchars($_POST['processo_principale'] ?? '');
     $messaggio = htmlspecialchars($_POST['messaggio'] ?? '');
     
     if ($nome && $email && $servizio && $messaggio) {
         $form_message = '<div class="success-message">Grazie! Ti ricontatteremo entro 24 ore.</div>';
         
         // Qui puoi aggiungere l'invio email o salvataggio database
-        // mail('info@example.com', 'Nuova richiesta landing', "Nome: $nome\nEmail: $email\nAzienda: $azienda\nServizio: $servizio\nBudget: $budget\nMessaggio: $messaggio");
+        // mail('info@example.com', 'Nuova richiesta landing', "Nome: $nome\nEmail: $email\nAzienda: $azienda\nServizio: $servizio\nBudget: $budget\nProcesso principale: $processo_principale\nMessaggio: $messaggio");
     } else {
         $form_message = '<div class="error-message">Compila tutti i campi obbligatori.</div>';
     }
@@ -397,8 +398,8 @@ if ($_POST && isset($_POST['contact_submit'])) {
     
     /* Metodo Section */
     .metodo-section {
-        background: var(--gradient-dark);
-        color: var(--white);
+        background: var(--white);
+        color: var(--text-dark);
         padding: 100px 0;
         position: relative;
     }
@@ -421,13 +422,13 @@ if ($_POST && isset($_POST['contact_submit'])) {
     }
     
     .metodo-step {
-        background: rgba(16, 185, 129, 0.05);
-        border: 1px solid rgba(16, 185, 129, 0.1);
+        background: var(--white);
+        border: 1px solid var(--gray-200);
         border-radius: 20px;
         padding: 32px 20px;
         text-align: center;
         transition: all 0.4s ease;
-        backdrop-filter: blur(10px);
+        box-shadow: var(--shadow-sm);
         position: relative;
         overflow: hidden;
     }
@@ -449,10 +450,10 @@ if ($_POST && isset($_POST['contact_submit'])) {
     }
     
     .metodo-step:hover {
-        background: rgba(16, 185, 129, 0.1);
+        background: var(--white);
         border-color: var(--primary-color);
         transform: translateY(-8px);
-        box-shadow: 0 20px 40px rgba(16, 185, 129, 0.2);
+        box-shadow: 0 20px 40px rgba(16, 185, 129, 0.15);
     }
     
     .step-number {
@@ -1632,6 +1633,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
         cursor: pointer;
         transition: all 0.3s ease;
         background: var(--gray-50);
+        user-select: none;
     }
     
     .faq-question:hover {
@@ -1656,6 +1658,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
         min-width: 24px;
         text-align: center;
         line-height: 1;
+        pointer-events: none;
     }
     
     .faq-item.active .faq-toggle {
@@ -1666,12 +1669,16 @@ if ($_POST && isset($_POST['contact_submit'])) {
     .faq-answer {
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.4s ease;
+        transition: all 0.4s ease;
         background: var(--white);
+        opacity: 0;
+        transform: translateY(-10px);
     }
     
     .faq-item.active .faq-answer {
         max-height: 200px;
+        opacity: 1;
+        transform: translateY(0);
     }
     
     .faq-answer p {
@@ -1735,6 +1742,58 @@ if ($_POST && isset($_POST['contact_submit'])) {
         margin-bottom: 80px;
         position: relative;
         z-index: 2;
+    }
+    
+    /* CTA Benefits List */
+    .cta-benefits-list {
+        max-width: 600px;
+        margin: 0 auto 60px auto;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .cta-benefit-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        font-size: 18px;
+        color: var(--white);
+        text-align: left;
+    }
+    
+    .cta-benefit-item:last-child {
+        margin-bottom: 0;
+    }
+    
+    .cta-check-icon {
+        color: var(--primary-color);
+        font-weight: bold;
+        margin-right: 16px;
+        font-size: 20px;
+        min-width: 24px;
+        filter: drop-shadow(0 2px 4px rgba(16, 185, 129, 0.3));
+    }
+    
+    .cta-benefit-item span:last-child {
+        line-height: 1.4;
+        font-weight: 500;
+    }
+    
+    /* Responsive design for CTA benefits */
+    @media (max-width: 768px) {
+        .cta-benefits-list {
+            margin-bottom: 40px;
+        }
+        
+        .cta-benefit-item {
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+        
+        .cta-check-icon {
+            font-size: 18px;
+            margin-right: 12px;
+        }
     }
     
     .benefits-grid {
@@ -2821,17 +2880,37 @@ if ($_POST && isset($_POST['contact_submit'])) {
     <section class="final-cta-section" id="final-cta">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Inizia la tua trasformazione AI oggi</h2>
+                <h2 class="section-title">Inizia la tua trasformazione digitale</h2>
                 <p class="section-intro">
-                    Prenota una consulenza gratuita di 30 minuti e scopri come l'AI 
-                    può trasformare la tua azienda.
+                    Prenota la tua consulenza gratuita di 30 minuti. Analizziamo insieme i tuoi processi e ti mostriamo concretamente cosa puoi automatizzare.
                 </p>
             </div>
+            
+            <div class="cta-benefits-list">
+                <div class="cta-benefit-item">
+                    <span class="cta-check-icon">✓</span>
+                    <span>Identifichi 2-3 processi automatizzabili subito</span>
+                </div>
+                <div class="cta-benefit-item">
+                    <span class="cta-check-icon">✓</span>
+                    <span>Ricevi stima tempi e costi personalizzata</span>
+                </div>
+                <div class="cta-benefit-item">
+                    <span class="cta-check-icon">✓</span>
+                    <span>Ottieni roadmap dettagliata (anche se non lavori con noi)</span>
+                </div>
+                <div class="cta-benefit-item">
+                    <span class="cta-check-icon">✓</span>
+                    <span>Zero impegno, massima trasparenza</span>
+                </div>
+            </div>
+            
             <div class="final-cta-button">
                 <a href="#contact" class="btn btn-primary btn-large">
-                    Prenota la tua consulenza gratuita
+                    PRENOTA CONSULENZA GRATUITA
                 </a>
             </div>
+            
             <div class="benefits-grid">
                 <div class="benefit-card">
                     <div class="benefit-icon">⏰</div>
@@ -2934,6 +3013,12 @@ if ($_POST && isset($_POST['contact_submit'])) {
                                  </select>
                              </div>
                          </div>
+                        
+                        <div class="form-group">
+                            <label for="processo-principale">Descrivi in 2 righe il principale processo che ti fa perdere tempo</label>
+                            <textarea id="processo-principale" name="processo_principale" rows="2" 
+                                      placeholder="Es: Controllo manuale delle scadenze ogni mattina, ricerca di informazioni su diversi software..."></textarea>
+                        </div>
                         
                         <div class="form-group">
                             <label for="messaggio">Descrivi la tua esigenza *</label>
@@ -3151,33 +3236,43 @@ if ($_POST && isset($_POST['contact_submit'])) {
 
     // FAQ Accordion functionality
     document.addEventListener('DOMContentLoaded', function() {
+        console.log('FAQ JavaScript loaded');
         const faqItems = document.querySelectorAll('.faq-item');
+        console.log('Found FAQ items:', faqItems.length);
         
-        faqItems.forEach(item => {
+        faqItems.forEach((item, index) => {
             const question = item.querySelector('.faq-question');
             const toggle = item.querySelector('.faq-toggle');
             
-            question.addEventListener('click', function() {
-                const isActive = item.classList.contains('active');
-                
-                // Close all other FAQ items
-                faqItems.forEach(otherItem => {
-                    if (otherItem !== item) {
-                        otherItem.classList.remove('active');
-                        const otherToggle = otherItem.querySelector('.faq-toggle');
-                        otherToggle.textContent = '+';
+            if (question && toggle) {
+                question.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('FAQ clicked:', index);
+                    
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all other FAQ items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                            const otherToggle = otherItem.querySelector('.faq-toggle');
+                            if (otherToggle) otherToggle.textContent = '+';
+                        }
+                    });
+                    
+                    // Toggle current item
+                    if (isActive) {
+                        item.classList.remove('active');
+                        toggle.textContent = '+';
+                    } else {
+                        item.classList.add('active');
+                        toggle.textContent = '−';
                     }
                 });
                 
-                // Toggle current item
-                if (isActive) {
-                    item.classList.remove('active');
-                    toggle.textContent = '+';
-                } else {
-                    item.classList.add('active');
-                    toggle.textContent = '−';
-                }
-            });
+                // Add hover effect
+                question.style.cursor = 'pointer';
+            }
         });
     });
     </script>
