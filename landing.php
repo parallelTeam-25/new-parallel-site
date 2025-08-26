@@ -2628,8 +2628,8 @@ if ($_POST && isset($_POST['contact_submit'])) {
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">🤖</div>
-                    <h3>AUTOMAZIONI INTELLIGENTI</h3>
-                    <p class="service-subtitle">Processi ripetitivi → Flussi automatici</p>
+                    <h3>SOLUZIONI CUSTOM</h3>
+                    <p class="service-subtitle">Sviluppiamo Agenti AI custom e automazioni AI personalizzate</p>
                     <ul class="service-features">
                         <li>Scadenziari e promemoria automatici</li>
                         <li>Report e dashboard auto-generati</li>
@@ -2637,27 +2637,29 @@ if ($_POST && isset($_POST['contact_submit'])) {
                         <li>Ricerche e analisi automatiche</li>
                         <li>Gestione dati e fatturazione</li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary">Scopri cosa puoi automatizzare</a>
+                    <div class="services-cta">
+                        <a href="#contact" class="btn btn-primary">Prenota call</a>
+                        <a href="#contact" class="btn btn-outline">Scopri di più</a>
+                    </div>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-icon">🎓</div>
-                    <h3>FORMAZIONE AI AZIENDALE</h3>
-                    <p class="service-subtitle">Rendi il tuo team autonomo con l'AI</p>
+                    <h3>FORMAZIONE AZIENDALE</h3>
+                    <p class="service-subtitle">Potenzia il tuo team con formazione AI personalizzata e percorsi mirati</p>
                     <ul class="service-features">
                         <li>Workshop intensivi su strumenti AI</li>
                         <li>Casi d'uso specifici per il tuo settore</li>
                         <li>Formazione personalizzata</li>
                         <li>Follow-up e supporto continuativo</li>
                     </ul>
-                    <a href="#contact" class="btn btn-outline">Richiedi workshop</a>
+                    <div class="services-cta">
+                        <a href="#contact" class="btn btn-primary">Prenota call</a>
+                        <a href="#contact" class="btn btn-outline">Scopri di più</a>
+                    </div>
                 </div>
             </div>
-            <div class="services-cta">
-                <a href="#contact" class="btn btn-primary btn-large">
-                    Richiedi una consulenza personalizzata
-                </a>
-            </div>
+
         </div>
     </section>
 
