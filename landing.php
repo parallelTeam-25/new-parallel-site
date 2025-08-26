@@ -764,12 +764,9 @@ if ($_POST && isset($_POST['contact_submit'])) {
             padding: 28px 16px;
         }
 
-        .why-us-section,
-        .mission-section,
-        .process-section,
         .services-section,
+        .differentiators-section,
         .case-studies-section,
-        .testimonials-section,
         .final-cta-section,
         .contact-section {
             padding: 80px 0;
@@ -1524,63 +1521,139 @@ if ($_POST && isset($_POST['contact_submit'])) {
         }
     }
     
-    /* Testimonials Section */
-    .testimonials-section {
-        background: var(--gray-100);
-        padding: 80px 0;
+
+    
+    /* Differentiators Section */
+    .differentiators-section {
+        background: var(--gradient-dark);
+        color: var(--white);
+        padding: 100px 0;
+        position: relative;
     }
     
-    .testimonials-grid {
+    .differentiators-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: var(--gradient-primary);
+    }
+    
+    .differentiators-section .section-title,
+    .differentiators-section .section-intro {
+        color: var(--white);
+        position: relative;
+        z-index: 2;
+    }
+    
+    .differentiators-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 32px;
-        margin-bottom: 40px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        margin-top: 80px;
+        position: relative;
+        z-index: 2;
     }
     
-    .testimonial-card {
-        background: var(--white);
-        padding: 32px 24px;
-        border-radius: 12px;
-        box-shadow: var(--shadow-sm);
+    .differentiator-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(16, 185, 129, 0.2);
+        border-radius: 20px;
+        padding: 40px 32px;
         text-align: center;
+        transition: all 0.4s ease;
+        backdrop-filter: blur(10px);
+        position: relative;
+        overflow: hidden;
     }
     
-    .testimonial-rating {
-        margin-bottom: 20px;
+    .differentiator-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: var(--gradient-primary);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
     }
     
-    .star {
-        color: #fbbf24;
+    .differentiator-card:hover::before {
+        transform: scaleX(1);
+    }
+    
+    .differentiator-card:hover {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: var(--primary-color);
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(16, 185, 129, 0.2);
+    }
+    
+    .differentiator-icon {
+        font-size: 56px;
+        margin-bottom: 24px;
+        filter: drop-shadow(0 8px 16px rgba(16, 185, 129, 0.3));
+    }
+    
+    .differentiator-card h3 {
         font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: var(--white);
+        letter-spacing: -0.5px;
+        line-height: 1.3;
     }
     
-    .testimonial-quote p {
-        font-style: italic;
+    .differentiator-subtitle {
+        color: var(--primary-color);
+        font-weight: 600;
         margin-bottom: 20px;
-        color: var(--text-light);
-        line-height: 1.6;
-    }
-    
-    .testimonial-author strong {
-        display: block;
-        color: var(--text-dark);
-        margin-bottom: 4px;
-    }
-    
-    .testimonial-author span {
-        color: var(--text-light);
         font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
     }
     
-    .overall-rating {
-        text-align: center;
-        font-size: 18px;
-        color: var(--text-dark);
+    .differentiator-description {
+        color: var(--gray-200);
+        line-height: 1.6;
+        font-size: 15px;
+        margin: 0;
+        opacity: 0.9;
     }
     
-    .overall-rating .star {
-        font-size: 24px;
-        margin-right: 8px;
+    /* Responsive design for differentiators */
+    @media (max-width: 1024px) {
+        .differentiators-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .differentiators-grid {
+            grid-template-columns: 1fr;
+            gap: 24px;
+            margin-top: 60px;
+        }
+        
+        .differentiator-card {
+            padding: 32px 24px;
+        }
+        
+        .differentiator-icon {
+            font-size: 48px;
+        }
+        
+        .differentiator-card h3 {
+            font-size: 18px;
+        }
+        
+        .differentiator-description {
+            font-size: 14px;
+        }
     }
     
     /* FAQ Section */
@@ -2436,148 +2509,11 @@ if ($_POST && isset($_POST['contact_submit'])) {
         </div>
     </section>
 
-    <!-- Why Us Section -->
-    <section class="why-us-section" id="why-us">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Perché scegliere noi</h2>
-                <p class="section-intro">
-                    Specializzati nell'implementazione di soluzioni AI per aziende di ogni dimensione, 
-                    ci impegniamo a fornire risultati misurabili e un supporto continuo.
-                </p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3>Esperienza Consolidata</h3>
-                    <p>Oltre 5 anni di esperienza nell'implementazione di soluzioni AI per aziende di diversi settori.</p>
-                    <div class="feature-stats">
-                        <div class="stat">
-                            <span class="stat-number">50+</span>
-                            <span class="stat-label">Progetti completati</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">95%</span>
-                            <span class="stat-label">Soddisfazione clienti</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Approccio Personalizzato</h3>
-                    <p>Ogni soluzione è progettata su misura per le specifiche esigenze della tua azienda.</p>
-                    <div class="feature-stats">
-                        <div class="stat">
-                            <span class="stat-number">100%</span>
-                            <span class="stat-label">Soluzioni custom</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">24h</span>
-                            <span class="stat-label">Supporto dedicato</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Focus sui Risultati</h3>
-                    <p>Ci concentriamo su metriche concrete e ROI misurabile per ogni progetto.</p>
-                    <div class="feature-stats">
-                        <div class="stat">
-                            <span class="stat-number">+40%</span>
-                            <span class="stat-label">Efficienza media</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">6 mesi</span>
-                            <span class="stat-label">ROI medio</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Mission Section -->
-    <section class="mission-section" id="mission">
-        <div class="container">
-            <div class="mission-content">
-                <div class="mission-text">
-                    <h2>La nostra missione</h2>
-                    <p>
-                        Democratizzare l'accesso alle tecnologie AI per le aziende italiane, 
-                        fornendo soluzioni pratiche e accessibili che generino valore immediato 
-                        e sostenibile nel tempo.
-                    </p>
-                    <div class="mission-stats">
-                        <div class="mission-stat">
-                            <span class="mission-stat-number">200+</span>
-                            <span class="mission-stat-label">Aziende servite</span>
-                        </div>
-                        <div class="mission-stat">
-                            <span class="mission-stat-number">15+</span>
-                            <span class="mission-stat-label">Settori coperti</span>
-                        </div>
-                        <div class="mission-stat">
-                            <span class="mission-stat-number">€2M+</span>
-                            <span class="mission-stat-label">Valore generato</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="mission-visual">
-                    <div class="mission-icon">🚀</div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Process Section -->
-    <section class="process-section" id="process">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Come lavoriamo insieme</h2>
-                <p class="section-subtitle">Il nostro processo di trasformazione in 3 fasi</p>
-            </div>
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h3>Analisi</h3>
-                    <p>Valutiamo i tuoi processi attuali e identifichiamo le opportunità di miglioramento con l'AI.</p>
-                    <div class="step-details">
-                        <ul>
-                            <li>Audit dei processi esistenti</li>
-                            <li>Identificazione delle inefficienze</li>
-                            <li>Definizione degli obiettivi</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="process-connector"></div>
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <h3>Implementazione</h3>
-                    <p>Sviluppiamo e implementiamo le soluzioni AI personalizzate per la tua azienda.</p>
-                    <div class="step-details">
-                        <ul>
-                            <li>Sviluppo soluzioni custom</li>
-                            <li>Integrazione con sistemi esistenti</li>
-                            <li>Test e validazione</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="process-connector"></div>
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h3>Supporto</h3>
-                    <p>Ti accompagniamo nel percorso di adozione con formazione e supporto continuo.</p>
-                    <div class="step-details">
-                        <ul>
-                            <li>Formazione del team</li>
-                            <li>Monitoraggio performance</li>
-                            <li>Ottimizzazioni continue</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
+
+
 
 
 
@@ -2725,80 +2661,62 @@ if ($_POST && isset($_POST['contact_submit'])) {
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials-section" id="testimonials">
+
+
+    <!-- Differentiators Section -->
+    <section class="differentiators-section" id="differentiators">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Cosa dicono i nostri clienti</h2>
+                <h2 class="section-title">Perché scegliere il nostro approccio</h2>
                 <p class="section-intro">
-                    I risultati parlano da soli. I nostri clienti testimoniano 
-                    miglioramenti concreti e soddisfazione garantita.
+                    Non siamo l'ennesima agenzia di consulenza. Ecco cosa ci rende diversi
                 </p>
             </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                    </div>
-                    <div class="testimonial-quote">
-                        <p>
-                            "L'implementazione dell'AI ha rivoluzionato i nostri processi. 
-                            La produttività è aumentata del 40% in soli 3 mesi."
-                        </p>
-                    </div>
-                    <div class="testimonial-author">
-                        <strong>Marco Rossi</strong>
-                        <span>CEO, TechStart SRL</span>
-                    </div>
+            <div class="differentiators-grid">
+                <div class="differentiator-card">
+                    <div class="differentiator-icon">🔍</div>
+                    <h3>TRASPARENZA TOTALE</h3>
+                    <p class="differentiator-subtitle">Zero scatole nere</p>
+                    <p class="differentiator-description">
+                        Ti mostriamo tutto il processo, il codice, le logiche. Sai sempre cosa stiamo facendo e perché.
+                    </p>
                 </div>
                 
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                    </div>
-                    <div class="testimonial-quote">
-                        <p>
-                            "Il team di AI Solutions ha trasformato la nostra visione dell'AI 
-                            in realtà concrete e misurabili."
-                        </p>
-                    </div>
-                    <div class="testimonial-author">
-                        <strong>Laura Bianchi</strong>
-                        <span>CTO, Innovazione Spa</span>
-                    </div>
+                <div class="differentiator-card">
+                    <div class="differentiator-icon">📈</div>
+                    <h3>INVESTIMENTO GRADUALE</h3>
+                    <p class="differentiator-subtitle">Un progetto alla volta</p>
+                    <p class="differentiator-description">
+                        Non rivoluzionismi tutto insieme. Iniziamo con un'automazione, la testiamo, funziona? Andiamo avanti.
+                    </p>
                 </div>
                 
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                    </div>
-                    <div class="testimonial-quote">
-                        <p>
-                            "Eccellente supporto e risultati che hanno superato le aspettative. 
-                            Consigliatissimo per chi vuole innovare."
-                        </p>
-                    </div>
-                    <div class="testimonial-author">
-                        <strong>Giuseppe Verdi</strong>
-                        <span>Direttore Operativo, Manifattura Italia</span>
-                    </div>
+                <div class="differentiator-card">
+                    <div class="differentiator-icon">🎓</div>
+                    <h3>FORMAZIONE INCLUSA</h3>
+                    <p class="differentiator-subtitle">Obiettivo: tua autonomia</p>
+                    <p class="differentiator-description">
+                        Non vogliamo che dipenda da noi per sempre. Ti formiamo fino a renderti completamente autonomo.
+                    </p>
                 </div>
-            </div>
-            <div class="overall-rating">
-                <span class="star">★</span>
-                <span>4.9/5 rating medio dei nostri clienti</span>
+                
+                <div class="differentiator-card">
+                    <div class="differentiator-icon">🇮🇹</div>
+                    <h3>100% FOCUS PMI ITALIANE</h3>
+                    <p class="differentiator-subtitle">Capiamo le tue sfide</p>
+                    <p class="differentiator-description">
+                        Non siamo una multinazionale. Conosciamo le specificità delle PMI italiane e parliamo la tua lingua.
+                    </p>
+                </div>
+                
+                <div class="differentiator-card">
+                    <div class="differentiator-icon">🛠️</div>
+                    <h3>ASSISTENZA QUANDO SERVE</h3>
+                    <p class="differentiator-subtitle">Supporto continuo senza vincoli</p>
+                    <p class="differentiator-description">
+                        Ti assistiamo quando hai bisogno, ma l'obiettivo è la tua indipendenza. Niente contratti di manutenzione obbligatori.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -3134,7 +3052,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
     }, observerOptions);
 
     // Osserva tutti gli elementi che devono essere animati
-    document.querySelectorAll('.feature-card, .service-card, .case-study-card, .testimonial-card, .process-step').forEach(el => {
+    document.querySelectorAll('.service-card, .case-study-card, .differentiator-card').forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -3165,7 +3083,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
     }
 
     // Hover effects per le card
-    document.querySelectorAll('.feature-card, .service-card, .case-study-card').forEach(card => {
+    document.querySelectorAll('.service-card, .case-study-card, .differentiator-card').forEach(card => {
         card.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-5px)';
         });
