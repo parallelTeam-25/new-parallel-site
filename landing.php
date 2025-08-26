@@ -255,9 +255,12 @@ if ($_POST && isset($_POST['contact_submit'])) {
     .new-hero-section {
         background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
         color: var(--white);
-        padding: 120px 0 80px;
+        padding: 180px 0 120px;
         position: relative;
         overflow: hidden;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
     }
     
     .new-hero-section::before {
@@ -268,11 +271,9 @@ if ($_POST && isset($_POST['contact_submit'])) {
         right: 0;
         bottom: 0;
         background: 
-            radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
-            radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
-            radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.05) 0%, transparent 70%);
-        opacity: 1;
-        animation: float 20s ease-in-out infinite;
+            linear-gradient(90deg, transparent 0%, rgba(16, 185, 129, 0.1) 20%, transparent 40%, rgba(16, 185, 129, 0.1) 60%, transparent 80%, rgba(16, 185, 129, 0.1) 100%);
+        opacity: 0.3;
+        animation: parallelLines 8s ease-in-out infinite;
     }
     
     .new-hero-section::after {
@@ -283,10 +284,64 @@ if ($_POST && isset($_POST['contact_submit'])) {
         right: 0;
         bottom: 0;
         background: 
-            radial-gradient(circle at 30% 30%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
-            radial-gradient(circle at 70% 70%, rgba(16, 185, 129, 0.06) 0%, transparent 40%);
-        opacity: 0.7;
-        animation: float 25s ease-in-out infinite reverse;
+            linear-gradient(90deg, transparent 0%, rgba(16, 185, 129, 0.08) 30%, transparent 50%, rgba(16, 185, 129, 0.08) 70%, transparent 90%, rgba(16, 185, 129, 0.08) 100%);
+        opacity: 0.4;
+        animation: parallelLines 12s ease-in-out infinite reverse;
+    }
+    
+    /* Linee parallele decorative */
+    .new-hero-section .parallel-line-1 {
+        position: absolute;
+        top: 20%;
+        left: -100px;
+        width: 200px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.6), transparent);
+        animation: slideLine 15s linear infinite;
+        transform: rotate(15deg);
+    }
+    
+    .new-hero-section .parallel-line-2 {
+        position: absolute;
+        top: 25%;
+        left: -100px;
+        width: 200px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.4), transparent);
+        animation: slideLine 15s linear infinite 2s;
+        transform: rotate(15deg);
+    }
+    
+    .new-hero-section .parallel-line-3 {
+        position: absolute;
+        bottom: 30%;
+        right: -100px;
+        width: 200px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.5), transparent);
+        animation: slideLine 18s linear infinite reverse;
+        transform: rotate(-15deg);
+    }
+    
+    .new-hero-section .parallel-line-4 {
+        position: absolute;
+        bottom: 35%;
+        right: -100px;
+        width: 200px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.3), transparent);
+        animation: slideLine 18s linear infinite reverse 3s;
+        transform: rotate(-15deg);
+    }
+    
+    @keyframes slideLine {
+        0% { transform: translateX(-100px) rotate(15deg); }
+        100% { transform: translateX(calc(100vw + 100px)) rotate(15deg); }
+    }
+    
+    @keyframes slideLineReverse {
+        0% { transform: translateX(100px) rotate(-15deg); }
+        100% { transform: translateX(calc(-100vw - 100px)) rotate(-15deg); }
     }
     
     .new-hero-content {
@@ -356,9 +411,23 @@ if ($_POST && isset($_POST['contact_submit'])) {
         background: linear-gradient(135deg, #10b981 0%, #00d4aa 100%);
     }
     
-    @keyframes float {
-        0%, 100% { transform: translateY(0px) rotate(0deg); }
-        50% { transform: translateY(-20px) rotate(180deg); }
+    @keyframes parallelLines {
+        0%, 100% { 
+            transform: translateX(-100%) scaleX(1);
+            opacity: 0.3;
+        }
+        25% { 
+            transform: translateX(0%) scaleX(1.2);
+            opacity: 0.6;
+        }
+        50% { 
+            transform: translateX(100%) scaleX(1);
+            opacity: 0.3;
+        }
+        75% { 
+            transform: translateX(0%) scaleX(0.8);
+            opacity: 0.8;
+        }
     }
     
     /* Hero Section */
@@ -749,6 +818,11 @@ if ($_POST && isset($_POST['contact_submit'])) {
             font-size: 18px;
         }
         
+        .new-hero-section {
+            padding: 140px 0 100px;
+            min-height: 80vh;
+        }
+        
         .new-hero-title {
             font-size: 48px;
             letter-spacing: -1px;
@@ -918,6 +992,11 @@ if ($_POST && isset($_POST['contact_submit'])) {
     @media (max-width: 480px) {
         .container {
             padding: 0 20px;
+        }
+        
+        .new-hero-section {
+            padding: 120px 0 80px;
+            min-height: 70vh;
         }
         
         .new-hero-title {
@@ -2522,6 +2601,12 @@ if ($_POST && isset($_POST['contact_submit'])) {
 
     <!-- New Hero Section -->
     <section class="new-hero-section" id="new-hero">
+        <!-- Linee parallele decorative -->
+        <div class="parallel-line-1"></div>
+        <div class="parallel-line-2"></div>
+        <div class="parallel-line-3"></div>
+        <div class="parallel-line-4"></div>
+        
         <div class="container">
             <div class="new-hero-content">
                 <h1 class="new-hero-title">
