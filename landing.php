@@ -2672,7 +2672,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
                 <div class="service-card">
                     <div class="service-icon">🤖</div>
                     <h3 style="text-align: center;">SOLUZIONI CUSTOM</h3>
-                    <p class="service-subtitle">Sviluppiamo Agenti AI custom e automazioni AI personalizzate</p>
+                    <p style="text-align: center;" class="service-subtitle">Sviluppiamo Agenti AI custom e automazioni AI personalizzate</p>
                     <ul class="service-features">
                         <li>Scadenziari e promemoria automatici</li>
                         <li>Report e dashboard auto-generati</li>
@@ -2689,7 +2689,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
                 <div class="service-card">
                     <div class="service-icon">🎓</div>
                     <h3 style="text-align: center;">FORMAZIONE AZIENDALE</h3>
-                    <p class="service-subtitle">Potenzia il tuo team con formazione AI personalizzata e percorsi mirati</p>
+                    <p  style="text-align: center;"class="service-subtitle">Potenzia il tuo team con formazione AI personalizzata e percorsi mirati</p>
                     <ul class="service-features">
                         <li>Workshop intensivi su strumenti AI</li>
                         <li>Casi d'uso specifici per il tuo settore</li>
@@ -2850,8 +2850,9 @@ if ($_POST && isset($_POST['contact_submit'])) {
             </div>
 
         </div>
+    </section>
     <!-- Differentiators Section -->
-    <section class="differentiators-section" id="differentiators">
+    <section class="differentiators-section" id="differentiators" style="dispaly:none;">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Perché scegliere il nostro approccio</h2>
@@ -2908,78 +2909,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="faq-section" id="faq">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Domande frequenti</h2>
-                <p class="section-intro">
-                    Tutto quello che devi sapere prima di iniziare
-                </p>
-            </div>
-            <div class="faq-container">
-                <div class="faq-item" data-faq="1">
-                    <div class="faq-question">
-                        <h3>Non conosco nulla di automazioni, è adatto per me?</h3>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Perfetto! Il nostro metodo è pensato proprio per chi parte da zero. Ti accompagniamo passo passo e ti formiamo completamente.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item" data-faq="2">
-                    <div class="faq-question">
-                        <h3>Quanto tempo ci vuole per vedere i primi risultati?</h3>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Dall'analisi al go-live: 2-6 settimane per automazione, in base alla complessità. I benefici li vedi immediatamente.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item" data-faq="3">
-                    <div class="faq-question">
-                        <h3>Cosa succede se ho problemi dopo l'implementazione?</h3>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Ti forniamo assistenza continua e formazione completa per renderti autonomo. Non sei mai lasciato solo.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item" data-faq="4">
-                    <div class="faq-question">
-                        <h3>Lavorate solo con grandi aziende?</h3>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>No, siamo specializzati in PMI da 5-50 dipendenti. Capiamo le specifiche esigenze delle piccole e medie imprese italiane.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item" data-faq="5">
-                    <div class="faq-question">
-                        <h3>Posso iniziare con una sola automazione?</h3>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Assolutamente sì! Anzi, è il nostro approccio consigliato. Un progetto alla volta, risultati concreti.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item" data-faq="6">
-                    <div class="faq-question">
-                        <h3>Come posso essere sicuro che l'investimento valga la pena?</h3>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Nella consulenza gratuita calcoliamo insieme il ROI previsto. Investi solo se i numeri ti convincono.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
     <!-- Final CTA Section -->
     <section class="final-cta-section" id="final-cta">
@@ -3137,6 +3067,79 @@ if ($_POST && isset($_POST['contact_submit'])) {
                             </button>
                         </div>
                     </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Domande frequenti</h2>
+                <p class="section-intro">
+                    Tutto quello che devi sapere prima di iniziare
+                </p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item" data-faq="1">
+                    <div class="faq-question">
+                        <h3>Non conosco nulla di automazioni, è adatto per me?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Perfetto! Il nostro metodo è pensato proprio per chi parte da zero. Ti accompagniamo passo passo e ti formiamo completamente.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-faq="2">
+                    <div class="faq-question">
+                        <h3>Quanto tempo ci vuole per vedere i primi risultati?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Dall'analisi al go-live: 2-6 settimane per automazione, in base alla complessità. I benefici li vedi immediatamente.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-faq="3">
+                    <div class="faq-question">
+                        <h3>Cosa succede se ho problemi dopo l'implementazione?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ti forniamo assistenza continua e formazione completa per renderti autonomo. Non sei mai lasciato solo.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-faq="4">
+                    <div class="faq-question">
+                        <h3>Lavorate solo con grandi aziende?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No, siamo specializzati in PMI da 5-50 dipendenti. Capiamo le specifiche esigenze delle piccole e medie imprese italiane.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-faq="5">
+                    <div class="faq-question">
+                        <h3>Posso iniziare con una sola automazione?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Assolutamente sì! Anzi, è il nostro approccio consigliato. Un progetto alla volta, risultati concreti.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-faq="6">
+                    <div class="faq-question">
+                        <h3>Come posso essere sicuro che l'investimento valga la pena?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nella consulenza gratuita calcoliamo insieme il ROI previsto. Investi solo se i numeri ti convincono.</p>
+                    </div>
                 </div>
             </div>
         </div>
