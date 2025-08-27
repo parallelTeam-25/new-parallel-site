@@ -2602,7 +2602,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
 
 
     <!-- Metodo Section -->
-    <section class="metodo-section" id="metodo" style="display: none !important;">
+    <section class="metodo-section" id="metodo" >
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title" style="text-align: center;">Dal manuale all'automatico in 4 step</h2>
@@ -2852,7 +2852,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
         </div>
     </section>
     <!-- Differentiators Section -->
-    <section class="differentiators-section" id="differentiators" style="dispaly:none;">
+    <section class="differentiators-section" id="differentiators" style="display: none !important;">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Perché scegliere il nostro approccio</h2>
