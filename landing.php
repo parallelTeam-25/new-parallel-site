@@ -1902,6 +1902,14 @@ if ($_POST && isset($_POST['contact_submit'])) {
         transition: all 0.3s ease;
         background: var(--gray-50);
         user-select: none;
+        position: relative;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+    }
+    
+    .faq-question:hover {
+        background: var(--white);
+        border-color: var(--primary-color);
     }
     
     .faq-question:hover {
@@ -1926,7 +1934,6 @@ if ($_POST && isset($_POST['contact_submit'])) {
         min-width: 24px;
         text-align: center;
         line-height: 1;
-        pointer-events: none;
     }
     
     .faq-item.active .faq-toggle {
@@ -1937,14 +1944,14 @@ if ($_POST && isset($_POST['contact_submit'])) {
     .faq-answer {
         max-height: 0;
         overflow: hidden;
-        transition: all 0.4s ease;
+        transition: max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
         background: var(--white);
         opacity: 0;
         transform: translateY(-10px);
     }
     
     .faq-item.active .faq-answer {
-        max-height: 200px;
+        max-height: 300px;
         opacity: 1;
         transform: translateY(0);
     }
@@ -2561,7 +2568,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
         <div class="container">
             <div class="nav-container">
                 <a href="#" class="logo">
-                    <img src="..\wp-content\uploads\2025\08\Logo Bianco.png"" alt="Logo" style="width: 100px; height: 100px;">
+                    <img src="..\wp-content\uploads\2025\08\Logo BiancoTagliato Parallel.png" alt="Logo" style="width: 100px; height: 100px;">
                 </a>
                 <nav>
                     <ul class="nav-menu">
@@ -2813,6 +2820,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
                             <div class="result-item">
                                 <span class="result-number">ZERO</span>
                                 <span class="result-label">Scontrini persi</span>
+                            </div>
                             <div class="result-item">
                                 <span class="result-number">AUTO</span>
                                 <span class="result-label">CATEGORIZZAZIONE</span>
@@ -3015,9 +3023,10 @@ if ($_POST && isset($_POST['contact_submit'])) {
                     <div class="contact-details">
                         <div class="contact-item">
                             <span class="contact-icon">📧</span>
-                            <span>info@aisolutions.it</span>
+                            <span>info.parallel.ai@gmail.com
+                            </span>
                         </div>
-                        <div class="contact-item">
+                        <div class="contact-item" style="display: none;">
                             <span class="contact-icon">📞</span>
                             <span>+39 02 1234 5678</span>
                         </div>
@@ -3378,8 +3387,10 @@ if ($_POST && isset($_POST['contact_submit'])) {
             const toggle = item.querySelector('.faq-toggle');
             
             if (question && toggle) {
-                question.addEventListener('click', function(e) {
+                // Add event listener to both question and toggle
+                const handleClick = function(e) {
                     e.preventDefault();
+                    e.stopPropagation();
                     console.log('FAQ clicked:', index);
                     
                     const isActive = item.classList.contains('active');
@@ -3401,10 +3412,14 @@ if ($_POST && isset($_POST['contact_submit'])) {
                         item.classList.add('active');
                         toggle.textContent = '−';
                     }
-                });
+                };
+                
+                question.addEventListener('click', handleClick);
+                toggle.addEventListener('click', handleClick);
                 
                 // Add hover effect
                 question.style.cursor = 'pointer';
+                toggle.style.cursor = 'pointer';
             }
         });
     });
