@@ -2663,7 +2663,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
     <section class="services-section" id="services">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Come possiamo aiutarti</h2>
+                <h2 class="section-title" style="text-align: center;">Come possiamo aiutarti</h2>
                 <p class="section-intro">
                     Soluzioni su misura per trasformare i tuoi processi
                 </p>
@@ -2671,7 +2671,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">🤖</div>
-                    <h3>SOLUZIONI CUSTOM</h3>
+                    <h3 style="text-align: center;">SOLUZIONI CUSTOM</h3>
                     <p class="service-subtitle">Sviluppiamo Agenti AI custom e automazioni AI personalizzate</p>
                     <ul class="service-features">
                         <li>Scadenziari e promemoria automatici</li>
@@ -2688,7 +2688,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
                 
                 <div class="service-card">
                     <div class="service-icon">🎓</div>
-                    <h3>FORMAZIONE AZIENDALE</h3>
+                    <h3 style="text-align: center;">FORMAZIONE AZIENDALE</h3>
                     <p class="service-subtitle">Potenzia il tuo team con formazione AI personalizzata e percorsi mirati</p>
                     <ul class="service-features">
                         <li>Workshop intensivi su strumenti AI</li>
