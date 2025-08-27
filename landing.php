@@ -2673,16 +2673,15 @@ if ($_POST && isset($_POST['contact_submit'])) {
                     <div class="service-icon">🤖</div>
                     <h3 style="text-align: center;">SOLUZIONI CUSTOM</h3>
                     <p style="text-align: center;" class="service-subtitle">Sviluppiamo Agenti AI custom e automazioni AI personalizzate</p>
-                    <ul class="service-features">
-                        <li>Scadenziari e promemoria automatici</li>
-                        <li>Report e dashboard auto-generati</li>
-                        <li>Integrazione tra software diversi</li>
-                        <li>Ricerche e analisi automatiche</li>
-                        <li>Gestione dati e fatturazione</li>
+                    <ul style="text-align: center;" class="service-features">
+                        <li>Risparmia tempo e denaro</li>
+                        <li>Riduci l'errore umano</li>
+                        <li>Aumenta la produttività del team</li>
+                        <li>Elimina i processi ripetitivi</li>
+                        <li>Aumenta le vendite con operatori h24</li>
                     </ul>
                     <div class="services-cta">
                         <a href="#contact" class="btn btn-primary">Prenota call</a>
-                        <a href="#contact" class="btn btn-outline">Scopri di più</a>
                     </div>
                 </div>
                 
@@ -2690,15 +2689,14 @@ if ($_POST && isset($_POST['contact_submit'])) {
                     <div class="service-icon">🎓</div>
                     <h3 style="text-align: center;">FORMAZIONE AZIENDALE</h3>
                     <p  style="text-align: center;"class="service-subtitle">Potenzia il tuo team con formazione AI personalizzata e percorsi mirati</p>
-                    <ul class="service-features">
-                        <li>Workshop intensivi su strumenti AI</li>
+                    <ul style="text-align: center;" class="service-features">
+                        <li>Corsi personalizzati per il tuo team</li>
                         <li>Casi d'uso specifici per il tuo settore</li>
-                        <li>Formazione personalizzata</li>
-                        <li>Follow-up e supporto continuativo</li>
+                        <li>Formazione sempre aggiornata</li>
+                        <li>Rimani sempre aggiornato</li>
                     </ul>
                     <div class="services-cta">
                         <a href="#contact" class="btn btn-primary">Prenota call</a>
-                        <a href="#contact" class="btn btn-outline">Scopri di più</a>
                     </div>
                 </div>
             </div>
@@ -2718,11 +2716,10 @@ if ($_POST && isset($_POST['contact_submit'])) {
             <div class="case-studies-grid">
                 <div class="case-study-card">
                     <div class="project-badge">In sviluppo</div>
-                    <h3>Scadenziario Intelligente</h3>
-                    <p class="project-subtitle">Elimina 2 ore/giorno di controlli manuali</p>
+                    <h3>Scadenziario Intelligente </h3>
+                    <p class="project-subtitle">MAI PIÙ LICENZE DIMENTICATE O CLIENTI PERSI</p>
                     <p class="case-description">
-                        Sistema automatico per gestione scadenze con notifiche smart e integrazione gestionale.
-                    </p>
+                    Centralizza tutte le scadenze software e licenze in un unico tool. Il sistema invia automaticamente email personalizzate ai clienti prima di ogni scadenza.
                     <div class="case-results">
                         <h4>Benefici attesi</h4>
                         <div class="results-grid">
@@ -2735,8 +2732,8 @@ if ($_POST && isset($_POST['contact_submit'])) {
                                 <span class="result-label">Scadenze coperte</span>
                             </div>
                             <div class="result-item">
-                                <span class="result-number">24/7</span>
-                                <span class="result-label">Monitoraggio</span>
+                                <span class="result-number">AUTO</span>
+                                <span class="result-label">Email Personalizzate</span>
                             </div>
                         </div>
                     </div>
@@ -2745,16 +2742,16 @@ if ($_POST && isset($_POST['contact_submit'])) {
                 
                 <div class="case-study-card">
                     <div class="project-badge">In sviluppo</div>
-                    <h3>Ricerca Automatica Mercato</h3>
-                    <p class="project-subtitle">Dalle 4 ore di ricerca manuale a risultati istantanei</p>
+                    <h3>Ricerca Auto Automatica </h3>
+                    <p class="project-subtitle">Basta perdere tempo su portali di auto diversi</p>
                     <p class="case-description">
-                        Assistant intelligente che trova automaticamente le migliori opportunità di mercato.
+                    Scrivi su Telegram che auto cerchi e ricevi automaticamente le migliori opportunità qualità-prezzo da tutti i portali di vendita con un alalisi di mercato annessa.
                     </p>
                     <div class="case-results">
                         <h4>Benefici attesi</h4>
                         <div class="results-grid">
                             <div class="result-item">
-                                <span class="result-number">-4h</span>
+                                <span class="result-number">-6h</span>
                                 <span class="result-label">Ricerca manuale</span>
                             </div>
                             <div class="result-item">
@@ -2762,14 +2759,41 @@ if ($_POST && isset($_POST['contact_submit'])) {
                                 <span class="result-label">Opportunità trovate</span>
                             </div>
                             <div class="result-item">
-                                <span class="result-number">Real-time</span>
-                                <span class="result-label">Aggiornamenti</span>
+                                <span class="result-number">Veloce</span>
+                                <span class="result-label">Chatta con l'AI</span>
                             </div>
                         </div>
                     </div>
                     <a href="#contact" class="btn btn-outline">Scopri di più</a>
                 </div>
                 
+                <div class="case-study-card">
+                    <div class="project-badge">In sviluppo</div>
+                    <h3>Report AI Automatici</h3>
+                    <p class="project-subtitle">Da 4 ore a 10 minuti per report cliente</p>
+                    <p class="case-description">
+                        Generazione automatica di report personalizzati con insights AI integrati.
+                    </p>
+                    <div class="case-results">
+                        <h4>Benefici attesi</h4>
+                        <div class="results-grid">
+                            <div class="result-item">
+                                <span class="result-number">-95%</span>
+                                <span class="result-label">Tempo report</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-number">+200%</span>
+                                <span class="result-label">Insights generati</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-number">Auto</span>
+                                <span class="result-label">Personalizzazione</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-outline">Scopri di più</a>
+                </div>
+
                 <div class="case-study-card">
                     <div class="project-badge">In sviluppo</div>
                     <h3>Report AI Automatici</h3>
