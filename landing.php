@@ -2569,7 +2569,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
         <div class="container">
             <div class="nav-container">
                 <a href="#" class="logo">
-                    <img src="..\wp-content\uploads\2025\08\Logo BiancoTagliato Parallel.png" alt="Logo" style="width: 100px; height: 100px;">
+                    <img src="..\wp-content\uploads\2025\08\Logo BiancoTagliato Parallel.png" alt="Logo" style="width: 150px; height: 46px;">
                 </a>
                 <nav>
                     <ul class="nav-menu">
