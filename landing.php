@@ -2806,7 +2806,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
     </section>
 
     <!-- Services Section -->
-    <section class="services-section" id="services">
+    <section class="services-section" id="services" style="display: none !important;">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Come possiamo aiutarti</h2>
