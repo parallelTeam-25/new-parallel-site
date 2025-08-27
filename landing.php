@@ -2769,25 +2769,25 @@ if ($_POST && isset($_POST['contact_submit'])) {
                 
                 <div class="case-study-card">
                     <div class="project-badge">In sviluppo</div>
-                    <h3>Report AI Automatici</h3>
+                    <h3>Report Clienti One-Click</h3>
                     <p class="project-subtitle">Da 4 ore a 10 minuti per report cliente</p>
                     <p class="case-description">
-                        Generazione automatica di report personalizzati con insights AI integrati.
+                    Sistema automatico che monitora le performance dei siti clienti e genera report personalizzati con commenti AI specifici per ogni progetto.
                     </p>
                     <div class="case-results">
                         <h4>Benefici attesi</h4>
                         <div class="results-grid">
                             <div class="result-item">
-                                <span class="result-number">-95%</span>
-                                <span class="result-label">Tempo report</span>
+                                <span class="result-number">1-click</span>
+                                <span class="result-label">Report Completo</span>
                             </div>
                             <div class="result-item">
-                                <span class="result-number">+200%</span>
-                                <span class="result-label">Insights generati</span>
+                                <span class="result-number">-95%</span>
+                                <span class="result-label">Tempo Risparmiato</span>
                             </div>
                             <div class="result-item">
                                 <span class="result-number">Auto</span>
-                                <span class="result-label">Personalizzazione</span>
+                                <span class="result-label">Commenti Personalizzati</span>
                             </div>
                         </div>
                     </div>
