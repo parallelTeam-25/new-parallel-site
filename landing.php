@@ -2560,7 +2560,9 @@ if ($_POST && isset($_POST['contact_submit'])) {
     <header class="header" id="header">
         <div class="container">
             <div class="nav-container">
-                <a href="#" class="logo">🤖 AI Solutions</a>
+                <a href="#" class="logo">
+                    <img src="..\wp-content\uploads\2025\08\Logo Bianco.png"" alt="Logo" style="width: 100px; height: 100px;">
+                </a>
                 <nav>
                     <ul class="nav-menu">
                         <li><a href="#why-us">Perché Noi</a></li>
@@ -2796,32 +2798,31 @@ if ($_POST && isset($_POST['contact_submit'])) {
 
                 <div class="case-study-card">
                     <div class="project-badge">In sviluppo</div>
-                    <h3>Report AI Automatici</h3>
-                    <p class="project-subtitle">Da 4 ore a 10 minuti per report cliente</p>
+                    <h3>Scontrini Aziendali Smart</h3>
+                    <p class="project-subtitle">Dalla foto dello scontrino a registro spese completo</p>
                     <p class="case-description">
-                        Generazione automatica di report personalizzati con insights AI integrati.
+                    Ogni dipendente carica gli scontrini via Telegram. Il sistema estrae automaticamente importi, categorie e dettagli per la contabilità aziendale.
                     </p>
                     <div class="case-results">
                         <h4>Benefici attesi</h4>
                         <div class="results-grid">
                             <div class="result-item">
-                                <span class="result-number">-95%</span>
-                                <span class="result-label">Tempo report</span>
+                                <span class="result-number">-2h</span>
+                                <span class="result-label">Lavoro contabile</span>
                             </div>
                             <div class="result-item">
-                                <span class="result-number">+200%</span>
-                                <span class="result-label">Insights generati</span>
-                            </div>
+                                <span class="result-number">ZERO</span>
+                                <span class="result-label">Scontrini persi</span>
                             <div class="result-item">
-                                <span class="result-number">Auto</span>
-                                <span class="result-label">Personalizzazione</span>
+                                <span class="result-number">AUTO</span>
+                                <span class="result-label">CATEGORIZZAZIONE</span>
                             </div>
                         </div>
                     </div>
                     <a href="#contact" class="btn btn-outline">Scopri di più</a>
                 </div>
             </div>
-            <div class="case-studies-cta">
+            <div class="case-studies-cta" style="text-align: center;">
                 <a href="#contact" class="btn btn-primary btn-large">
                     Inizia la tua trasformazione
                 </a>
@@ -3022,7 +3023,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
                         </div>
                         <div class="contact-item">
                             <span class="contact-icon">📍</span>
-                            <span>Milano, Italia</span>
+                            <span>Cuneo, Italia</span>
                         </div>
                     </div>
                 </div>
