@@ -2602,7 +2602,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
 
 
     <!-- Metodo Section -->
-    <section class="metodo-section" id="metodo" >
+    <section class="metodo-section" id="metodo" style="display: none !important;">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title" style="text-align: center;">Dal manuale all'automatico in 4 step</h2>
