@@ -1910,10 +1910,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
     .faq-question:hover {
         background: var(--white);
         border-color: var(--primary-color);
-    }
-    
-    .faq-question:hover {
-        background: var(--gray-100);
+        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.1);
     }
     
     .faq-question h3 {
@@ -1937,23 +1934,27 @@ if ($_POST && isset($_POST['contact_submit'])) {
     }
     
     .faq-item.active .faq-toggle {
-        transform: rotate(45deg);
+        transform: rotate(45deg) !important;
         color: var(--secondary-color);
     }
     
     .faq-answer {
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+        transition: all 0.3s ease;
         background: var(--white);
         opacity: 0;
         transform: translateY(-10px);
+        padding: 0;
+        margin: 0;
     }
     
     .faq-item.active .faq-answer {
-        max-height: 300px;
+        max-height: 500px;
         opacity: 1;
         transform: translateY(0);
+        padding: 0 32px 24px 32px;
+        margin: 0;
     }
     
     .faq-answer p {
@@ -2822,8 +2823,8 @@ if ($_POST && isset($_POST['contact_submit'])) {
                                 <span class="result-label">Scontrini persi</span>
                             </div>
                             <div class="result-item">
-                                <span class="result-number">AUTO</span>
-                                <span class="result-label">CATEGORIZZAZIONE</span>
+                                <span class="result-number">ZERO</span>
+                                <span class="result-label">ERRORI INSERIMENTO</span>
                             </div>
                         </div>
                     </div>
@@ -3376,53 +3377,93 @@ if ($_POST && isset($_POST['contact_submit'])) {
         });
     });
 
-    // FAQ Accordion functionality
-    document.addEventListener('DOMContentLoaded', function() {
-        console.log('FAQ JavaScript loaded');
+    // FAQ Accordion functionality - VERSIONE ROBUSTA
+    function initFAQ() {
+        console.log('🚀 Inizializzazione FAQ...');
+        
         const faqItems = document.querySelectorAll('.faq-item');
-        console.log('Found FAQ items:', faqItems.length);
+        console.log('📋 FAQ items trovati:', faqItems.length);
+        
+        if (faqItems.length === 0) {
+            console.error('❌ Nessuna FAQ trovata!');
+            return;
+        }
         
         faqItems.forEach((item, index) => {
             const question = item.querySelector('.faq-question');
             const toggle = item.querySelector('.faq-toggle');
+            const answer = item.querySelector('.faq-answer');
             
-            if (question && toggle) {
-                // Add event listener to both question and toggle
-                const handleClick = function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    console.log('FAQ clicked:', index);
-                    
-                    const isActive = item.classList.contains('active');
-                    
-                    // Close all other FAQ items
-                    faqItems.forEach(otherItem => {
-                        if (otherItem !== item) {
-                            otherItem.classList.remove('active');
-                            const otherToggle = otherItem.querySelector('.faq-toggle');
-                            if (otherToggle) otherToggle.textContent = '+';
-                        }
-                    });
-                    
-                    // Toggle current item
-                    if (isActive) {
-                        item.classList.remove('active');
-                        toggle.textContent = '+';
-                    } else {
-                        item.classList.add('active');
-                        toggle.textContent = '−';
-                    }
-                };
-                
-                question.addEventListener('click', handleClick);
-                toggle.addEventListener('click', handleClick);
-                
-                // Add hover effect
-                question.style.cursor = 'pointer';
-                toggle.style.cursor = 'pointer';
+            if (!question || !toggle || !answer) {
+                console.error(`❌ Elementi mancanti per FAQ ${index + 1}:`, { question: !!question, toggle: !!toggle, answer: !!answer });
+                return;
             }
+            
+            console.log(`✅ FAQ ${index + 1} configurata correttamente`);
+            
+            // Funzione per gestire il click
+            const handleClick = function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                console.log(`🖱️ FAQ ${index + 1} cliccata`);
+                
+                const isActive = item.classList.contains('active');
+                
+                // Chiudi tutte le altre FAQ
+                faqItems.forEach((otherItem, otherIndex) => {
+                    if (otherIndex !== index) {
+                        otherItem.classList.remove('active');
+                        const otherToggle = otherItem.querySelector('.faq-toggle');
+                        if (otherToggle) {
+                            otherToggle.textContent = '+';
+                            otherToggle.style.transform = 'rotate(0deg)';
+                        }
+                    }
+                });
+                
+                // Toggle FAQ corrente
+                if (isActive) {
+                    item.classList.remove('active');
+                    toggle.textContent = '+';
+                    toggle.style.transform = 'rotate(0deg)';
+                    console.log(`🔽 FAQ ${index + 1} chiusa`);
+                } else {
+                    item.classList.add('active');
+                    toggle.textContent = '−';
+                    toggle.style.transform = 'rotate(45deg)';
+                    console.log(`🔼 FAQ ${index + 1} aperta`);
+                }
+            };
+            
+            // Event listeners
+            question.addEventListener('click', handleClick);
+            toggle.addEventListener('click', handleClick);
+            
+            // Stili interattivi
+            question.style.cursor = 'pointer';
+            toggle.style.cursor = 'pointer';
+            
+            // Debug info
+            console.log(`🎯 FAQ ${index + 1} ready:`, {
+                question: question.textContent.trim().substring(0, 30) + '...',
+                toggleText: toggle.textContent,
+                hasActiveClass: item.classList.contains('active')
+            });
         });
-    });
+        
+        console.log('✅ Tutte le FAQ sono state inizializzate!');
+    }
+    
+    // Inizializza FAQ quando il DOM è pronto
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initFAQ);
+    } else {
+        initFAQ();
+    }
+    
+    // Backup: riprova dopo un breve delay
+    setTimeout(initFAQ, 1000);
     </script>
 </body>
 </html>
