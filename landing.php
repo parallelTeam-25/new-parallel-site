@@ -2587,7 +2587,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
                     Il futuro della tua azienda corre in <span class="ai-partner">parallelo</span> con l'AI
                 </h1>
                 <p class="new-hero-subtitle">
-                    Noi costruiamo soluzioni su misura che affiancano le tue persone, ottimizzano i flussi e liberano energie per ciò che conta davvero.
+                    Costruiamo soluzioni su misura che affiancano il tuo team, ottimizzano i flussi e liberano energie per ciò che conta davvero.
                 </p>
                 <div class="new-hero-cta">
                     <a href="#services" class="btn">Le nostre soluzioni</a>
@@ -2605,7 +2605,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
     <section class="metodo-section" id="metodo" style="display: none !important;">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Dal manuale all'automatico in 4 step</h2>
+                <h2 class="section-title" style="text-align: center;">Dal manuale all'automatico in 4 step</h2>
                 <p class="section-intro">
                     Il nostro processo trasparente per trasformare i tuoi processi ripetitivi
                 </p>
