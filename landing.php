@@ -280,7 +280,39 @@ if ($_POST && isset($_POST['contact_submit'])) {
         border: none;
         font-size: 24px;
         cursor: pointer;
-        color: var(--text-dark);
+        color: var(--white);
+    }
+    
+    /* Menu mobile attivo */
+    .nav-menu.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.98);
+        backdrop-filter: blur(20px);
+        padding: 20px;
+        border-top: 1px solid rgba(16, 185, 129, 0.2);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+    
+    .nav-menu.active li {
+        margin: 15px 0;
+        text-align: center;
+    }
+    
+    .nav-menu.active a {
+        font-size: 18px;
+        padding: 15px 0;
+        display: block;
+        border-bottom: 1px solid rgba(16, 185, 129, 0.1);
+    }
+    
+    .nav-menu.active a:last-child {
+        border-bottom: none;
     }
     
     /* New Hero Section */
@@ -839,6 +871,10 @@ if ($_POST && isset($_POST['contact_submit'])) {
     
     /* Responsive */
     @media (max-width: 768px) {
+        .nav-container {
+            position: relative;
+        }
+        
         .nav-menu {
             display: none;
         }
@@ -2654,8 +2690,19 @@ if ($_POST && isset($_POST['contact_submit'])) {
         }
         
         .footer-content {
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            text-align: left;
+        }
+        
+        .footer-section:first-child {
+            grid-column: 1 / -1;
             text-align: center;
+        }
+        
+        .footer-section:nth-child(2),
+        .footer-section:nth-child(3) {
+            text-align: left;
         }
         
         .section-title {
@@ -2687,6 +2734,15 @@ if ($_POST && isset($_POST['contact_submit'])) {
     @media (max-width: 480px) {
         .container {
             padding: 0 16px;
+        }
+        
+        .footer-content {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        .footer-section:first-child {
+            grid-column: 1;
         }
         
         .hero-title {
