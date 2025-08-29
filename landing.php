@@ -2774,8 +2774,13 @@ if ($_POST && isset($_POST['contact_submit'])) {
             text-align: left;
         }
         
-        .footer-section:nth-child(2),
+        .footer-section:nth-child(2) {
+            grid-column: 2;
+            text-align: left;
+        }
+        
         .footer-section:nth-child(3) {
+            grid-column: 3;
             text-align: left;
         }
         
@@ -2953,8 +2958,8 @@ if ($_POST && isset($_POST['contact_submit'])) {
             
             <div class="metodo-steps">
                 <div class="metodo-step">
-                    <div class="step-number">1</div>
                     <div class="step-icon">📞</div>
+                    <div class="step-number">1</div>
                     <div class="step-content">
                         <h3 class="step-title">CALL ESPLORATIVA <span class="step-duration">(30min - GRATUITA)</span></h3>
                         <p class="step-description">Capiamo la tua azienda e identifichiamo le prime 3 opportunità di automazione</p>
@@ -2962,8 +2967,8 @@ if ($_POST && isset($_POST['contact_submit'])) {
                 </div>
                 
                 <div class="metodo-step">
-                    <div class="step-number">2</div>
                     <div class="step-icon">🔍</div>
+                    <div class="step-number">2</div>
                     <div class="step-content">
                         <h3 class="step-title">AUDIT APPROFONDITO <span class="step-duration">(2-3 ore)</span></h3>
                         <p class="step-description">Analizziamo insieme tutti i processi automatizzabili e definiamo le priorità</p>
@@ -2971,8 +2976,8 @@ if ($_POST && isset($_POST['contact_submit'])) {
                 </div>
                 
                 <div class="metodo-step">
-                    <div class="step-number">3</div>
                     <div class="step-icon">⚙️</div>
+                    <div class="step-number">3</div>
                     <div class="step-content">
                         <h3 class="step-title">SVILUPPO + TEST</h3>
                         <p class="step-description">Creiamo l'automazione su misura e la testiamo insieme al tuo team</p>
@@ -2980,8 +2985,8 @@ if ($_POST && isset($_POST['contact_submit'])) {
                 </div>
                 
                 <div class="metodo-step">
-                    <div class="step-number">4</div>
                     <div class="step-icon">🎓</div>
+                    <div class="step-number">4</div>
                     <div class="step-content">
                         <h3 class="step-title">FORMAZIONE + GO-LIVE + ASSISTENZA</h3>
                         <p class="step-description">Ti rendiamo completamente autonomo con supporto continuo quando serve</p>
