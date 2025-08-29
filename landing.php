@@ -508,9 +508,10 @@ if ($_POST && isset($_POST['contact_submit'])) {
     }
     
     .trust-badge:hover {
-        background: rgba(16, 185, 129, 0.2);
+        background: rgba(16, 185, 129, 0.25);
         border-color: var(--primary-color);
         transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(16, 185, 129, 0.2);
     }
     
     .badge-icon {
@@ -548,10 +549,10 @@ if ($_POST && isset($_POST['contact_submit'])) {
     }
     
     .credibility-item:hover {
-        background: rgba(16, 185, 129, 0.1);
+        background: rgba(16, 185, 129, 0.15);
         border-color: var(--primary-color);
         transform: translateX(8px);
-        box-shadow: 0 4px 15px rgba(16, 185, 129, 0.15);
+        box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
     }
     
     .credibility-icon {
@@ -643,10 +644,10 @@ if ($_POST && isset($_POST['contact_submit'])) {
     }
     
     .metodo-step:hover {
-        background: var(--white);
+        background: rgba(255, 255, 255, 0.2);
         border-color: var(--primary-color);
         transform: translateY(-8px);
-        box-shadow: 0 20px 40px rgba(16, 185, 129, 0.15);
+        box-shadow: 0 20px 40px rgba(16, 185, 129, 0.3);
     }
     
     .step-number {
@@ -731,7 +732,8 @@ if ($_POST && isset($_POST['contact_submit'])) {
     .floating-card:hover {
         transform: translateY(-10px) scale(1.02);
         border-color: var(--primary-color);
-        box-shadow: 0 30px 60px rgba(16, 185, 129, 0.2);
+        box-shadow: 0 30px 60px rgba(16, 185, 129, 0.3);
+        background: rgba(16, 185, 129, 0.1);
     }
     
     .floating-card.card-1 {
@@ -1157,8 +1159,9 @@ if ($_POST && isset($_POST['contact_submit'])) {
     
     .feature-card:hover {
         transform: translateY(-12px);
-        box-shadow: 0 25px 50px rgba(16, 185, 129, 0.15);
+        box-shadow: 0 25px 50px rgba(16, 185, 129, 0.25);
         border-color: var(--primary-color);
+        background: var(--white);
     }
     
     .feature-icon {
@@ -1547,8 +1550,9 @@ if ($_POST && isset($_POST['contact_submit'])) {
     
     .case-study-card:hover {
         transform: translateY(-8px);
-        box-shadow: 0 20px 40px rgba(16, 185, 129, 0.15);
+        box-shadow: 0 20px 40px rgba(16, 185, 129, 0.3);
         border-color: var(--primary-color);
+        background: rgba(255, 255, 255, 0.15);
     }
     
     .case-study-card h3 {
@@ -1621,8 +1625,9 @@ if ($_POST && isset($_POST['contact_submit'])) {
     
     .result-item:hover {
         transform: translateY(-4px);
-        box-shadow: 0 8px 25px rgba(16, 185, 129, 0.15);
+        box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
         border-color: var(--primary-color);
+        background: rgba(255, 255, 255, 0.2);
     }
     
     .result-number {
@@ -1711,8 +1716,9 @@ if ($_POST && isset($_POST['contact_submit'])) {
     
     .service-card:hover {
         transform: translateY(-12px);
-        box-shadow: 0 25px 50px rgba(16, 185, 129, 0.15);
+        box-shadow: 0 25px 50px rgba(16, 185, 129, 0.25);
         border-color: var(--primary-color);
+        background: var(--white);
     }
     
     .service-icon {
@@ -1988,8 +1994,8 @@ if ($_POST && isset($_POST['contact_submit'])) {
     }
     
     .faq-question:hover {
-        background: rgba(16, 185, 129, 0.05);
-        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.1);
+        background: rgba(16, 185, 129, 0.1);
+        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
     }
     
     .faq-question h3 {
@@ -2171,9 +2177,9 @@ if ($_POST && isset($_POST['contact_submit'])) {
     
     .benefit-card:hover {
         transform: translateY(-8px);
-        background: rgba(16, 185, 129, 0.15);
+        background: rgba(16, 185, 129, 0.2);
         border-color: var(--primary-color);
-        box-shadow: 0 20px 40px rgba(16, 185, 129, 0.2);
+        box-shadow: 0 20px 40px rgba(16, 185, 129, 0.3);
     }
     
     .benefit-icon {
@@ -2274,9 +2280,10 @@ if ($_POST && isset($_POST['contact_submit'])) {
     }
     
     .contact-item:hover {
-        background: rgba(16, 185, 129, 0.05);
+        background: rgba(16, 185, 129, 0.15);
         border-color: var(--primary-color);
         transform: translateX(8px);
+        box-shadow: 0 8px 25px rgba(16, 185, 129, 0.2);
     }
     
     .contact-icon {
@@ -2471,31 +2478,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
         opacity: 1;
     }
     
-    .footer-cta {
-        margin-top: 24px;
-    }
-    
-    .footer-cta .btn {
-        padding: 16px 32px;
-        font-size: 16px;
-        background: linear-gradient(135deg, #00d4aa 0%, #10b981 100%);
-        border: none;
-        color: white;
-        border-radius: 50px;
-        text-decoration: none;
-        display: inline-block;
-        transition: all 0.3s ease;
-        box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-weight: 700;
-    }
-    
-    .footer-cta .btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 20px 40px rgba(16, 185, 129, 0.4);
-        background: linear-gradient(135deg, #10b981 0%, #00d4aa 100%);
-    }
+
     
     .footer-bottom {
         border-top: 1px solid rgba(16, 185, 129, 0.2);
@@ -3219,9 +3202,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
                     </a>
                     <h3>Trasformiamo il futuro della tua azienda con l'AI</h3>
                     <p>Soluzioni innovative e personalizzate per ottimizzare i tuoi processi e accelerare la crescita.</p>
-                    <div class="footer-cta">
-                        <a href="https://calendly.com/info-parallel-ai/30min" target="_blank" class="btn btn-primary">Prenota consulenza gratuita</a>
-                    </div>
+
                 </div>
                 <div class="footer-section">
                     <h4>Navigazione</h4>
