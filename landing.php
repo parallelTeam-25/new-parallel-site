@@ -67,7 +67,16 @@ if ($_POST && isset($_POST['contact_submit'])) {
     <meta property="og:url" content="">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='35' y='20' width='6' height='60' rx='3' fill='%2310b981'/><rect x='55' y='20' width='6' height='60' rx='3' fill='%2310b981' opacity='0.8'/></svg>">
+    
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect x='63' y='36' width='10' height='108' rx='5' fill='%2310b981'/><rect x='99' y='36' width='10' height='108' rx='5' fill='%2310b981' opacity='0.8'/></svg>">
+    
+    <!-- Favicon 32x32 -->
+    <link rel="icon" type="image/svg+xml" sizes="32x32" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='11' y='6' width='2' height='20' rx='1' fill='%2310b981'/><rect x='17' y='6' width='2' height='20' rx='1' fill='%2310b981' opacity='0.8'/></svg>">
+    
+    <!-- Favicon 16x16 -->
+    <link rel="icon" type="image/svg+xml" sizes="16x16" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect x='5' y='3' width='1' height='10' rx='0.5' fill='%2310b981'/><rect x='8' y='3' width='1' height='10' rx='0.5' fill='%2310b981' opacity='0.8'/></svg>">
     
     <style>
     /* Reset e base */
