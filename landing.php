@@ -573,22 +573,11 @@ if ($_POST && isset($_POST['contact_submit'])) {
     
     /* Metodo Section */
     .metodo-section {
-        background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 25%, #e2e8f0 50%, #f8fafc 75%, #ffffff 100%);
-        color: var(--text-dark);
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: var(--white);
         padding: 100px 0;
         position: relative;
         overflow: hidden;
-    }
-    
-    .metodo-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background: var(--gradient-primary);
-        box-shadow: 0 3px 10px rgba(16, 185, 129, 0.3);
     }
     
     .metodo-section::after {
@@ -599,9 +588,9 @@ if ($_POST && isset($_POST['contact_submit'])) {
         right: 0;
         bottom: 0;
         background: 
-            radial-gradient(circle at 15% 85%, rgba(16, 185, 129, 0.07) 0%, transparent 50%),
-            radial-gradient(circle at 85% 15%, rgba(16, 185, 129, 0.05) 0%, transparent 50%),
-            linear-gradient(135deg, transparent 0%, rgba(16, 185, 129, 0.02) 50%, transparent 100%);
+            radial-gradient(circle at 15% 85%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 85% 15%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
+            linear-gradient(135deg, transparent 0%, rgba(16, 185, 129, 0.05) 50%, transparent 100%);
         opacity: 1;
         z-index: 1;
     }
@@ -609,6 +598,11 @@ if ($_POST && isset($_POST['contact_submit'])) {
     .metodo-section .container {
         position: relative;
         z-index: 2;
+    }
+    
+    .metodo-section .section-title,
+    .metodo-section .section-intro {
+        color: var(--white);
     }
     
     .metodo-steps {
@@ -619,15 +613,17 @@ if ($_POST && isset($_POST['contact_submit'])) {
     }
     
     .metodo-step {
-        background: var(--white);
-        border: 1px solid var(--gray-200);
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(16, 185, 129, 0.2);
         border-radius: 20px;
         padding: 32px 20px;
         text-align: center;
         transition: all 0.4s ease;
-        box-shadow: var(--shadow-sm);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         position: relative;
         overflow: hidden;
+        color: var(--white);
     }
     
     .metodo-step::before {
@@ -680,7 +676,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
         font-size: 20px;
         font-weight: 700;
         margin-bottom: 16px;
-        color: var(--text-dark);
+        color: var(--white);
         letter-spacing: -0.5px;
         line-height: 1.3;
     }
@@ -696,7 +692,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
     }
     
     .step-description {
-        color: var(--text-light);
+        color: var(--gray-200);
         line-height: 1.6;
         font-size: 16px;
         margin: 0;
@@ -1482,21 +1478,11 @@ if ($_POST && isset($_POST['contact_submit'])) {
     
     /* Case Studies Section */
     .case-studies-section {
-        background: linear-gradient(135deg, #e2e8f0 0%, #f1f5f9 25%, #ffffff 50%, #f8fafc 75%, #e2e8f0 100%);
+        background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+        color: var(--white);
         padding: 100px 0;
         position: relative;
         overflow: hidden;
-    }
-    
-    .case-studies-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background: var(--gradient-primary);
-        box-shadow: 0 3px 10px rgba(16, 185, 129, 0.3);
     }
     
     .case-studies-section::after {
@@ -1507,9 +1493,9 @@ if ($_POST && isset($_POST['contact_submit'])) {
         right: 0;
         bottom: 0;
         background: 
-            radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
-            radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.06) 0%, transparent 50%),
-            linear-gradient(45deg, transparent 0%, rgba(16, 185, 129, 0.03) 50%, transparent 100%);
+            radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
+            linear-gradient(45deg, transparent 0%, rgba(16, 185, 129, 0.05) 50%, transparent 100%);
         opacity: 1;
         z-index: 1;
     }
@@ -1517,6 +1503,11 @@ if ($_POST && isset($_POST['contact_submit'])) {
     .case-studies-section .container {
         position: relative;
         z-index: 2;
+    }
+    
+    .case-studies-section .section-title,
+    .case-studies-section .section-intro {
+        color: var(--white);
     }
     
     .case-studies-grid {
@@ -1527,13 +1518,15 @@ if ($_POST && isset($_POST['contact_submit'])) {
     }
     
     .case-study-card {
-        background: var(--gray-100);
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
         padding: 40px 32px;
         border-radius: 20px;
         transition: all 0.4s ease;
-        border: 1px solid var(--gray-200);
+        border: 1px solid rgba(16, 185, 129, 0.2);
         position: relative;
         overflow: hidden;
+        color: var(--white);
     }
     
     .case-study-card::before {
@@ -1562,7 +1555,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
         font-size: 26px;
         font-weight: 700;
         margin-bottom: 16px;
-        color: var(--text-dark);
+        color: var(--white);
         letter-spacing: -0.5px;
     }
     
@@ -1595,7 +1588,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
     
     .case-description {
         margin-bottom: 24px;
-        color: var(--text-light);
+        color: var(--gray-200);
         line-height: 1.7;
         font-size: 16px;
     }
@@ -1604,7 +1597,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
         font-size: 20px;
         font-weight: 700;
         margin-bottom: 20px;
-        color: var(--text-dark);
+        color: var(--white);
         text-align: center;
         letter-spacing: -0.5px;
     }
@@ -1619,9 +1612,10 @@ if ($_POST && isset($_POST['contact_submit'])) {
     .result-item {
         text-align: center;
         padding: 20px;
-        background: var(--white);
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
         border-radius: 16px;
-        border: 1px solid var(--gray-200);
+        border: 1px solid rgba(16, 185, 129, 0.2);
         transition: all 0.3s ease;
     }
     
@@ -1642,7 +1636,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
     
     .result-label {
         font-size: 13px;
-        color: var(--text-light);
+        color: var(--gray-200);
         line-height: 1.4;
         display: block;
         font-weight: 600;
@@ -1656,17 +1650,6 @@ if ($_POST && isset($_POST['contact_submit'])) {
         padding: 100px 0;
         position: relative;
         overflow: hidden;
-    }
-    
-    .services-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background: var(--gradient-primary);
-        box-shadow: 0 3px 10px rgba(16, 185, 129, 0.3);
     }
     
     .services-section::after {
@@ -1939,21 +1922,10 @@ if ($_POST && isset($_POST['contact_submit'])) {
     
     /* FAQ Section */
     .faq-section {
-        background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 30%, #e2e8f0 70%, #f8fafc 100%);
+        background: linear-gradient(135deg, #ffffff 0%, #f8fafc 30%, #e2e8f0 70%, #f1f5f9 100%);
         padding: 100px 0;
         position: relative;
         overflow: hidden;
-    }
-    
-    .faq-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background: var(--gradient-primary);
-        box-shadow: 0 3px 10px rgba(16, 185, 129, 0.3);
     }
     
     .faq-section::after {
@@ -2226,21 +2198,11 @@ if ($_POST && isset($_POST['contact_submit'])) {
     
     /* Contact Section */
     .contact-section {
-        background: linear-gradient(135deg, #f1f5f9 0%, #ffffff 30%, #f8fafc 70%, #e2e8f0 100%);
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: var(--white);
         padding: 100px 0;
         position: relative;
         overflow: hidden;
-    }
-    
-    .contact-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background: var(--gradient-primary);
-        box-shadow: 0 3px 10px rgba(16, 185, 129, 0.3);
     }
     
     .contact-section::after {
@@ -2251,9 +2213,9 @@ if ($_POST && isset($_POST['contact_submit'])) {
         right: 0;
         bottom: 0;
         background: 
-            radial-gradient(circle at 30% 70%, rgba(16, 185, 129, 0.06) 0%, transparent 50%),
-            radial-gradient(circle at 70% 30%, rgba(16, 185, 129, 0.04) 0%, transparent 50%),
-            linear-gradient(45deg, transparent 0%, rgba(16, 185, 129, 0.03) 50%, transparent 100%);
+            radial-gradient(circle at 30% 70%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 70% 30%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
+            linear-gradient(45deg, transparent 0%, rgba(16, 185, 129, 0.05) 50%, transparent 100%);
         opacity: 1;
         z-index: 1;
     }
@@ -2261,6 +2223,11 @@ if ($_POST && isset($_POST['contact_submit'])) {
     .contact-section .container {
         position: relative;
         z-index: 2;
+    }
+    
+    .contact-section .section-title,
+    .contact-section .section-intro {
+        color: var(--white);
     }
     
     .contact-content {
@@ -2276,12 +2243,12 @@ if ($_POST && isset($_POST['contact_submit'])) {
         font-size: 28px;
         font-weight: 700;
         margin-bottom: 20px;
-        color: var(--text-dark);
+        color: var(--white);
         letter-spacing: -0.5px;
     }
     
     .contact-info p {
-        color: var(--text-light);
+        color: var(--gray-200);
         margin-bottom: 40px;
         line-height: 1.7;
         font-size: 16px;
@@ -2297,11 +2264,12 @@ if ($_POST && isset($_POST['contact_submit'])) {
         display: flex;
         align-items: center;
         gap: 16px;
-        color: var(--text-dark);
+        color: var(--white);
         padding: 20px;
-        background: var(--gray-100);
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
         border-radius: 16px;
-        border: 1px solid var(--gray-200);
+        border: 1px solid rgba(16, 185, 129, 0.2);
         transition: all 0.3s ease;
     }
     
@@ -2317,11 +2285,12 @@ if ($_POST && isset($_POST['contact_submit'])) {
     }
     
     .contact-form {
-        background: var(--gray-100);
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
         padding: 40px;
         border-radius: 20px;
-        border: 1px solid var(--gray-200);
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(16, 185, 129, 0.2);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
     }
     
     .form-row {
@@ -2339,7 +2308,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
         display: block;
         margin-bottom: 10px;
         font-weight: 600;
-        color: var(--text-dark);
+        color: var(--white);
         font-size: 14px;
         text-transform: uppercase;
         letter-spacing: 0.5px;
@@ -2350,11 +2319,12 @@ if ($_POST && isset($_POST['contact_submit'])) {
     .form-group select {
         width: 100%;
         padding: 16px;
-        border: 2px solid var(--gray-300);
+        border: 2px solid rgba(16, 185, 129, 0.3);
         border-radius: 12px;
         font-size: 16px;
         transition: all 0.3s ease;
-        background: var(--white);
+        background: rgba(255, 255, 255, 0.9);
+        color: var(--text-dark);
         font-family: inherit;
         appearance: none;
         -webkit-appearance: none;
@@ -2501,28 +2471,30 @@ if ($_POST && isset($_POST['contact_submit'])) {
         opacity: 1;
     }
     
-    .social-links {
-        display: flex;
-        gap: 20px;
+    .footer-cta {
         margin-top: 24px;
     }
     
-    .social-links a {
-        font-size: 28px;
+    .footer-cta .btn {
+        padding: 16px 32px;
+        font-size: 16px;
+        background: linear-gradient(135deg, #00d4aa 0%, #10b981 100%);
+        border: none;
+        color: white;
+        border-radius: 50px;
+        text-decoration: none;
+        display: inline-block;
         transition: all 0.3s ease;
-        color: var(--gray-200);
-        padding: 12px;
-        border-radius: 12px;
-        background: rgba(16, 185, 129, 0.1);
-        border: 1px solid rgba(16, 185, 129, 0.2);
+        box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 700;
     }
     
-    .social-links a:hover {
-        transform: translateY(-4px) scale(1.1);
-        color: var(--primary-color);
-        background: rgba(16, 185, 129, 0.2);
-        border-color: var(--primary-color);
-        box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+    .footer-cta .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 20px 40px rgba(16, 185, 129, 0.4);
+        background: linear-gradient(135deg, #10b981 0%, #00d4aa 100%);
     }
     
     .footer-bottom {
@@ -3247,10 +3219,8 @@ if ($_POST && isset($_POST['contact_submit'])) {
                     </a>
                     <h3>Trasformiamo il futuro della tua azienda con l'AI</h3>
                     <p>Soluzioni innovative e personalizzate per ottimizzare i tuoi processi e accelerare la crescita.</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="LinkedIn">🔗</a>
-                        <a href="#" aria-label="Twitter">🐦</a>
-                        <a href="#" aria-label="Facebook">📘</a>
+                    <div class="footer-cta">
+                        <a href="https://calendly.com/info-parallel-ai/30min" target="_blank" class="btn btn-primary">Prenota consulenza gratuita</a>
                     </div>
                 </div>
                 <div class="footer-section">
@@ -3442,7 +3412,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
         });
     });
 
-    // FAQ Accordion functionality - VERSIONE MIGLIORATA
+    // FAQ Accordion functionality - VERSIONE CORRETTA
     function initFAQ() {
         console.log('🚀 Inizializzazione FAQ...');
         
@@ -3482,7 +3452,6 @@ if ($_POST && isset($_POST['contact_submit'])) {
                         const otherToggle = otherItem.querySelector('.faq-toggle');
                         if (otherToggle) {
                             otherToggle.textContent = '+';
-                            otherToggle.style.transform = 'rotate(0deg)';
                         }
                     }
                 });
@@ -3491,32 +3460,21 @@ if ($_POST && isset($_POST['contact_submit'])) {
                 if (isActive) {
                     item.classList.remove('active');
                     toggle.textContent = '+';
-                    toggle.style.transform = 'rotate(0deg)';
                     console.log(`🔽 FAQ ${index + 1} chiusa`);
                 } else {
                     item.classList.add('active');
                     toggle.textContent = '−';
-                    toggle.style.transform = 'rotate(0deg)';
                     console.log(`🔼 FAQ ${index + 1} aperta`);
                 }
             };
             
-            // Event listeners multipli per sicurezza
+            // Event listeners
             question.addEventListener('click', handleClick);
-            toggle.addEventListener('click', function(e) {
-                e.stopPropagation();
-                handleClick(e);
-            });
-            item.addEventListener('click', function(e) {
-                if (e.target === question || e.target === toggle || question.contains(e.target)) {
-                    handleClick(e);
-                }
-            });
+            toggle.addEventListener('click', handleClick);
             
             // Stili interattivi
             question.style.cursor = 'pointer';
             toggle.style.cursor = 'pointer';
-            item.style.cursor = 'pointer';
             
             // Debug info
             console.log(`🎯 FAQ ${index + 1} ready:`, {
