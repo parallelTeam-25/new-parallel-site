@@ -287,16 +287,16 @@ if ($_POST && isset($_POST['contact_submit'])) {
     .nav-menu.active {
         display: flex;
         flex-direction: column;
-        position: fixed;
-        top: 0;
+        position: absolute;
+        top: 100%;
         right: 0;
         width: 280px;
-        height: 100vh;
         background: rgba(0, 0, 0, 0.98);
         backdrop-filter: blur(20px);
-        padding: 80px 30px 30px 30px;
-        border-left: 2px solid var(--primary-color);
-        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+        padding: 20px 0;
+        border: 2px solid var(--primary-color);
+        border-radius: 12px 0 12px 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         z-index: 999;
         transform: translateX(0);
         transition: transform 0.3s ease;
@@ -308,28 +308,42 @@ if ($_POST && isset($_POST['contact_submit'])) {
     }
     
     .nav-menu.active li {
-        margin: 20px 0;
+        margin: 0;
         text-align: left;
+        border-bottom: 1px solid rgba(16, 185, 129, 0.1);
+    }
+    
+    .nav-menu.active li:last-child {
+        border-bottom: none;
     }
     
     .nav-menu.active a {
-        font-size: 18px;
-        padding: 12px 0;
+        font-size: 16px;
+        padding: 15px 25px;
         display: block;
         color: var(--white);
         text-decoration: none;
-        border-bottom: 1px solid rgba(16, 185, 129, 0.2);
         transition: all 0.3s ease;
+        position: relative;
     }
     
     .nav-menu.active a:hover {
         color: var(--primary-color);
-        border-bottom-color: var(--primary-color);
-        padding-left: 10px;
+        background: rgba(16, 185, 129, 0.1);
+        padding-left: 30px;
     }
     
-    .nav-menu.active a:last-child {
-        border-bottom: none;
+    .nav-menu.active a::before {
+        content: '→';
+        position: absolute;
+        left: 10px;
+        color: var(--primary-color);
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-menu.active a:hover::before {
+        opacity: 1;
     }
     
     /* Overlay per menu mobile */
@@ -2750,14 +2764,14 @@ if ($_POST && isset($_POST['contact_submit'])) {
         }
         
         .footer-content {
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 30px;
             text-align: left;
         }
         
         .footer-section:first-child {
-            grid-column: 1 / -1;
-            text-align: center;
+            grid-column: 1;
+            text-align: left;
         }
         
         .footer-section:nth-child(2),
@@ -2803,6 +2817,10 @@ if ($_POST && isset($_POST['contact_submit'])) {
         
         .footer-section:first-child {
             grid-column: 1;
+        }
+        
+        .footer-section {
+            text-align: center;
         }
         
         .hero-title {
