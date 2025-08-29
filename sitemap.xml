@@ -4,7 +4,7 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-    <!-- Homepage principale -->
+    <!-- Homepage principale (landing.php) -->
     <url>
         <loc>https://parallel-ai.it/</loc>
         <lastmod>2025-01-27</lastmod>
@@ -12,15 +12,7 @@
         <priority>1.0</priority>
     </url>
 
-    <!-- Landing page principale -->
-    <url>
-        <loc>https://parallel-ai.it/landing.php</loc>
-        <lastmod>2025-01-27</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <!-- Sezioni principali della landing page -->
+    <!-- Sezioni principali della homepage con anchor -->
     <url>
         <loc>https://parallel-ai.it/#hero</loc>
         <lastmod>2025-01-27</lastmod>
@@ -63,58 +55,6 @@
         <priority>0.7</priority>
     </url>
 
-    <!-- Pagine di servizi specifici -->
-    <url>
-        <loc>https://parallel-ai.it/servizi/automazioni-intelligenti</loc>
-        <lastmod>2025-01-27</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://parallel-ai.it/servizi/formazione-ai-aziendale</loc>
-        <lastmod>2025-01-27</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- Pagine informative -->
-    <url>
-        <loc>https://parallel-ai.it/chi-siamo</loc>
-        <lastmod>2025-01-27</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>https://parallel-ai.it/metodologia</loc>
-        <lastmod>2025-01-27</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>https://parallel-ai.it/casi-studio</loc>
-        <lastmod>2025-01-27</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- Pagine di contatto e supporto -->
-    <url>
-        <loc>https://parallel-ai.it/contatti</loc>
-        <lastmod>2025-01-27</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <url>
-        <loc>https://parallel-ai.it/consulenza-gratuita</loc>
-        <lastmod>2025-01-27</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
     <!-- Pagine legali -->
     <url>
         <loc>https://parallel-ai.it/privacy-policy</loc>
@@ -124,47 +64,10 @@
     </url>
 
     <url>
-        <loc>https://parallel-ai.it/termini-condizioni</loc>
+        <loc>https://parallel-ai.it/cookies-policy</loc>
         <lastmod>2025-01-27</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
-    </url>
-
-    <url>
-        <loc>https://parallel-ai.it/cookie-policy</loc>
-        <lastmod>2025-01-27</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
-
-    <!-- Blog e risorse -->
-    <url>
-        <loc>https://parallel-ai.it/blog</loc>
-        <lastmod>2025-01-27</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>https://parallel-ai.it/risorse</loc>
-        <lastmod>2025-01-27</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-
-    <!-- Pagine di conversione -->
-    <url>
-        <loc>https://parallel-ai.it/demo-gratuita</loc>
-        <lastmod>2025-01-27</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://parallel-ai.it/preventivo-gratuito</loc>
-        <lastmod>2025-01-27</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
     </url>
 
 </urlset>
