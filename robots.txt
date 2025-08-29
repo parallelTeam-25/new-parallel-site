@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://parallel-ai.it/sitemap.xml
+
+# Blocca accesso a file sensibili
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-content/plugins/
+Disallow: /wp-content/themes/
+Disallow: /wp-content/uploads/
+Disallow: /wp-config.php
+Disallow: /wp-login.php
+Disallow: /wp-register.php
+
+# Permetti accesso a contenuti pubblici
+Allow: /wp-content/uploads/2025/
+Allow: /wp-content/themes/twentytwentyfive/
+Allow: /wp-content/themes/twentytwentyfour/
+Allow: /wp-content/themes/twentytwentythree/
+
+# Crawl delay per evitare sovraccarico
+Crawl-delay: 1
