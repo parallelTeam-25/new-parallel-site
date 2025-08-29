@@ -2446,6 +2446,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
         margin-bottom: 60px;
         position: relative;
         z-index: 2;
+        align-items: start;
     }
     
     .footer-section h3,
@@ -2454,6 +2455,13 @@ if ($_POST && isset($_POST['contact_submit'])) {
         color: var(--white);
         font-weight: 700;
         letter-spacing: -0.5px;
+    }
+    
+    /* Allineamento generale per tutte le sezioni del footer */
+    .footer-section {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
     
     .footer-section h3 {
@@ -2471,6 +2479,29 @@ if ($_POST && isset($_POST['contact_submit'])) {
         line-height: 1.7;
         margin-bottom: 20px;
         font-size: 16px;
+    }
+    
+    /* Allineamento specifico per la prima sezione del footer */
+    .footer-section:first-child {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    
+    .footer-section:first-child .logo {
+        margin-bottom: 20px;
+        display: block;
+    }
+    
+    .footer-section:first-child h3 {
+        margin-bottom: 16px;
+        line-height: 1.2;
+    }
+    
+    .footer-section:first-child p {
+        margin-bottom: 0;
+        line-height: 1.6;
     }
     
     .footer-section ul {
