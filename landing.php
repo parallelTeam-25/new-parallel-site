@@ -23,12 +23,32 @@ if ($_POST && isset($_POST['contact_submit'])) {
     $messaggio = htmlspecialchars($_POST['messaggio'] ?? '');
     
     if ($nome && $email && $servizio && $messaggio) {
-        $form_message = '<div class="success-message">Grazie! Ti ricontatteremo entro 24 ore.</div>';
+        // Preparazione email
+        $to = 'info.parallel.ai@gmail.com';
+        $subject = 'Nuova richiesta da Landing Page - ' . $azienda;
         
-        // Qui puoi aggiungere l'invio email o salvataggio database
-        // mail('info@example.com', 'Nuova richiesta landing', "Nome: $nome\nEmail: $email\nAzienda: $azienda\nServizio: $servizio\nBudget: $budget\nProcesso principale: $processo_principale\nMessaggio: $messaggio");
+        $email_body = "Nuova richiesta di contatto dalla landing page:\n\n";
+        $email_body .= "Nome: $nome\n";
+        $email_body .= "Email: $email\n";
+        $email_body .= "Azienda: $azienda\n";
+        $email_body .= "Servizio di interesse: $servizio\n";
+        $email_body .= "Budget stimato: $budget\n";
+        $email_body .= "Processo principale: $processo_principale\n";
+        $email_body .= "Messaggio: $messaggio\n\n";
+        $email_body .= "Data invio: " . date('d/m/Y H:i:s') . "\n";
+        
+        $headers = "From: $email\r\n";
+        $headers .= "Reply-To: $email\r\n";
+        $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+        
+        // Invio email
+        if (mail($to, $subject, $email_body, $headers)) {
+            $form_message = '<div class="success-message">✅ Messaggio inviato correttamente! Ti ricontatteremo entro 24 ore.</div>';
+        } else {
+            $form_message = '<div class="error-message">❌ Errore nell\'invio del messaggio. Riprova più tardi.</div>';
+        }
     } else {
-        $form_message = '<div class="error-message">Compila tutti i campi obbligatori.</div>';
+        $form_message = '<div class="error-message">⚠️ Compila tutti i campi obbligatori.</div>';
     }
 }
 ?>
@@ -553,10 +573,11 @@ if ($_POST && isset($_POST['contact_submit'])) {
     
     /* Metodo Section */
     .metodo-section {
-        background: var(--white);
+        background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 25%, #e2e8f0 50%, #f8fafc 75%, #ffffff 100%);
         color: var(--text-dark);
         padding: 100px 0;
         position: relative;
+        overflow: hidden;
     }
     
     .metodo-section::before {
@@ -565,8 +586,29 @@ if ($_POST && isset($_POST['contact_submit'])) {
         top: 0;
         left: 0;
         right: 0;
-        height: 1px;
+        height: 3px;
         background: var(--gradient-primary);
+        box-shadow: 0 3px 10px rgba(16, 185, 129, 0.3);
+    }
+    
+    .metodo-section::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            radial-gradient(circle at 15% 85%, rgba(16, 185, 129, 0.07) 0%, transparent 50%),
+            radial-gradient(circle at 85% 15%, rgba(16, 185, 129, 0.05) 0%, transparent 50%),
+            linear-gradient(135deg, transparent 0%, rgba(16, 185, 129, 0.02) 50%, transparent 100%);
+        opacity: 1;
+        z-index: 1;
+    }
+    
+    .metodo-section .container {
+        position: relative;
+        z-index: 2;
     }
     
     .metodo-steps {
@@ -1440,9 +1482,10 @@ if ($_POST && isset($_POST['contact_submit'])) {
     
     /* Case Studies Section */
     .case-studies-section {
-        background: var(--white);
+        background: linear-gradient(135deg, #e2e8f0 0%, #f1f5f9 25%, #ffffff 50%, #f8fafc 75%, #e2e8f0 100%);
         padding: 100px 0;
         position: relative;
+        overflow: hidden;
     }
     
     .case-studies-section::before {
@@ -1451,8 +1494,29 @@ if ($_POST && isset($_POST['contact_submit'])) {
         top: 0;
         left: 0;
         right: 0;
-        height: 1px;
+        height: 3px;
         background: var(--gradient-primary);
+        box-shadow: 0 3px 10px rgba(16, 185, 129, 0.3);
+    }
+    
+    .case-studies-section::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.06) 0%, transparent 50%),
+            linear-gradient(45deg, transparent 0%, rgba(16, 185, 129, 0.03) 50%, transparent 100%);
+        opacity: 1;
+        z-index: 1;
+    }
+    
+    .case-studies-section .container {
+        position: relative;
+        z-index: 2;
     }
     
     .case-studies-grid {
@@ -1588,9 +1652,10 @@ if ($_POST && isset($_POST['contact_submit'])) {
     
     /* Services Section */
     .services-section {
-        background: var(--gray-100);
+        background: linear-gradient(135deg, #ffffff 0%, #f8fafc 30%, #e2e8f0 70%, #f1f5f9 100%);
         padding: 100px 0;
         position: relative;
+        overflow: hidden;
     }
     
     .services-section::before {
@@ -1599,8 +1664,29 @@ if ($_POST && isset($_POST['contact_submit'])) {
         top: 0;
         left: 0;
         right: 0;
-        height: 1px;
+        height: 3px;
         background: var(--gradient-primary);
+        box-shadow: 0 3px 10px rgba(16, 185, 129, 0.3);
+    }
+    
+    .services-section::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.05) 0%, transparent 50%),
+            linear-gradient(45deg, transparent 0%, rgba(16, 185, 129, 0.02) 50%, transparent 100%);
+        opacity: 1;
+        z-index: 1;
+    }
+    
+    .services-section .container {
+        position: relative;
+        z-index: 2;
     }
     
     .services-grid {
@@ -1853,9 +1939,10 @@ if ($_POST && isset($_POST['contact_submit'])) {
     
     /* FAQ Section */
     .faq-section {
-        background: var(--white);
+        background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 30%, #e2e8f0 70%, #f8fafc 100%);
         padding: 100px 0;
         position: relative;
+        overflow: hidden;
     }
     
     .faq-section::before {
@@ -1864,8 +1951,29 @@ if ($_POST && isset($_POST['contact_submit'])) {
         top: 0;
         left: 0;
         right: 0;
-        height: 1px;
+        height: 3px;
         background: var(--gradient-primary);
+        box-shadow: 0 3px 10px rgba(16, 185, 129, 0.3);
+    }
+    
+    .faq-section::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 50%),
+            radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.04) 0%, transparent 50%),
+            linear-gradient(-45deg, transparent 0%, rgba(16, 185, 129, 0.02) 50%, transparent 100%);
+        opacity: 1;
+        z-index: 1;
+    }
+    
+    .faq-section .container {
+        position: relative;
+        z-index: 2;
     }
     
     .faq-container {
@@ -1900,16 +2008,15 @@ if ($_POST && isset($_POST['contact_submit'])) {
         padding: 24px 32px;
         cursor: pointer;
         transition: all 0.3s ease;
-        background: var(--gray-50);
+        background: var(--white);
         user-select: none;
         position: relative;
-        border: 1px solid var(--border-color);
-        border-radius: 8px;
+        border: none;
+        border-radius: 16px 16px 0 0;
     }
     
     .faq-question:hover {
-        background: var(--white);
-        border-color: var(--primary-color);
+        background: rgba(16, 185, 129, 0.05);
         box-shadow: 0 4px 12px rgba(16, 185, 129, 0.1);
     }
     
@@ -1941,7 +2048,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
     .faq-answer {
         max-height: 0;
         overflow: hidden;
-        transition: all 0.3s ease;
+        transition: all 0.4s ease;
         background: var(--white);
         opacity: 0;
         transform: translateY(-10px);
@@ -1950,15 +2057,15 @@ if ($_POST && isset($_POST['contact_submit'])) {
     }
     
     .faq-item.active .faq-answer {
-        max-height: 500px;
+        max-height: 300px;
         opacity: 1;
         transform: translateY(0);
-        padding: 0 32px 24px 32px;
+        padding: 24px 32px;
         margin: 0;
     }
     
     .faq-answer p {
-        padding: 0 32px 24px 32px;
+        padding: 0;
         margin: 0;
         color: var(--text-light);
         line-height: 1.6;
@@ -2119,9 +2226,10 @@ if ($_POST && isset($_POST['contact_submit'])) {
     
     /* Contact Section */
     .contact-section {
-        background: var(--white);
+        background: linear-gradient(135deg, #f1f5f9 0%, #ffffff 30%, #f8fafc 70%, #e2e8f0 100%);
         padding: 100px 0;
         position: relative;
+        overflow: hidden;
     }
     
     .contact-section::before {
@@ -2130,8 +2238,29 @@ if ($_POST && isset($_POST['contact_submit'])) {
         top: 0;
         left: 0;
         right: 0;
-        height: 1px;
+        height: 3px;
         background: var(--gradient-primary);
+        box-shadow: 0 3px 10px rgba(16, 185, 129, 0.3);
+    }
+    
+    .contact-section::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            radial-gradient(circle at 30% 70%, rgba(16, 185, 129, 0.06) 0%, transparent 50%),
+            radial-gradient(circle at 70% 30%, rgba(16, 185, 129, 0.04) 0%, transparent 50%),
+            linear-gradient(45deg, transparent 0%, rgba(16, 185, 129, 0.03) 50%, transparent 100%);
+        opacity: 1;
+        z-index: 1;
+    }
+    
+    .contact-section .container {
+        position: relative;
+        z-index: 2;
     }
     
     .contact-content {
@@ -2573,10 +2702,9 @@ if ($_POST && isset($_POST['contact_submit'])) {
                 </a>
                 <nav>
                     <ul class="nav-menu">
-                        <li><a href="#why-us">Perché Noi</a></li>
+                        <li><a href="#metodo">Come lavoriamo</a></li>
                         <li><a href="#services">Servizi</a></li>
                         <li><a href="#case-studies">Casi Studio</a></li>
-                        <li><a href="#testimonials">Testimonial</a></li>
                         <li><a href="#contact">Contatti</a></li>
                     </ul>
                 </nav>
@@ -2600,7 +2728,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
                     Costruiamo soluzioni su misura che affiancano il tuo team, ottimizzano i flussi e liberano energie per ciò che conta davvero.
                 </p>
                 <div class="new-hero-cta">
-                    <a href="#services" class="btn">Le nostre soluzioni</a>
+                    <a href="https://calendly.com/info-parallel-ai/30min" target="_blank" class="btn">Prenota consulenza gratuita</a>
                 </div>
             </div>
         </div>
@@ -2615,9 +2743,9 @@ if ($_POST && isset($_POST['contact_submit'])) {
     <section class="metodo-section" id="metodo" >
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" style="text-align: center;">Dal manuale all'automatico in 4 step</h2>
+                <h2 class="section-title" style="text-align: center;">Come lavoriamo</h2>
                 <p class="section-intro">
-                    Il nostro processo trasparente per trasformare i tuoi processi ripetitivi
+                    Dal manuale all'automatico in 4 step: il nostro processo trasparente per trasformare i tuoi processi ripetitivi
                 </p>
             </div>
             
@@ -2691,7 +2819,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
                         <li>Aumenta le vendite con operatori h24</li>
                     </ul>
                     <div class="services-cta">
-                        <a href="#contact" class="btn btn-primary">Prenota call</a>
+                        <a href="https://calendly.com/info-parallel-ai/30min" target="_blank" class="btn btn-primary">Prenota call</a>
                     </div>
                 </div>
                 
@@ -2706,7 +2834,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
                         <li>Rimani sempre aggiornato</li>
                     </ul>
                     <div class="services-cta">
-                        <a href="#contact" class="btn btn-primary">Prenota call</a>
+                        <a href="https://calendly.com/info-parallel-ai/30min" target="_blank" class="btn btn-primary">Prenota call</a>
                     </div>
                 </div>
             </div>
@@ -2747,7 +2875,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
                             </div>
                         </div>
                     </div>
-                    <a href="#contact" class="btn btn-outline">Scopri di più</a>
+                    <a href="https://calendly.com/info-parallel-ai/30min" target="_blank" class="btn btn-outline">Scopri di più</a>
                 </div>
                 
                 <div class="case-study-card">
@@ -2774,9 +2902,9 @@ if ($_POST && isset($_POST['contact_submit'])) {
                             </div>
                         </div>
                     </div>
-                    <a href="#contact" class="btn btn-outline">Scopri di più</a>
+                                        <a href="https://calendly.com/info-parallel-ai/30min" target="_blank" class="btn btn-outline">Scopri di più</a>
                 </div>
-                
+
                 <div class="case-study-card">
                     <div class="project-badge">In sviluppo</div>
                     <h3>Report Clienti One-Click</h3>
@@ -2801,7 +2929,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
                             </div>
                         </div>
                     </div>
-                    <a href="#contact" class="btn btn-outline">Scopri di più</a>
+                    <a href="https://calendly.com/info-parallel-ai/30min" target="_blank" class="btn btn-outline">Scopri di più</a>
                 </div>
 
                 <div class="case-study-card">
@@ -2828,11 +2956,11 @@ if ($_POST && isset($_POST['contact_submit'])) {
                             </div>
                         </div>
                     </div>
-                    <a href="#contact" class="btn btn-outline">Scopri di più</a>
+                    <a href="https://calendly.com/info-parallel-ai/30min" target="_blank" class="btn btn-outline">Scopri di più</a>
                 </div>
             </div>
             <div class="case-studies-cta" style="text-align: center;">
-                <a href="#contact" class="btn btn-primary btn-large">
+                <a href="https://calendly.com/info-parallel-ai/30min" target="_blank" class="btn btn-primary btn-large">
                     Inizia la tua trasformazione
                 </a>
             </div>
@@ -2840,20 +2968,20 @@ if ($_POST && isset($_POST['contact_submit'])) {
     </section>
 
     <!-- Services Section -->
-    <section class="services-section" id="services" style="display: none !important;">
+    <section class="services-section" id="services">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Come possiamo aiutarti</h2>
+                <h2 class="section-title">I nostri servizi</h2>
                 <p class="section-intro">
-                    Soluzioni su misura per trasformare i tuoi processi
+                    Soluzioni su misura per trasformare i tuoi processi aziendali
                 </p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">🤖</div>
-                    <h3>SOLUZIONI CUSTOM</h3>
-                    <p class="service-subtitle">Sviluppiamo Agenti AI custom e automazioni AI personalizzate</p>
-                    <ul class="service-features">
+                    <h3 style="text-align: center;">AUTOMAZIONI CUSTOM</h3>
+                    <p style="text-align: center;" class="service-subtitle">Sviluppiamo automazioni AI personalizzate per i tuoi processi</p>
+                    <ul style="text-align: center;" class="service-features">
                         <li>Scadenziari e promemoria automatici</li>
                         <li>Report e dashboard auto-generati</li>
                         <li>Integrazione tra software diversi</li>
@@ -2861,89 +2989,27 @@ if ($_POST && isset($_POST['contact_submit'])) {
                         <li>Gestione dati e fatturazione</li>
                     </ul>
                     <div class="services-cta">
-                        <a href="#contact" class="btn btn-primary">Prenota call</a>
-                        <a href="#contact" class="btn btn-outline">Scopri di più</a>
+                        <a href="https://calendly.com/info-parallel-ai/30min" target="_blank" class="btn btn-primary">Prenota call</a>
                     </div>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-icon">🎓</div>
-                    <h3>FORMAZIONE AZIENDALE</h3>
-                    <p class="service-subtitle">Potenzia il tuo team con formazione AI personalizzata e percorsi mirati</p>
-                    <ul class="service-features">
+                    <h3 style="text-align: center;">FORMAZIONE AZIENDALE</h3>
+                    <p style="text-align: center;" class="service-subtitle">Potenzia il tuo team con formazione AI personalizzata</p>
+                    <ul style="text-align: center;" class="service-features">
                         <li>Workshop intensivi su strumenti AI</li>
                         <li>Casi d'uso specifici per il tuo settore</li>
-                        <li>Formazione personalizzata</li>
+                        <li>Formazione personalizzata e aggiornata</li>
                         <li>Follow-up e supporto continuativo</li>
                     </ul>
                     <div class="services-cta">
-                        <a href="#contact" class="btn btn-primary">Prenota call</a>
-                        <a href="#contact" class="btn btn-outline">Scopri di più</a>
+                        <a href="https://calendly.com/info-parallel-ai/30min" target="_blank" class="btn btn-primary">Prenota call</a>
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
-    <!-- Differentiators Section -->
-    <section class="differentiators-section" id="differentiators" style="display: none !important;">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Perché scegliere il nostro approccio</h2>
-                <p class="section-intro">
-                    Non siamo l'ennesima agenzia di consulenza. Ecco cosa ci rende diversi
-                </p>
-            </div>
-            <div class="differentiators-grid">
-                <div class="differentiator-card">
-                    <div class="differentiator-icon">🔍</div>
-                    <h3>TRASPARENZA TOTALE</h3>
-                    <p class="differentiator-subtitle">Zero scatole nere</p>
-                    <p class="differentiator-description">
-                        Ti mostriamo tutto il processo, il codice, le logiche. Sai sempre cosa stiamo facendo e perché.
-                    </p>
-                </div>
-                
-                <div class="differentiator-card">
-                    <div class="differentiator-icon">📈</div>
-                    <h3>INVESTIMENTO GRADUALE</h3>
-                    <p class="differentiator-subtitle">Un progetto alla volta</p>
-                    <p class="differentiator-description">
-                        Non rivoluzionismi tutto insieme. Iniziamo con un'automazione, la testiamo, funziona? Andiamo avanti.
-                    </p>
-                </div>
-                
-                <div class="differentiator-card">
-                    <div class="differentiator-icon">🎓</div>
-                    <h3>FORMAZIONE INCLUSA</h3>
-                    <p class="differentiator-subtitle">Obiettivo: tua autonomia</p>
-                    <p class="differentiator-description">
-                        Non vogliamo che dipenda da noi per sempre. Ti formiamo fino a renderti completamente autonomo.
-                    </p>
-                </div>
-                
-                <div class="differentiator-card">
-                    <div class="differentiator-icon">🇮🇹</div>
-                    <h3>100% FOCUS PMI ITALIANE</h3>
-                    <p class="differentiator-subtitle">Capiamo le tue sfide</p>
-                    <p class="differentiator-description">
-                        Non siamo una multinazionale. Conosciamo le specificità delle PMI italiane e parliamo la tua lingua.
-                    </p>
-                </div>
-                
-                <div class="differentiator-card">
-                    <div class="differentiator-icon">🛠️</div>
-                    <h3>ASSISTENZA QUANDO SERVE</h3>
-                    <p class="differentiator-subtitle">Supporto continuo senza vincoli</p>
-                    <p class="differentiator-description">
-                        Ti assistiamo quando hai bisogno, ma l'obiettivo è la tua indipendenza. Niente contratti di manutenzione obbligatori.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    
 
     <!-- Final CTA Section -->
     <section class="final-cta-section" id="final-cta">
@@ -2975,7 +3041,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
             </div>
             
             <div class="final-cta-button">
-                <a href="#contact" class="btn btn-primary btn-large">
+                <a href="https://calendly.com/info-parallel-ai/30min" target="_blank" class="btn btn-primary btn-large">
                     PRENOTA CONSULENZA GRATUITA
                 </a>
             </div>
@@ -3027,10 +3093,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
                             <span>info.parallel.ai@gmail.com
                             </span>
                         </div>
-                        <div class="contact-item" style="display: none;">
-                            <span class="contact-icon">📞</span>
-                            <span>+39 02 1234 5678</span>
-                        </div>
+
                         <div class="contact-item">
                             <span class="contact-icon">📍</span>
                             <span>Cuneo, Italia</span>
@@ -3057,21 +3120,6 @@ if ($_POST && isset($_POST['contact_submit'])) {
                                  <input type="text" id="azienda" name="azienda" required>
                              </div>
                              <div class="form-group">
-                                 <label for="telefono">Telefono</label>
-                                 <input type="tel" id="telefono" name="telefono">
-                             </div>
-                         </div>
-                         
-                         <div class="form-row">
-                             <div class="form-group">
-                                 <label for="servizio">Servizio di interesse *</label>
-                                 <select id="servizio" name="servizio" required>
-                                     <option value="">Seleziona un servizio</option>
-                                     <option value="automazione-processi">Automazione di processi</option>
-                                     <option value="formazione">Formazione</option>
-                                 </select>
-                             </div>
-                             <div class="form-group">
                                  <label for="budget">Budget stimato</label>
                                  <select id="budget" name="budget">
                                      <option value="">Seleziona budget</option>
@@ -3082,6 +3130,15 @@ if ($_POST && isset($_POST['contact_submit'])) {
                                      <option value="da-definire">Da definire</option>
                                  </select>
                              </div>
+                         </div>
+                         
+                         <div class="form-group">
+                             <label for="servizio">Servizio di interesse *</label>
+                             <select id="servizio" name="servizio" required>
+                                 <option value="">Seleziona un servizio</option>
+                                 <option value="automazione-processi">Automazione di processi</option>
+                                 <option value="formazione">Formazione</option>
+                             </select>
                          </div>
                         
                         <div class="form-group">
@@ -3180,18 +3237,30 @@ if ($_POST && isset($_POST['contact_submit'])) {
         </div>
     </section>
 
-    <!-- Footer */
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>AI Solutions</h3>
-                    <p>Trasformiamo le aziende italiane con soluzioni AI innovative e personalizzate.</p>
+                    <a href="#" class="logo">
+                        <img src="..\wp-content\uploads\2025\08\Logo BiancoTagliato Parallel.png" alt="Logo Parallel" style="width: 150px; height: 46px; margin-bottom: 20px;">
+                    </a>
+                    <h3>Trasformiamo il futuro della tua azienda con l'AI</h3>
+                    <p>Soluzioni innovative e personalizzate per ottimizzare i tuoi processi e accelerare la crescita.</p>
                     <div class="social-links">
                         <a href="#" aria-label="LinkedIn">🔗</a>
                         <a href="#" aria-label="Twitter">🐦</a>
                         <a href="#" aria-label="Facebook">📘</a>
                     </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigazione</h4>
+                    <ul>
+                        <li><a href="#metodo">Come lavoriamo</a></li>
+                        <li><a href="#services">Servizi</a></li>
+                        <li><a href="#case-studies">Casi Studio</a></li>
+                        <li><a href="#contact">Contatti</a></li>
+                    </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Servizi</h4>
@@ -3203,23 +3272,17 @@ if ($_POST && isset($_POST['contact_submit'])) {
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Azienda</h4>
-                    <ul>
-                        <li><a href="#why-us">Chi siamo</a></li>
-                        <li><a href="#case-studies">Casi studio</a></li>
-                        <li><a href="#testimonials">Testimonial</a></li>
-                        <li><a href="#contact">Contatti</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
                     <h4>Contatti</h4>
-                    <p>📧 info@aisolutions.it</p>
-                    <p>📞 +39 02 1234 5678</p>
-                    <p>📍 Milano, Italia</p>
+                    <p>📧 info.parallel.ai@gmail.com</p>
+                    <p>📍 Cuneo, Italia</p>
+                    <p>🏢 P.IVA: 04034440042</p>
+                    <p style="margin-top: 20px; font-size: 14px; opacity: 0.8;">
+                        Partner ufficiale di <a href="https://www.sguanginformatica.com" target="_blank" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">SguangInformatica</a>
+                    </p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 AI Solutions. Tutti i diritti riservati.</p>
+                <p>&copy; 2024 Parallel AI. Tutti i diritti riservati.</p>
             </div>
         </div>
     </footer>
@@ -3295,14 +3358,16 @@ if ($_POST && isset($_POST['contact_submit'])) {
                 if (!field.value.trim()) {
                     isValid = false;
                     field.style.borderColor = '#e53e3e';
+                    field.style.boxShadow = '0 0 0 3px rgba(239, 68, 68, 0.1)';
                 } else {
                     field.style.borderColor = '';
+                    field.style.boxShadow = '';
                 }
             });
             
             if (!isValid) {
                 e.preventDefault();
-                alert('Compila tutti i campi obbligatori');
+                alert('⚠️ Compila tutti i campi obbligatori per continuare');
             }
         });
     }
@@ -3377,7 +3442,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
         });
     });
 
-    // FAQ Accordion functionality - VERSIONE ROBUSTA
+    // FAQ Accordion functionality - VERSIONE MIGLIORATA
     function initFAQ() {
         console.log('🚀 Inizializzazione FAQ...');
         
@@ -3431,18 +3496,27 @@ if ($_POST && isset($_POST['contact_submit'])) {
                 } else {
                     item.classList.add('active');
                     toggle.textContent = '−';
-                    toggle.style.transform = 'rotate(45deg)';
+                    toggle.style.transform = 'rotate(0deg)';
                     console.log(`🔼 FAQ ${index + 1} aperta`);
                 }
             };
             
-            // Event listeners
+            // Event listeners multipli per sicurezza
             question.addEventListener('click', handleClick);
-            toggle.addEventListener('click', handleClick);
+            toggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                handleClick(e);
+            });
+            item.addEventListener('click', function(e) {
+                if (e.target === question || e.target === toggle || question.contains(e.target)) {
+                    handleClick(e);
+                }
+            });
             
             // Stili interattivi
             question.style.cursor = 'pointer';
             toggle.style.cursor = 'pointer';
+            item.style.cursor = 'pointer';
             
             // Debug info
             console.log(`🎯 FAQ ${index + 1} ready:`, {
