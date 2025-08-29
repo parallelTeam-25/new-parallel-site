@@ -3525,7 +3525,13 @@ if ($_POST && isset($_POST['contact_submit'])) {
     
     function closeMobileMenu() {
         navMenu.classList.remove('active');
-        navOverlay.classList.remove('active');
+        if (navOverlay) {
+            navOverlay.classList.remove('active');
+        }
+        // Su mobile, nascondi il menu dopo la chiusura
+        if (window.innerWidth <= 768) {
+            navMenu.style.display = 'none';
+        }
     }
     
     if (mobileMenuToggle && navMenu) {
@@ -3549,17 +3555,36 @@ if ($_POST && isset($_POST['contact_submit'])) {
     // Gestione responsive del menu
     function handleMenuResponsive() {
         if (window.innerWidth <= 768) {
-            // Su mobile, il menu web si nasconde
+            // Su mobile, il menu web si nasconde ma mantiene la struttura per il toggle
             navMenu.style.display = 'none';
+            navMenu.classList.remove('active');
         } else {
-            // Su desktop, il menu web è visibile
+            // Su desktop, il menu web è visibile e si rimuove la classe active
             navMenu.style.display = 'flex';
+            navMenu.classList.remove('active');
+            if (navOverlay) {
+                navOverlay.classList.remove('active');
+            }
         }
     }
     
     // Esegui al caricamento e al resize
     handleMenuResponsive();
     window.addEventListener('resize', handleMenuResponsive);
+    
+    // Gestione menu mobile
+    if (mobileMenuToggle && navMenu) {
+        mobileMenuToggle.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+                // Su mobile, mostra il menu
+                navMenu.style.display = 'flex';
+                navMenu.classList.add('active');
+                if (navOverlay) {
+                    navOverlay.classList.add('active');
+                }
+            }
+        });
+    }
 
     // Intersection Observer per animazioni
     const observerOptions = {
