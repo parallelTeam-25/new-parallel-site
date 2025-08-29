@@ -226,6 +226,9 @@ if ($_POST && isset($_POST['contact_submit'])) {
         color: var(--primary-color);
         text-decoration: none;
         letter-spacing: -0.5px;
+        display: flex;
+        align-items: center;
+        height: 100%;
     }
     
     .nav-menu {
@@ -291,9 +294,9 @@ if ($_POST && isset($_POST['contact_submit'])) {
         right: 0;
         bottom: 0;
         background: 
-            linear-gradient(90deg, transparent 0%, rgba(16, 185, 129, 0.1) 20%, transparent 40%, rgba(16, 185, 129, 0.1) 60%, transparent 80%, rgba(16, 185, 129, 0.1) 100%);
+            linear-gradient(180deg, transparent 0%, rgba(16, 185, 129, 0.1) 20%, transparent 40%, rgba(16, 185, 129, 0.1) 60%, transparent 80%, rgba(16, 185, 129, 0.1) 100%);
         opacity: 0.3;
-        animation: parallelLines 8s ease-in-out infinite;
+        animation: parallelLinesVertical 8s ease-in-out infinite;
     }
     
     .new-hero-section::after {
@@ -304,39 +307,39 @@ if ($_POST && isset($_POST['contact_submit'])) {
         right: 0;
         bottom: 0;
         background: 
-            linear-gradient(90deg, transparent 0%, rgba(16, 185, 129, 0.08) 30%, transparent 50%, rgba(16, 185, 129, 0.08) 70%, transparent 90%, rgba(16, 185, 129, 0.08) 100%);
+            linear-gradient(180deg, transparent 0%, rgba(16, 185, 129, 0.08) 30%, transparent 50%, rgba(16, 185, 129, 0.08) 70%, transparent 90%, rgba(16, 185, 129, 0.08) 100%);
         opacity: 0.4;
-        animation: parallelLines 12s ease-in-out infinite reverse;
+        animation: parallelLinesVertical 12s ease-in-out infinite reverse;
     }
     
     /* Linee parallele decorative */
     .new-hero-section .parallel-line-1 {
         position: absolute;
-        top: 52%;
-        left: -100px;
-        width: 300px;
-        height: 4px;
-        background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 1), rgba(16, 185, 129, 1), transparent);
-        animation: slideLine 8s linear infinite;
+        top: -100px;
+        left: 52%;
+        width: 4px;
+        height: 300px;
+        background: linear-gradient(180deg, transparent, rgba(16, 185, 129, 1), rgba(16, 185, 129, 1), transparent);
+        animation: slideLineVertical 8s linear infinite;
         z-index: 10;
     }
     
     .new-hero-section .parallel-line-2 {
         position: absolute;
-        top: 55%;
-        left: -100px;
-        width: 300px;
-        height: 4px;
-        background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.8), rgba(16, 185, 129, 0.8), transparent);
-        animation: slideLine 8s linear infinite 1s;
+        top: -100px;
+        left: 55%;
+        width: 4px;
+        height: 300px;
+        background: linear-gradient(180deg, transparent, rgba(16, 185, 129, 0.8), rgba(16, 185, 129, 0.8), transparent);
+        animation: slideLineVertical 8s linear infinite 1s;
         z-index: 10;
     }
     
 
     
-    @keyframes slideLine {
-        0% { transform: translateX(-100px); }
-        100% { transform: translateX(calc(100vw + 100px)); }
+    @keyframes slideLineVertical {
+        0% { transform: translateY(-100px); }
+        100% { transform: translateY(calc(100vh + 100px)); }
     }
     
     .new-hero-content {
@@ -406,21 +409,21 @@ if ($_POST && isset($_POST['contact_submit'])) {
         background: linear-gradient(135deg, #10b981 0%, #00d4aa 100%);
     }
     
-    @keyframes parallelLines {
+    @keyframes parallelLinesVertical {
         0%, 100% { 
-            transform: translateX(-100%) scaleX(1);
+            transform: translateY(-100%) scaleY(1);
             opacity: 0.3;
         }
         25% { 
-            transform: translateX(0%) scaleX(1.2);
+            transform: translateY(0%) scaleY(1.2);
             opacity: 0.6;
         }
         50% { 
-            transform: translateX(100%) scaleX(1);
+            transform: translateY(100%) scaleY(1);
             opacity: 0.3;
         }
         75% { 
-            transform: translateX(0%) scaleX(0.8);
+            transform: translateY(0%) scaleY(0.8);
             opacity: 0.8;
         }
     }
@@ -2696,7 +2699,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
                 <nav>
                     <ul class="nav-menu">
                         <li><a href="#metodo">Come lavoriamo</a></li>
-                        <li><a href="#why-us">Servizi</a></li>
+                        <li><a href="#metodo">Servizi</a></li>
                         <li><a href="#case-studies">Casi Studio</a></li>
                         <li><a href="#contact">Contatti</a></li>
                     </ul>
@@ -3204,18 +3207,9 @@ if ($_POST && isset($_POST['contact_submit'])) {
                     <h4>Navigazione</h4>
                     <ul>
                         <li><a href="#metodo">Come lavoriamo</a></li>
-                        <li><a href="#why-us">Servizi</a></li>
+                        <li><a href="#metodo">Servizi</a></li>
                         <li><a href="#case-studies">Casi Studio</a></li>
                         <li><a href="#contact">Contatti</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Servizi</h4>
-                    <ul>
-                        <li><a href="#why-us">Formazione AI</a></li>
-                        <li><a href="#why-us">Automazioni</a></li>
-                        <li><a href="#why-us">Agenti AI</a></li>
-                        <li><a href="#why-us">Consulenza</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -3231,7 +3225,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Parallel AI. Tutti i diritti riservati.</p>
+                <p>&copy; 2025 Parallel AI. Tutti i diritti riservati.</p>
             </div>
         </div>
     </footer>
