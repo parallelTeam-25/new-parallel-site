@@ -1669,6 +1669,23 @@ if ($_POST && isset($_POST['contact_submit'])) {
         border: 1px solid rgba(16, 185, 129, 0.3);
     }
     
+    /* Responsive per il badge su mobile */
+    @media (max-width: 768px) {
+        .project-badge {
+            position: relative;
+            top: auto;
+            right: auto;
+            display: inline-block;
+            margin-bottom: 16px;
+            align-self: flex-start;
+        }
+        
+        .case-study-card {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    
     .project-subtitle {
         color: var(--primary-color);
         font-weight: 600;
@@ -2679,6 +2696,16 @@ if ($_POST && isset($_POST['contact_submit'])) {
         .case-studies-grid,
         .testimonials-grid {
             grid-template-columns: 1fr;
+        }
+        
+        /* Ottimizzazioni per case study su mobile */
+        .case-study-card {
+            padding: 24px 20px;
+        }
+        
+        .case-study-card h3 {
+            font-size: 22px;
+            margin-top: 8px;
         }
         
         .process-steps {
