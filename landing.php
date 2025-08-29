@@ -3264,7 +3264,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>La call gratuita di 30 minuti serve a conoscerci, capire i tuoi processi e valutare insieme dove l'automazione può avere più impatto. Senza impegno, ma con spunti subito concreti.</p>
+                        <p>La call gratuita di 30 minuti serve a conoscerci, capire i tuoi processi e valutare insieme dove l'automazione può avere più impatto. È senza impegno, ma con spunti subito concreti.</p>
                     </div>
                 </div>
                 
@@ -3280,6 +3280,16 @@ if ($_POST && isset($_POST['contact_submit'])) {
                 
                 <div class="faq-item" data-faq="9">
                     <div class="faq-question">
+                        <h3>Offrite anche formazione su AI senza implementazioni?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sì. Parallel può fornire percorsi di formazione su AI e automazione anche senza realizzare progetti tecnici. Dalla strategia d'impresa all'uso pratico degli strumenti, aiutiamo il tuo team a capire e sfruttare al meglio le potenzialità dell'intelligenza artificiale.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-faq="10">
+                    <div class="faq-question">
                         <h3>Come faccio a essere sicuro che l'investimento convenga davvero?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
@@ -3288,7 +3298,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
                     </div>
                 </div>
                 
-                <div class="faq-item" data-faq="10">
+                <div class="faq-item" data-faq="11">
                     <div class="faq-question">
                         <h3>Parallel sostituisce le persone con l'AI?</h3>
                         <span class="faq-toggle">+</span>
