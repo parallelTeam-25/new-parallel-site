@@ -3200,61 +3200,101 @@ if ($_POST && isset($_POST['contact_submit'])) {
             <div class="faq-container">
                 <div class="faq-item" data-faq="1">
                     <div class="faq-question">
-                        <h3>Non conosco nulla di automazioni, è adatto per me?</h3>
+                        <h3>Non ho esperienza con automazioni o AI: posso iniziare lo stesso?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Perfetto! Il nostro metodo è pensato proprio per chi parte da zero. Ti accompagniamo passo passo e ti formiamo completamente.</p>
+                        <p>Certo. Parallel è pensato anche per chi parte da zero: analizziamo i tuoi processi, individuiamo quelli più adatti e ti accompagniamo passo dopo passo fino ai primi risultati.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item" data-faq="2">
                     <div class="faq-question">
-                        <h3>Quanto tempo ci vuole per vedere i primi risultati?</h3>
+                        <h3>E se so già quali processi voglio automatizzare o migliorare?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Dall'analisi al go-live: 2-6 settimane per automazione, in base alla complessità. I benefici li vedi immediatamente.</p>
+                        <p>Perfetto! Possiamo partire subito dalle tue esigenze specifiche, sviluppando soluzioni mirate e riducendo tempi e costi di implementazione.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item" data-faq="3">
                     <div class="faq-question">
-                        <h3>Cosa succede se ho problemi dopo l'implementazione?</h3>
+                        <h3>Lavorate solo con PMI?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Ti forniamo assistenza continua e formazione completa per renderti autonomo. Non sei mai lasciato solo.</p>
+                        <p>No. Parallel collabora sia con PMI (5-50 dipendenti) che con grandi aziende. Le nostre soluzioni sono scalabili e adattabili a realtà di dimensioni diverse.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item" data-faq="4">
                     <div class="faq-question">
-                        <h3>Lavorate solo con grandi aziende?</h3>
+                        <h3>Quanto tempo serve per vedere i risultati?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>No, siamo specializzati in PMI da 5-50 dipendenti. Capiamo le specifiche esigenze delle piccole e medie imprese italiane.</p>
+                        <p>In media 2-6 settimane per progetto, in base alla complessità. I benefici, come risparmio di tempo ed efficienza operativa, sono evidenti già dal go-live.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item" data-faq="5">
                     <div class="faq-question">
-                        <h3>Posso iniziare con una sola automazione?</h3>
+                        <h3>Cosa succede dopo l'implementazione?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Assolutamente sì! Anzi, è il nostro approccio consigliato. Un progetto alla volta, risultati concreti.</p>
+                        <p>Non ti lasciamo solo. Offriamo assistenza continua, monitoraggio e formazione, così il tuo team diventa autonomo e sicuro nell'utilizzo delle nuove soluzioni.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item" data-faq="6">
                     <div class="faq-question">
-                        <h3>Come posso essere sicuro che l'investimento valga la pena?</h3>
+                        <h3>Posso partire con una sola automazione?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Nella consulenza gratuita calcoliamo insieme il ROI previsto. Investi solo se i numeri ti convincono.</p>
+                        <p>Sì, ed è il nostro approccio consigliato: cominciamo da un progetto ad alto impatto, misuriamo i risultati e poi estendiamo gradualmente.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-faq="7">
+                    <div class="faq-question">
+                        <h3>Come funziona la call gratuita?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>La call gratuita di 30 minuti serve a conoscerci, capire i tuoi processi e valutare insieme dove l'automazione può avere più impatto. Senza impegno, ma con spunti subito concreti.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-faq="8">
+                    <div class="faq-question">
+                        <h3>Cos'è l'Audit e a cosa serve?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>L'Audit è un'analisi approfondita dei tuoi processi aziendali: individuiamo inefficienze, calcoliamo il potenziale risparmio e tracciamo una roadmap di automazioni. Ha un costo fisso, ma viene scalato dal progetto se decidi di procedere.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-faq="9">
+                    <div class="faq-question">
+                        <h3>Come faccio a essere sicuro che l'investimento convenga davvero?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Durante la consulenza e nell'Audit calcoliamo insieme il ROI (ritorno sull'investimento). Procedi solo se i numeri ti convincono: nessuna promessa generica, solo dati concreti.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-faq="10">
+                    <div class="faq-question">
+                        <h3>Parallel sostituisce le persone con l'AI?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No. Parallel non elimina posti di lavoro: automatizza i compiti ripetitivi e a basso valore, così che le persone possano concentrarsi su attività strategiche e creative.</p>
                     </div>
                 </div>
             </div>
