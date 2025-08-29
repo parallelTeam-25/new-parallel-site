@@ -315,31 +315,34 @@ if ($_POST && isset($_POST['contact_submit'])) {
     /* Linee parallele decorative */
     .new-hero-section .parallel-line-1 {
         position: absolute;
-        top: -100px;
-        left: 52%;
+        top: 50%;
+        left: 15%;
         width: 4px;
         height: 300px;
         background: linear-gradient(180deg, transparent, rgba(16, 185, 129, 1), rgba(16, 185, 129, 1), transparent);
         animation: slideLineVertical 8s linear infinite;
         z-index: 10;
+        transform: translateY(-50%);
     }
     
     .new-hero-section .parallel-line-2 {
         position: absolute;
-        top: -100px;
-        left: 55%;
+        top: 50%;
+        right: 15%;
         width: 4px;
         height: 300px;
         background: linear-gradient(180deg, transparent, rgba(16, 185, 129, 0.8), rgba(16, 185, 129, 0.8), transparent);
         animation: slideLineVertical 8s linear infinite 1s;
         z-index: 10;
+        transform: translateY(-50%);
     }
     
 
     
     @keyframes slideLineVertical {
-        0% { transform: translateY(-100px); }
-        100% { transform: translateY(calc(100vh + 100px)); }
+        0% { transform: translateY(-50%) scaleY(0.8); opacity: 0.3; }
+        50% { transform: translateY(-50%) scaleY(1.2); opacity: 1; }
+        100% { transform: translateY(-50%) scaleY(0.8); opacity: 0.3; }
     }
     
     .new-hero-content {
@@ -2699,7 +2702,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
                 <nav>
                     <ul class="nav-menu">
                         <li><a href="#metodo">Come lavoriamo</a></li>
-                        <li><a href="#metodo">Servizi</a></li>
+                        <li><a href="#services">Servizi</a></li>
                         <li><a href="#case-studies">Casi Studio</a></li>
                         <li><a href="#contact">Contatti</a></li>
                     </ul>
@@ -3201,13 +3204,12 @@ if ($_POST && isset($_POST['contact_submit'])) {
                     </a>
                     <h3>Trasformiamo il futuro della tua azienda con l'AI</h3>
                     <p>Soluzioni innovative e personalizzate per ottimizzare i tuoi processi e accelerare la crescita.</p>
-
                 </div>
                 <div class="footer-section">
                     <h4>Navigazione</h4>
                     <ul>
                         <li><a href="#metodo">Come lavoriamo</a></li>
-                        <li><a href="#metodo">Servizi</a></li>
+                        <li><a href="#services">Servizi</a></li>
                         <li><a href="#case-studies">Casi Studio</a></li>
                         <li><a href="#contact">Contatti</a></li>
                     </ul>
