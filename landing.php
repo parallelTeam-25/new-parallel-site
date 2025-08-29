@@ -2752,6 +2752,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     
     /* Responsive adjustments */
+    @media (max-width: 1024px) {
+        .footer-content {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+    }
+    
     @media (max-width: 768px) {
         .footer {
             padding: 60px 0 20px;
@@ -2826,6 +2833,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
         
         .footer-section:nth-child(3) {
+            grid-column: 1;
+        }
+        
+        .footer-section:nth-child(4) {
             grid-column: 1;
         }
         
@@ -3582,6 +3593,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <p style="margin-top: 20px; font-size: 14px; opacity: 0.8; text-align: center;">
                         Partner ufficiale di <a href="https://www.sguanginformatica.com" target="_blank" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">SguangInformatica</a>
                     </p>
+                </div>
+                <div class="footer-section">
+                    <h4>Legale</h4>
+                    <ul>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/cookies-policy">Cookies Policy</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
