@@ -2674,6 +2674,23 @@ if ($_POST && isset($_POST['contact_submit'])) {
         opacity: 1;
     }
     
+    /* Miglioramenti per mobile */
+    @media (max-width: 768px) {
+        .footer-section ul li a {
+            padding: 8px 0;
+            display: block;
+            text-align: center;
+        }
+        
+        .footer-section ul li a::before {
+            display: none;
+        }
+        
+        .footer-section ul li a:hover {
+            padding-left: 0;
+        }
+    }
+    
 
     
     .footer-bottom {
@@ -2697,6 +2714,8 @@ if ($_POST && isset($_POST['contact_submit'])) {
         color: var(--gray-200);
         font-size: 14px;
         line-height: 1.4;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
     
     /* Message styles */
@@ -2726,6 +2745,21 @@ if ($_POST && isset($_POST['contact_submit'])) {
     
     /* Responsive adjustments */
     @media (max-width: 768px) {
+        .footer {
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            grid-template-columns: 1fr;
+            gap: 40px;
+            text-align: center;
+        }
+        
+        .footer-section {
+            text-align: center;
+            align-items: center;
+        }
+        
         .contact-content {
             grid-template-columns: 1fr;
             gap: 40px;
@@ -2765,24 +2799,26 @@ if ($_POST && isset($_POST['contact_submit'])) {
         }
         
         .footer-content {
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 30px;
-            text-align: left;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            text-align: center;
+        }
+        
+        .footer-section {
+            text-align: center;
+            align-items: center;
         }
         
         .footer-section:first-child {
             grid-column: 1;
-            text-align: left;
         }
         
         .footer-section:nth-child(2) {
-            grid-column: 2;
-            text-align: left;
+            grid-column: 1;
         }
         
         .footer-section:nth-child(3) {
-            grid-column: 3;
-            text-align: left;
+            grid-column: 1;
         }
         
         .section-title {
@@ -2818,15 +2854,34 @@ if ($_POST && isset($_POST['contact_submit'])) {
         
         .footer-content {
             grid-template-columns: 1fr;
-            gap: 20px;
-        }
-        
-        .footer-section:first-child {
-            grid-column: 1;
+            gap: 30px;
         }
         
         .footer-section {
             text-align: center;
+            align-items: center;
+        }
+        
+        .footer-section h3 {
+            font-size: 24px;
+        }
+        
+        .footer-section h4 {
+            font-size: 18px;
+        }
+        
+        .footer-section p {
+            font-size: 15px;
+        }
+        
+        .contact-info-horizontal span {
+            font-size: 13px;
+            padding: 0 10px;
+        }
+        
+        .footer-bottom {
+            padding-top: 20px;
+            font-size: 14px;
         }
         
         .hero-title {
@@ -2892,6 +2947,38 @@ if ($_POST && isset($_POST['contact_submit'])) {
         .btn-large {
             padding: 16px 32px;
             font-size: 16px;
+        }
+    }
+    
+    /* Regole extra per schermi molto piccoli */
+    @media (max-width: 360px) {
+        .footer {
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            gap: 25px;
+        }
+        
+        .footer-section h3 {
+            font-size: 22px;
+        }
+        
+        .footer-section h4 {
+            font-size: 16px;
+        }
+        
+        .footer-section p {
+            font-size: 14px;
+        }
+        
+        .contact-info-horizontal span {
+            font-size: 12px;
+            padding: 0 5px;
+        }
+        
+        .footer-bottom {
+            font-size: 13px;
         }
     }
     </style>
@@ -3480,7 +3567,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
                         <span>📍 Cuneo, Italia</span>
                         <span>🏢 P.IVA: 04034440042</span>
                     </div>
-                    <p style="margin-top: 20px; font-size: 14px; opacity: 0.8;">
+                    <p style="margin-top: 20px; font-size: 14px; opacity: 0.8; text-align: center;">
                         Partner ufficiale di <a href="https://www.sguanginformatica.com" target="_blank" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">SguangInformatica</a>
                     </p>
                 </div>
