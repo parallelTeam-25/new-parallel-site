@@ -286,63 +286,80 @@ if ($_POST && isset($_POST['contact_submit'])) {
         align-items: center;
     }
     
-    .new-hero-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: 
-            linear-gradient(180deg, transparent 0%, rgba(16, 185, 129, 0.1) 20%, transparent 40%, rgba(16, 185, 129, 0.1) 60%, transparent 80%, rgba(16, 185, 129, 0.1) 100%);
-        opacity: 0.3;
-        animation: parallelLinesVertical 8s ease-in-out infinite;
-    }
+    /* Rimuovo le ombre animate che si muovono */
     
-    .new-hero-section::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: 
-            linear-gradient(180deg, transparent 0%, rgba(16, 185, 129, 0.08) 30%, transparent 50%, rgba(16, 185, 129, 0.08) 70%, transparent 90%, rgba(16, 185, 129, 0.08) 100%);
-        opacity: 0.4;
-        animation: parallelLinesVertical 12s ease-in-out infinite reverse;
-    }
-    
-    /* Linee parallele decorative */
+    /* Linee parallele decorative - Versione migliorata */
     .new-hero-section .parallel-line-1 {
         position: absolute;
-        top: 50%;
-        left: 15%;
-        width: 4px;
-        height: 300px;
-        background: linear-gradient(180deg, transparent, rgba(16, 185, 129, 1), rgba(16, 185, 129, 1), transparent);
-        animation: slideLineVertical 8s linear infinite;
+        top: 0;
+        left: 12%;
+        width: 3px;
+        height: 200px;
+        background: linear-gradient(180deg, transparent, rgba(16, 185, 129, 0.8), rgba(16, 185, 129, 1), rgba(16, 185, 129, 0.8), transparent);
+        animation: slideLineVertical 6s ease-in-out infinite;
         z-index: 10;
-        transform: translateY(-50%);
+        border-radius: 2px;
+        box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
     }
     
     .new-hero-section .parallel-line-2 {
         position: absolute;
-        top: 50%;
-        right: 15%;
-        width: 4px;
-        height: 300px;
-        background: linear-gradient(180deg, transparent, rgba(16, 185, 129, 0.8), rgba(16, 185, 129, 0.8), transparent);
-        animation: slideLineVertical 8s linear infinite 1s;
+        top: 0;
+        left: 14%;
+        width: 2px;
+        height: 150px;
+        background: linear-gradient(180deg, transparent, rgba(16, 185, 129, 0.6), rgba(16, 185, 129, 0.8), rgba(16, 185, 129, 0.6), transparent);
+        animation: slideLineVertical 8s ease-in-out infinite 2s;
         z-index: 10;
-        transform: translateY(-50%);
+        border-radius: 1px;
+        box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+    }
+    
+    .new-hero-section .parallel-line-3 {
+        position: absolute;
+        top: 0;
+        right: 12%;
+        width: 3px;
+        height: 200px;
+        background: linear-gradient(180deg, transparent, rgba(16, 185, 129, 0.8), rgba(16, 185, 129, 1), rgba(16, 185, 129, 0.8), transparent);
+        animation: slideLineVertical 7s ease-in-out infinite 1s;
+        z-index: 10;
+        border-radius: 2px;
+        box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+    }
+    
+    .new-hero-section .parallel-line-4 {
+        position: absolute;
+        top: 0;
+        right: 14%;
+        width: 2px;
+        height: 150px;
+        background: linear-gradient(180deg, transparent, rgba(16, 185, 129, 0.6), rgba(16, 185, 129, 0.8), rgba(16, 185, 129, 0.6), transparent);
+        animation: slideLineVertical 9s ease-in-out infinite 3s;
+        z-index: 10;
+        border-radius: 1px;
+        box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
     }
     
 
     
     @keyframes slideLineVertical {
-        0% { transform: translateY(-50%) scaleY(0.8); opacity: 0.3; }
-        50% { transform: translateY(-50%) scaleY(1.2); opacity: 1; }
-        100% { transform: translateY(-50%) scaleY(0.8); opacity: 0.3; }
+        0% { 
+            transform: translateY(-100px); 
+            opacity: 0; 
+        }
+        20% { 
+            transform: translateY(20px); 
+            opacity: 0.8; 
+        }
+        80% { 
+            transform: translateY(calc(100vh - 220px)); 
+            opacity: 0.8; 
+        }
+        100% { 
+            transform: translateY(calc(100vh + 100px)); 
+            opacity: 0; 
+        }
     }
     
     .new-hero-content {
@@ -858,6 +875,14 @@ if ($_POST && isset($_POST['contact_submit'])) {
         .new-hero-cta .btn {
             padding: 16px 32px;
             font-size: 16px;
+        }
+        
+        /* Nascondi le linee decorative su mobile */
+        .new-hero-section .parallel-line-1,
+        .new-hero-section .parallel-line-2,
+        .new-hero-section .parallel-line-3,
+        .new-hero-section .parallel-line-4 {
+            display: none;
         }
         
         .hero-cta .btn {
@@ -2748,6 +2773,8 @@ if ($_POST && isset($_POST['contact_submit'])) {
         <!-- Linee parallele decorative -->
         <div class="parallel-line-1"></div>
         <div class="parallel-line-2"></div>
+        <div class="parallel-line-3"></div>
+        <div class="parallel-line-4"></div>
         
         <div class="container">
             <div class="new-hero-content">
