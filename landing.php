@@ -302,7 +302,8 @@ if ($_POST && isset($_POST['contact_submit'])) {
         transition: transform 0.3s ease;
     }
     
-    .nav-menu {
+    /* Menu mobile - stato iniziale nascosto */
+    .nav-menu.mobile-hidden {
         transform: translateX(100%);
         transition: transform 0.3s ease;
     }
@@ -3544,6 +3545,21 @@ if ($_POST && isset($_POST['contact_submit'])) {
             link.addEventListener('click', closeMobileMenu);
         });
     }
+    
+    // Gestione responsive del menu
+    function handleMenuResponsive() {
+        if (window.innerWidth <= 768) {
+            // Su mobile, il menu web si nasconde
+            navMenu.style.display = 'none';
+        } else {
+            // Su desktop, il menu web è visibile
+            navMenu.style.display = 'flex';
+        }
+    }
+    
+    // Esegui al caricamento e al resize
+    handleMenuResponsive();
+    window.addEventListener('resize', handleMenuResponsive);
 
     // Intersection Observer per animazioni
     const observerOptions = {
