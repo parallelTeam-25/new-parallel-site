@@ -287,32 +287,65 @@ if ($_POST && isset($_POST['contact_submit'])) {
     .nav-menu.active {
         display: flex;
         flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
+        position: fixed;
+        top: 0;
         right: 0;
+        width: 280px;
+        height: 100vh;
         background: rgba(0, 0, 0, 0.98);
         backdrop-filter: blur(20px);
-        padding: 20px;
-        border-top: 1px solid rgba(16, 185, 129, 0.2);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        padding: 80px 30px 30px 30px;
+        border-left: 2px solid var(--primary-color);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
         z-index: 999;
+        transform: translateX(0);
+        transition: transform 0.3s ease;
+    }
+    
+    .nav-menu {
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
     }
     
     .nav-menu.active li {
-        margin: 15px 0;
-        text-align: center;
+        margin: 20px 0;
+        text-align: left;
     }
     
     .nav-menu.active a {
         font-size: 18px;
-        padding: 15px 0;
+        padding: 12px 0;
         display: block;
-        border-bottom: 1px solid rgba(16, 185, 129, 0.1);
+        color: var(--white);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+        transition: all 0.3s ease;
+    }
+    
+    .nav-menu.active a:hover {
+        color: var(--primary-color);
+        border-bottom-color: var(--primary-color);
+        padding-left: 10px;
     }
     
     .nav-menu.active a:last-child {
         border-bottom: none;
+    }
+    
+    /* Overlay per menu mobile */
+    .nav-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+    }
+    
+    .nav-overlay.active {
+        display: block;
     }
     
     /* New Hero Section */
@@ -2858,6 +2891,8 @@ if ($_POST && isset($_POST['contact_submit'])) {
                 <button class="mobile-menu-toggle" id="mobile-menu-toggle">☰</button>
             </div>
         </div>
+        <!-- Overlay per menu mobile -->
+        <div class="nav-overlay" id="nav-overlay"></div>
     </header>
 
     <!-- New Hero Section -->
@@ -3462,10 +3497,28 @@ if ($_POST && isset($_POST['contact_submit'])) {
     // Mobile menu toggle
     const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
+    const navOverlay = document.getElementById('nav-overlay');
+    
+    function closeMobileMenu() {
+        navMenu.classList.remove('active');
+        navOverlay.classList.remove('active');
+    }
     
     if (mobileMenuToggle && navMenu) {
         mobileMenuToggle.addEventListener('click', function() {
             navMenu.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+        });
+        
+        // Chiudi menu quando si clicca sull'overlay
+        if (navOverlay) {
+            navOverlay.addEventListener('click', closeMobileMenu);
+        }
+        
+        // Chiudi menu quando si clicca su una voce del menu
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
         });
     }
 
