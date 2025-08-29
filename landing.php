@@ -1477,6 +1477,18 @@ if ($_POST && isset($_POST['contact_submit'])) {
     
     .services-cta {
         text-align: center;
+        margin-top: auto;
+        padding-top: 20px;
+    }
+    
+    .service-card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    
+    .service-features {
+        flex-grow: 1;
     }
     
     /* Case Studies Section */
@@ -1769,6 +1781,18 @@ if ($_POST && isset($_POST['contact_submit'])) {
     
     .services-cta {
         text-align: center;
+        margin-top: auto;
+        padding-top: 20px;
+    }
+    
+    .service-card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    
+    .service-features {
+        flex-grow: 1;
     }
     
     /* Responsive design for services */
@@ -2183,9 +2207,9 @@ if ($_POST && isset($_POST['contact_submit'])) {
     }
     
     .benefit-icon {
-        font-size: 56px;
-        margin-bottom: 24px;
-        filter: drop-shadow(0 8px 16px rgba(16, 185, 129, 0.3));
+        font-size: 36px;
+        margin-bottom: 20px;
+        filter: drop-shadow(0 4px 8px rgba(16, 185, 129, 0.2));
     }
     
     .benefit-card h3 {
@@ -2489,6 +2513,20 @@ if ($_POST && isset($_POST['contact_submit'])) {
         z-index: 2;
     }
     
+    .contact-info-horizontal {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+    
+    .contact-info-horizontal span {
+        display: block;
+        color: var(--gray-200);
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    
     /* Message styles */
     .success-message {
         background: rgba(16, 185, 129, 0.1);
@@ -2658,7 +2696,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
                 <nav>
                     <ul class="nav-menu">
                         <li><a href="#metodo">Come lavoriamo</a></li>
-                        <li><a href="#services">Servizi</a></li>
+                        <li><a href="#why-us">Servizi</a></li>
                         <li><a href="#case-studies">Casi Studio</a></li>
                         <li><a href="#contact">Contatti</a></li>
                     </ul>
@@ -2763,7 +2801,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">🤖</div>
+                    <div class="service-icon">⚙️</div>
                     <h3 style="text-align: center;">SOLUZIONI CUSTOM</h3>
                     <p style="text-align: center;" class="service-subtitle">Sviluppiamo Agenti AI custom e automazioni AI personalizzate</p>
                     <ul style="text-align: center;" class="service-features">
@@ -2779,7 +2817,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
                 </div>
                 
                 <div class="service-card">
-                    <div class="service-icon">🎓</div>
+                    <div class="service-icon">📚</div>
                     <h3 style="text-align: center;">FORMAZIONE AZIENDALE</h3>
                     <p  style="text-align: center;"class="service-subtitle">Potenzia il tuo team con formazione AI personalizzata e percorsi mirati</p>
                     <ul style="text-align: center;" class="service-features">
@@ -2922,49 +2960,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services-section" id="services">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">I nostri servizi</h2>
-                <p class="section-intro">
-                    Soluzioni su misura per trasformare i tuoi processi aziendali
-                </p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🤖</div>
-                    <h3 style="text-align: center;">AUTOMAZIONI CUSTOM</h3>
-                    <p style="text-align: center;" class="service-subtitle">Sviluppiamo automazioni AI personalizzate per i tuoi processi</p>
-                    <ul style="text-align: center;" class="service-features">
-                        <li>Scadenziari e promemoria automatici</li>
-                        <li>Report e dashboard auto-generati</li>
-                        <li>Integrazione tra software diversi</li>
-                        <li>Ricerche e analisi automatiche</li>
-                        <li>Gestione dati e fatturazione</li>
-                    </ul>
-                    <div class="services-cta">
-                        <a href="https://calendly.com/info-parallel-ai/30min" target="_blank" class="btn btn-primary">Prenota call</a>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">🎓</div>
-                    <h3 style="text-align: center;">FORMAZIONE AZIENDALE</h3>
-                    <p style="text-align: center;" class="service-subtitle">Potenzia il tuo team con formazione AI personalizzata</p>
-                    <ul style="text-align: center;" class="service-features">
-                        <li>Workshop intensivi su strumenti AI</li>
-                        <li>Casi d'uso specifici per il tuo settore</li>
-                        <li>Formazione personalizzata e aggiornata</li>
-                        <li>Follow-up e supporto continuativo</li>
-                    </ul>
-                    <div class="services-cta">
-                        <a href="https://calendly.com/info-parallel-ai/30min" target="_blank" class="btn btn-primary">Prenota call</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Final CTA Section -->
     <section class="final-cta-section" id="final-cta">
@@ -3003,19 +2999,19 @@ if ($_POST && isset($_POST['contact_submit'])) {
             
             <div class="benefits-grid">
                 <div class="benefit-card">
-                    <div class="benefit-icon">⏰</div>
+                    <div class="benefit-icon">⏱️</div>
                     <h3>30 minuti di valore</h3>
                     <p>Consulenza mirata e personalizzata per identificare le opportunità specifiche per la tua azienda.</p>
                 </div>
                 
                 <div class="benefit-card">
-                    <div class="benefit-icon">👨‍💼</div>
+                    <div class="benefit-icon">👨‍💻</div>
                     <h3>Esperti dedicati</h3>
                     <p>Incontro con i nostri specialisti AI con esperienza specifica nel tuo settore.</p>
                 </div>
                 
                 <div class="benefit-card">
-                    <div class="benefit-icon">📋</div>
+                    <div class="benefit-icon">📊</div>
                     <h3>Piano d'azione</h3>
                     <p>Riceverai un piano personalizzato con step concreti per iniziare la tua trasformazione AI.</p>
                 </div>
@@ -3208,7 +3204,7 @@ if ($_POST && isset($_POST['contact_submit'])) {
                     <h4>Navigazione</h4>
                     <ul>
                         <li><a href="#metodo">Come lavoriamo</a></li>
-                        <li><a href="#services">Servizi</a></li>
+                        <li><a href="#why-us">Servizi</a></li>
                         <li><a href="#case-studies">Casi Studio</a></li>
                         <li><a href="#contact">Contatti</a></li>
                     </ul>
@@ -3216,17 +3212,19 @@ if ($_POST && isset($_POST['contact_submit'])) {
                 <div class="footer-section">
                     <h4>Servizi</h4>
                     <ul>
-                        <li><a href="#services">Formazione AI</a></li>
-                        <li><a href="#services">Automazioni</a></li>
-                        <li><a href="#services">Agenti AI</a></li>
-                        <li><a href="#services">Consulenza</a></li>
+                        <li><a href="#why-us">Formazione AI</a></li>
+                        <li><a href="#why-us">Automazioni</a></li>
+                        <li><a href="#why-us">Agenti AI</a></li>
+                        <li><a href="#why-us">Consulenza</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Contatti</h4>
-                    <p>📧 info.parallel.ai@gmail.com</p>
-                    <p>📍 Cuneo, Italia</p>
-                    <p>🏢 P.IVA: 04034440042</p>
+                    <div class="contact-info-horizontal">
+                        <span>📧 info.parallel.ai@gmail.com</span>
+                        <span>📍 Cuneo, Italia</span>
+                        <span>🏢 P.IVA: 04034440042</span>
+                    </div>
                     <p style="margin-top: 20px; font-size: 14px; opacity: 0.8;">
                         Partner ufficiale di <a href="https://www.sguanginformatica.com" target="_blank" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">SguangInformatica</a>
                     </p>
@@ -3477,6 +3475,9 @@ if ($_POST && isset($_POST['contact_submit'])) {
     
     // Backup: riprova dopo un breve delay
     setTimeout(initFAQ, 1000);
+    
+    // Inizializza FAQ anche quando la pagina è completamente caricata
+    window.addEventListener('load', initFAQ);
     </script>
 </body>
 </html>
